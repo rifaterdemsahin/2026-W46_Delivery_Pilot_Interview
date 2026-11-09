@@ -1,0 +1,283 @@
+[00:00] More, more.
+[00:02] No, when I sit my head will be up.
+[00:06] Okay, good. Recording?
+[00:08] Yes, it's recording.
+[00:09] Okay, hello Ernem. Let's talk about technologies, AI, progress, evolution and human
+[00:17] because it's a very important subject and it becomes more and more complicated for us to deal with it.
+[00:24] And let's start from technologies and your experience because all your life you are focusing on technologies.
+[00:32] It's something that you are in love with. Tell me why? What made you so interested in technologies?
+[00:39] So the reality is I'm passionate about technology because from a kid I always fantasized to become a pilot.
+[00:46] Once you said let's do delivery pilot, it made two of my childhood things come true. One from my adult old, which is called continuous integration and continuous delivery.
+[00:58] 10-20 years ago doing continuous integration was impossible for most of the teams.
+[01:05] Most of the teams were unable to integrate the code.
+[01:08] And now we came to an age with the rise of the AI.
+[01:12] We can do the continuous integration.
+[01:14] Now it is time to do the continuous delivery, which brings me to my childhood.
+[01:18] In my childhood, I was watching the movies where these Macrobots, the suits, the arc suits,
+[01:24] were able to go to the other planets, be able to terraform them and do all these magic stuff.
+[01:30] But the reality is being a pilot is very, very expensive right now.
+[01:35] To hold a plane in the air is very hard.
+[01:37] But with the rise of the AI, it all changed.
+[01:40] What happened is we are becoming from a driver to a pilot.
+[01:45] So I called it delivery pilot.
+[01:47] And that's the reason I'm very passionate about it.
+[01:49] not just to make money but make sure that this new profession comes to life.
+[01:54] Can you help us to understand the history of technology a little bit?
+[02:01] Because you've started over 20 years before and do you remember how it looked like at that time and how much changed till today?
+[02:12] First of all, I started 40 years ago. I had a computer at the age of five and my mother was a nuclear scientist. And once she was doing the things with the Atari, I got a basic book, tried to replicate what was on the book and some stuff working on the screen, especially the colorful, the GPU stuff at that time at 1985 in Ankara on the Nuclear Research Institute.
+[02:37] So, what is happening right now is most of these languages was declarative.
+[02:44] We had to learn a language to be able to talk.
+[02:46] I moved to the UK, I had to learn English.
+[02:49] People need to learn an intermediary language to talk to each other as well as to talk to the computer.
+[02:55] Right now what's happening is with the rise of the AI we can only speak in our own language, not even English, to be able to make the AI work.
+[03:04] because the AIs, the computer languages got obstructed so much
+[03:09] that a computer geek is not needed to be able to program these computers anymore.
+[03:15] Right, it seems that today we don't need programmers as much as we needed them before
+[03:23] because today we can build a lot without even being a friend with software engineer.
+[03:30] And I mean that without knowing about coding we can create an application.
+[03:37] Isn't it amazing? Isn't it that crazy program that happened?
+[03:43] What is happening right now is we are moving from a rider to a driver, driver to a pilot.
+[03:49] But this is a different change. Meaning in the past the programmer was building the program.
+[03:54] Right now the program is getting built by AI. What it means is we are right now entered into an era in 2026. AI is building another AI. So we need to come to ourselves. Why do we need a pilot in the first place?
+[04:10] Once you want to fly to America, you always want a pilot in the helm because they are going to carry 300 people. Even though everything is done automatically, 30 years ago without the generative AI, we still wanted a pilot, somebody who is responsible, who understands the plane and who understands the passengers and the engineers at the same time to fly these planes.
+[04:38] Right now with the software revolution, with the AI, what's happening is we are responsible to fly over all of our bots. I have 300 bots running at the same time right now. What's happening is I cannot go and write the bot. I write one bot to write other bots.
+[04:55] So the AI is creating the other AI.
+[04:59] What we need to become is, become pilots rather than drivers and make sure that this is working all together.
+[05:05] I created the bots to invite people to the Cambridge events.
+[05:09] It sometimes works, sometimes doesn't work.
+[05:11] I need to make sure I fly over it.
+[05:13] I understand the direction is correct.
+[05:15] So the bots are doing their jobs properly.
+[05:18] Okay, you jumped already to bots.
+[05:20] I think it's too fast.
+[05:22] Let's talk about AI skills.
+[05:24] what does it mean, why we need it, because I think that it's more popular to use chat with AI,
+[05:34] to use AI just chatting about the problems, making some solutions, brainstorming, etc.
+[05:41] But it's much more, AI can do much more than that.
+[05:47] Yes.
+[05:49] Let's talk about AI skills first. How do you understand AI skills and why it's important?
+[05:56] So I separated the AI skills into three basic categories. The first one is being a rider.
+[06:02] You use the web chat to be able to do your things. You manually instruct them like riding
+[06:07] a horse or riding a motorcycle. You are very very hands-on. Once you become a driver, you
+[06:12] You start using Cloud Code to build a website, to do the things that you want to build with
+[06:17] automation.
+[06:18] Once you become a pilot, you are not driving anymore.
+[06:22] The pilot does not drive, does not go into day in and day out like lots of micromanagement.
+[06:28] He cannot do that because he has lots of responsibility, much more number of customers that they need
+[06:33] to carry and make sure everything works and the direction is correct.
+[06:38] So we are right now moving into an era where people are going to become pilots.
+[06:44] Instead of going to their keyboards and typing, they will stop typing, they will start observing and directing.
+[06:50] That's a completely different job than driving these computers with the keyboards.
+[06:56] We got used to using the keyboards and people like myself, the dinosaurs, look at the screens.
+[07:02] I have lots of screens, lots of keyboards to do the job. That era is changing.
+[07:06] Right now we will look into the computers much less and the robots, the bots are going to do most.
+[07:13] But what we need to make sure is the direction is correct. So that is the major thing that changes for us.
+[07:20] If we never use AI, we need to first become a writer. Then we need to understand, oh, there is cloud code, we can create programs.
+[07:28] We don't need to buy the programs anymore. Then we are going to go into a world of bots.
+[07:33] We are going to understand AI is going to build the AI, not us building the AI, not me building the boats.
+[07:40] That's a completely different world.
+[07:42] Once we come there, then we have the necessary skills of the future.
+[07:46] Driving and riding is still the old dinosaur world that I'm coming from.
+[07:51] Once people see the code, they are like, okay, I can create my website.
+[07:56] Yes, you can create your website.
+[07:58] That's good.
+[07:59] That's not a bad skill.
+[08:00] from a rider to driver definitely but focus on the new world
+[08:04] the boats are building the boats that the economic pressures are getting
+[08:09] removed so this is a critical world that we are gonna go riding driving
+[08:15] technology is the old way of doing things okay can you help us to understand
+[08:21] the journey this technology journey is it we have to go through to get to the
+[08:29] pilot level? For us, starting from your personal life is very very important. I
+[08:36] start doing the typing and the writing, go on the chat GPT prompting. That is the
+[08:42] stage one that we all need to learn how to do that. Most of us don't have the
+[08:46] Alexa's or the Muses at home so they are unable to go to that ecosystem. But if
+[08:52] you have the money, spend the tokens, get these latest Frontier models to be able
+[08:58] to do your work in a more autonomous manner. It could be cloud code, it could be Gemini,
+[09:03] it could be Codex. Once you start doing that, right now the major hype, the trend is going to the bots.
+[09:11] That is the third stage. Make sure that you have a bot with yourself. It could be a growth bot,
+[09:16] it could be Muse, it could be DOTS, every major technology company is creating them. They are
+[09:21] more probabilistic than deterministic meaning most of the time once we create computer programs they
+[09:28] are deterministic we have one input and one output and they don't go out of their box but these bots
+[09:35] think out of the box and they have something called the AI harness that they go and complete
+[09:41] the tasks such as once i created the event bright event in Cambridge i need to make sure i advertise
+[09:47] I need to make sure I go ahead and get an insurance. I need to make sure I communicate to people. So where we are going through in the world is we are going to create all these little me's. You can call digital twins. People call them bots. We are going to create them and we are going to make sure that they can do something called agent to agent communication.
+[10:08] My campaign bot should be able to talk to my finance bot, that should be able to talk to my capacity management bot.
+[10:17] So I can be at a high capacity, do my campaign in the budget.
+[10:23] Okay, but let's come back a little bit. Again, there are software programs, there are bots, chatbots,
+[10:36] AI tools and AI by itself. Can you help us to understand they all are different?
+[10:48] Yes. Because when we are talking to ChatGPT for example, we are talking to chatbot.
+[10:55] Yes. But this chatbot can create a code.
+[10:59] Yes. That code can create a software program.
+[11:02] Yes. Where is agent in between? What does mean agent? What can we do? Because this chatbot can create agent as well. But what is the difference between AI tool, I mean the tool or software program created by AI and agent?
+[11:24] So, how we call it in the world of software, we call it demos.
+[11:29] Once you go to the chat GPT, you have some software, some data that's working, that's the development side.
+[11:36] You have some code that's working. But once that code becomes alive, becomes sentient, can do the tasks by itself, can operate by itself, we call it demos.
+[11:46] The bots are able to work in a world where they get coded and where they can operate it at the same time.
+[11:53] Once I ask my grocery bot or grocery agent to complete a task every week because I need to find or get food every week, the bot is able to go to the Tesco's website, do all the clicks that I need to do in the digital world, make sure that I get the items and if I have excessive items, stop the system working.
+[12:15] In the past, once it was only development, not operations integrated, it always relied on humans to complete the operations. Once it becomes a bot, it doesn't rely humans to complete the operations.
+[12:30] such as I did Google AdWords 10-15 years ago, I was deciding the keywords, I was writing the title. Now I don't do that.
+[12:38] I have a bot that creates all the necessary bots that does the title, that does the links, that does the thumbnails, that does the campaign management.
+[12:48] They come together to be able to do this.
+[12:50] 20 years ago, 30 years ago, there was this cartoon called Voltron.
+[12:55] In Voltron, there is this space lion that flies in the space and it's a robot.
+[13:02] The robot comes together to be able to do the job.
+[13:05] So that's one of the reasons I like to deliver a pilot name.
+[13:08] Right now what is happening is all these bots are coming together and delivering the job.
+[13:13] So that is the reason Muse has passed ChatGPT in terms of installs.
+[13:18] Right now people are going to the bots because typing to chat GPT is good.
+[13:22] But what you want is to be operational in real world.
+[13:26] I don't want to do my visa application every five years.
+[13:30] I want a bot that knows all my information, that does a visa application.
+[13:34] I want a bot to do my insurance applications while I'm alive.
+[13:38] This bot, when you are saying bot, this is that agent that you are sending to do the work instead of you.
+[13:46] Yes, the agent and the bot are very similar. The agent has less autonomy than a bot. A bot and a robot are tools that works in the real world, and a robot collects the data from the real world, a bot collects the data from the digital world, and it doesn't have a body.
+[14:06] The reality of an agent, because they started calling them agents, then they turned into bots.
+[14:13] Agents are mostly defined by software people and they don't go out of their harnesses.
+[14:19] They are locked into their sandboxes. But these bots are more probabilistic.
+[14:24] They go out, if they can't find the food in Tesco, they will go to Sainsbury.
+[14:28] If they can't go to the Sainsbury, they will knock on the door to Maria and say,
+[14:31] do you guys have any olives that we can eat? It will be able to do that. So the bot is more probabilistic
+[14:37] to be able to complete the goal. So that is the thing of these agents converting into bots and
+[14:44] they become more useful because once I give you the task, I really don't care how you complete
+[14:49] that task. I want that goal to be achieved. Let's talk a little bit about coding. How is it important
+[14:57] nowadays. Do we need to learn coding to use AI better?
+[15:04] So if you go back to Socrates, 3000 years ago, they memorized all the books because there is no printing press.
+[15:13] They used a technique called memory palaces to remember thousands of pages of a book.
+[15:19] Right now we do not have that skill. There is only memory championships in the world where people memorize a deck of cards.
+[15:25] and they got championship. But most of the people stopped doing that. What is
+[15:30] happening right now is because the language gets abstracted, people are
+[15:35] going to become pilots rather than riders or drivers. Those riding and
+[15:41] driving will still exist in a hobby level. People looking at a screen using a
+[15:47] keyboard will be something of the past. But that means the white-collar jobs
+[15:52] that people got used to do is getting disturbed a lot. So we are going to go into a world where
+[16:01] we don't look at the screens. So it could be also very plus for people's mental health. They don't
+[16:07] have to look at the screens all day long because once you delegate the job to a bot that can do
+[16:13] the things with their own agency, then you don't need to look at the screens that much. The other
+[16:19] reality that we got is in Europe, in the US, we created lots of red tape. We draw
+[16:25] borders between countries. We say this is this government, this is that government.
+[16:30] That created a big bureaucracy all over the world. What these bots are good at is
+[16:36] they are good at policy. Writing, implementing and delivering. What we are
+[16:42] going to see it is these government agencies are mostly going to converge
+[16:47] and all of the jobs that the government policy is done will be done by the AI
+[16:52] because that is the tasks that the AI can excel at. What does it mean for us?
+[16:57] We will have more time to be able to be much much more creative. What does that
+[17:03] mean? A pilot versus a driver. A pilot has more places to go than a car driver.
+[17:10] A car driver has more places than a go than a rider because rider always
+[17:15] depends on the horse car also depends on the car the pilot depends on the plane
+[17:21] the plane has more engineering in it to answer your question
+[17:29] to answer your question the engineering has to be learned because once you fly
+[17:36] a plane as a pilot you are going to get trained more not less most of the time
+[17:43] people think that I will get trained less. No. From a horse to a car, you have to get licensed
+[17:50] to understand there's an engine, there's back, there's insurance, there's the fatalities.
+[17:55] With a plane, the risk is higher. If I had 300 boats, I'm more dangerous. So I need to get certified.
+[18:02] I need to make sure that I can engineer this. To come to your question, would I need to memory
+[18:07] memorize 300 pages? No. But I will watch more, I will understand more, I will
+[18:13] comment and conquer more. Then we are turning to the subject why continuous
+[18:20] learning is so important and it's more and more important day by day that we
+[18:27] cannot stop learning new things. Yes, that is the reality. I had a different idea
+[18:33] 10 years ago, if you ask me this question, I thought I live in Cambridge, the University of Cambridge's value will go down.
+[18:40] But right now, my idea is the adult education is going to rise.
+[18:44] Because being a pilot requires you to know more, to understand more, to experience more.
+[18:51] And people are going to realize they already watch more YouTube than ever.
+[18:58] YouTube is a non-fiction source of education.
+[19:01] Everybody is trying to learn.
+[19:02] Right now, all over the world, everybody is skilling up.
+[19:06] Once Africa comes into the game, once India comes into the game with all these satellites and all these learning,
+[19:13] we will have a much different world where everybody is continuously learning.
+[19:18] And that is going to be the main thing.
+[19:20] That will become bread and butter for everyone, especially for the adults, to learn more and more.
+[19:26] I know that you like to learn a lot and you've been learning a lot continuously.
+[19:32] But what else you like a lot as well? You like to teach people. What do you think? Why?
+[19:40] The reason is if I go to these groups, communities, if you don't give it to somebody else,
+[19:47] I think what we do is meaningless. Such as we started doing this Cambridge
+[19:52] AI meetups. If this information only lies with me, then it is not that meaningful. But what
+[19:59] is meaningful for me is to share this experience with others and I see that
+[20:04] right now everybody including myself is having a hard time being able to adapt
+[20:10] because the jobs give meaning to people. My research paper is all about when AGI
+[20:16] comes in what's going to happen to the workforce because people ride these
+[20:22] horses for hundreds of years. Once the horses are not there they lose their
+[20:27] meaning. Right now most 20-30% of the world is doing a desk-based job.
+[20:33] Their jobs are gonna go away so that's an important time right now. In history we
+[20:38] need to find a way what we are going to do and instead of trying to hold on to
+[20:44] these old jobs being a developer, being a tester, being an accountant, being a
+[20:50] lawyer, we need to make sure we go to a more creative world where we are not just
+[20:55] only accountants, insurance, developers, but we are all of them by using these bots and coordinating those bots.
+[21:03] We become like directors to those bots and that becomes our job.
+[21:08] We are not going to only direct ourselves, but direct more than ever.
+[21:12] Right now, this already happened in any flat or in any house.
+[21:17] If you are cooking, cleaning, doing the drying, you are using all the robots in the house,
+[21:23] but there is no agent in the middle. You are the robot. You command the machines. You do all the
+[21:29] hands-on. But the future is there is going to be an intermediary. We are going to pilot that machine
+[21:36] or the abstract software to be able to do the job. So that is where we are going. And I'm very
+[21:42] passionate about going there. The reason is we have lots of gatekeepers right now. Such as I'm a
+[21:48] I am a gatekeeper of all my knowledge. If I don't share it, that knowledge goes away.
+[21:53] But with the rise of AI, you are a nuclear scientist. Everybody is a nuclear scientist.
+[21:58] We don't need to raise a nuclear scientist and take them to the university for 40 years.
+[22:03] We need pilots that can do the nuclear science, that can do the civil engineering at the same time.
+[22:08] So we will be able to remove the barriers of the schools that only focus on nuclear science, that only focus on one subject.
+[22:17] but that is going to have also an impact of the society because in the
+[22:23] university we learn that we need to have only one major maybe max two my mom did
+[22:28] math and physics not that many majors but then we are going to realize once AI
+[22:34] does the job your job is to learn once you are learning why are you learning
+[22:39] only one major because your job is to become a pilot a plane versus a car you
+[22:46] You need to become much, much, much more creative and do meaningful stuff.
+[22:51] They will expect you to become a scientist themselves because you have all the agents
+[22:56] at your disposal.
+[22:57] You need to come up with a new science.
+[22:59] You need to come up with creative ways to be able to do this stuff.
+[23:03] Let's talk a little bit about the mind digestion system.
+[23:09] Because we had a very interesting case when you asked the AI how much time it will take
+[23:15] to average person to absorb the information that you've provided in a few minutes. I mean that it
+[23:23] takes time and as early as we are starting to work just to adopt AI for our mind, like we help our
+[23:33] mind to learn it, to be with it, to live with it. It is not only about learning, it's about to learn
+[23:40] have to live with AI as soon as I can say based on my experience then when I
+[23:48] started it was complicated but every time months by months I can do more and
+[23:53] more but it's not possible to do a lot in the beginning you have to adopt your
+[24:01] mind to that right yes the self-learning that was my core niche I started this
+[24:07] niche 10 years ago there was not that many people in this niche still there's not that many people
+[24:13] on the self-learning niche i think is going to become big and our job is going to become self
+[24:20] learners because once ai does the job we either go to our corner or we become very creative and we
+[24:27] become self-learners and our job becomes learning and creating because we need to in my perception
+[24:35] the pilots needs to be creative. The pilots needs to be operative. The pilots needs to be builders.
+[24:43] They need to be architects. They need to treasure the things and they need to become strategists.
+[24:48] I call this cobalt to make sure that what does a pilot do in a nutshell.
+[24:53] They need to be able to create and operate all day long.
+[25:04] Great. Let's talk a few sentences about the workshop that you are running.
+[25:11] Yes, we are doing the Eventbrite workshops in Cambridge Sixth Form College. People can sign up in Cambridge and they can join us.
+[25:20] We have a free session on the school platform where we come together every week on Sunday 1.30. So they can come in and showcase what they are doing. We have a session where we meet up, we go through one topic, then we talk about what we are grateful of, what we learned, what we implemented that week.
+[25:41] Our on-site sessions are mostly about people coming in, doing the things hands-on because you always need somebody supporting this.
+[25:50] And we are very, very passionate about these delivery pilots going online.
+[25:55] People delivering, not just integrating, delivering the solutions as a pilot.
+[26:01] So we are very focused on it and we are blessed in Cambridge.
+[26:05] There is a community that people are very interested in learning these things.
+[26:10] But if you are not in this area, definitely go to the school community, join.
+[26:15] It is free for the students to come in and join.
+[26:18] There is a symbolic fee for the professionals.
+[26:21] And if the businesses want, they can get managed service as these bots and be able to implement.
+[26:27] Are there any requirements that you have to know or to be prepared before joining school community?
+[26:35] No, for the school there is no requirements.
+[26:38] In the past, if you needed to go to a computer language class, you needed to have programming language as a prerequisite.
+[26:48] In this case, with the AI, most of the technical stuff is taken care of by AI.
+[26:53] But you need to have basics. A computer and an internet connection is a must.
+[26:57] A mobile phone is a must. As long as you have the gear and the will to learn, you are good to go.
+[27:05] If someone is thinking, oh, AI isn't for me, what can you say?
+[27:11] Yes, they said this as well during the revolution of the cars.
+[27:16] You can always say, stay like an Amish.
+[27:19] Amish people don't use internal combustion engines.
+[27:22] They always used the horses.
+[27:25] You can still stay there, but all of the world is right now moving to an AI-based world.
+[27:32] and the large language models are just the engine.
+[27:35] So the things happening around them,
+[27:38] people are building platforms,
+[27:40] people are building economies,
+[27:42] and this is the greatest investment of humanity.
+[27:46] Right now the AI investment
+[27:48] bypassed the industrial revolution,
+[27:51] railway, the investments.
+[27:54] So we are right now in an era
+[27:56] everybody is putting their chips in
+[27:59] into this new AI-based, new bot-based world.
+[28:03] So we are trying to go there.
+[28:05] Thank you. Thank you very much.
+[28:08] Thank you.
+[28:09] This could be very long.
