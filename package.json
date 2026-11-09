@@ -7,7 +7,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "studio": "remotion studio src/index.ts",
+    "typecheck": "tsc",
+    "still": "remotion still src/index.ts Main out/still.png --frame=1500"
   },
   "repository": {
     "type": "git",
@@ -28,5 +31,9 @@
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "remotion": "^4.0.542"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "typescript": "^7.0.2"
   }
 }

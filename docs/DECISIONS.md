@@ -42,3 +42,10 @@
 - **Why anchors, not hard-coded times:** each chapter is tied to a unique phrase and snapped to that segment's start. If the transcript is re-run, times follow. The script asserts each anchor matches exactly one segment and that order is increasing.
 - **Outputs:** `chapters.json` (Remotion), `chapters.ffmetadata` (ffmpeg MP4 chapter atoms), `chapters.youtube.txt` (description paste).
 - **Review needed:** boundaries are my judgement, so please skim `data/chapters.youtube.txt`. The 28:05 closing thanks is folded into the last chapter.
+
+## 8. Remotion setup (2026-11-09)
+- Composition `Main`: 1280x720 @ 25 fps, 42,336 frames, matching the proxy so there is no resampling.
+- Layers: `OffthreadVideo` (proxy) -> `ChapterCard` (5 s lower-third at each chapter start) -> `Subtitles` (burned-in, 38 px, dark box for contrast on any background) -> `ProgressBar` (with white chapter ticks).
+- **Captions as JSON:** `scripts/03_make_subtitles.py` also writes `data/captions.json` in `@remotion/captions` format, so the composition needs no runtime SRT parsing or delayRender fetch.
+- **Media access:** `public/proxy.mp4` is a symlink to `work/proxy.mp4`. Both are git-ignored, so no video ever enters the repo.
+- **Delivery:** `scripts/06_render_and_embed.sh` renders, then ffmpeg stream-copies and adds native MP4 chapters (from `chapters.ffmetadata`) and a toggleable `mov_text` subtitle track. Burned-in captions suit social platforms; the soft track suits players.

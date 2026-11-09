@@ -21,7 +21,7 @@ flowchart TD
     CH[/"data/chapters.json + .ffmetadata + .youtube.txt"/]:::done
     S5["05 make_proxy.sh<br/>ffmpeg 720p proxy"]:::wip
     PX[("work/proxy.mp4<br/>git-ignored")]:::wip
-    RM["Remotion composition<br/>captions + chapter cards"]:::todo
+    RM["Remotion composition src/<br/>captions + chapter cards + progress bar"]:::wip
     OUT[("out/final.mp4<br/>git-ignored")]:::todo
     S8["06 embed_chapters.sh<br/>ffmpeg metadata mux"]:::todo
 
@@ -52,4 +52,6 @@ scripts/01_extract_audio.sh                  # ~2 s
 .venv/bin/python -I scripts/03_make_subtitles.py
 scripts/04_make_chapters.py
 scripts/05_make_proxy.sh                     # ~10 min, hardware H.264
+npm run studio                              # preview in Remotion Studio
+scripts/06_render_and_embed.sh              # render + chapter markers + soft subs
 ```

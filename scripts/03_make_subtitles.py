@@ -48,3 +48,13 @@ for n, c in enumerate(cues, 1):
 open("data/subtitles.srt", "w").write("\n".join(srt))
 open("data/subtitles.vtt", "w").write("\n".join(vtt))
 print(f"{len(cues)} cues")
+
+# Remotion @remotion/captions format, consumed directly by src/ (no runtime SRT parsing)
+caps = []
+for n, c in enumerate(cues):
+    start, end = c[0]["start"], max(c[-1]["end"], c[0]["start"] + 0.8)
+    if n + 1 < len(cues):
+        end = min(end, cues[n + 1][0]["start"])
+    caps.append({"text": wrap(" ".join(x["w"] for x in c)), "startMs": round(start * 1000),
+                 "endMs": round(end * 1000), "timestampMs": round(start * 1000), "confidence": None})
+json.dump(caps, open("data/captions.json", "w"), ensure_ascii=False)
