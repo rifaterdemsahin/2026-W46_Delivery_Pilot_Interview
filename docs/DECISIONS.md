@@ -207,3 +207,6 @@
 
 ## 34. Audio assets are committed (2026-11-09)
 - `.gitignore` blocked `*.mp3`, so the 8 generated clips were not in v0.15.0. They are small (5.6 MB in total) and regenerating costs money and gives different results, so `public/audio/*.mp3` is now committed alongside `data/audio_manifest.json` (prompt, model, length, estimated cost). Video and the raw source stay out of git. A fresh clone can now render the sound versions without calling fal.ai.
+
+## 35. Reusable template spec (2026-11-09)
+- `docs/TEMPLATE_PROJECT_SPEC.md` distils this project into a copyable spec: rules, stack, repo layout, pipeline order, edit conventions, deliverables, placeholders to fill, bootstrap prompts, gotchas and a definition of done. Why: the flow is now stable and the user wants to start similar projects without re-deriving it. It contains no keys and no project-specific secrets. Linked from the README docs line.
