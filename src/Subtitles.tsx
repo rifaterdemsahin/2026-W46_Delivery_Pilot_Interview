@@ -24,7 +24,7 @@ export const Subtitles = ({ timeline }: { timeline: TimelineCut[] }) => {
   const activeIdx = words.reduce((a, w, i) => (w.start <= s ? i : a), -1);
 
   return (
-    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 90 }}>
+    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 28 }}>
       <div
         style={{
           display: "flex",
