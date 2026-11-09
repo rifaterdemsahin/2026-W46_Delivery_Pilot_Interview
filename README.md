@@ -11,10 +11,10 @@ Legend: done = green, pending = grey.
 ```mermaid
 flowchart TD
     SRC[("C1193.MP4<br/>~/Downloads, 4K, 28 min<br/>NOT in repo")]:::done
-    S1["01 extract_audio.sh<br/>ffmpeg to 16kHz mono WAV"]:::wip
-    WAV[("work/audio.wav<br/>git-ignored")]:::wip
-    S2["02 transcribe.py<br/>mlx-whisper large-v3-turbo"]:::todo
-    TJ[/"data/transcript.json<br/>word timestamps"/]:::todo
+    S1["01 extract_audio.sh<br/>ffmpeg to 16kHz mono WAV"]:::done
+    WAV[("work/audio.wav<br/>git-ignored")]:::done
+    S2["02 transcribe.py<br/>mlx-whisper large-v3-turbo"]:::done
+    TJ[/"data/transcript.json<br/>283 segments, 4494 words"/]:::done
     S3["03 make_subtitles.py"]:::todo
     SUB[/"data/subtitles.srt + .vtt"/]:::todo
     S4["04 make_chapters.py<br/>Claude topic segmentation"]:::todo
@@ -47,5 +47,6 @@ npm install
 
 ## Run
 ```bash
-scripts/01_extract_audio.sh
+scripts/01_extract_audio.sh                  # ~2 s
+.venv/bin/python -I scripts/02_transcribe.py # ~2 min on Apple Silicon
 ```

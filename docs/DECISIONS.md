@@ -13,3 +13,15 @@
 - **Editing:** `remotion`, `@remotion/cli`, `@remotion/captions`, `react`, `react-dom` (Remotion 4.0.542) via npm.
   - **Why:** `@remotion/captions` provides caption types and SRT parsing, which fits the subtitle step.
 - **Not installed yet:** Whisper model weights. They download on the first transcription run (step 4) so this step stays light.
+
+## 3. Audio extraction (2026-11-09)
+- `scripts/01_extract_audio.sh`: `-map 0:a:0 -vn -ac 1 -ar 16000 -c:a pcm_s16le`.
+- **Why:** the file has 3 streams (video, PCM audio, a data stream). Mapping only the first audio stream avoids the data stream. Result: 52 MB WAV in about 2 s, full 28:13 duration.
+
+## 4. Transcription (2026-11-09)
+- `scripts/02_transcribe.py`: `whisper-large-v3-turbo` (MLX), `language="en"`, `word_timestamps=True`, `condition_on_previous_text=False`.
+- **Why:** turbo is near large-v3 accuracy at much higher speed. Disabling previous-text conditioning avoids the hallucinated repetition loops Whisper can fall into on long audio.
+- **Result:** 283 segments, 4,494 words, about 2 min (plus a one-off 65 s model download).
+- **Validation:** last segment ends at 1691.66 s (audio is 1693.4 s), no segment text repeated more than twice, no gap over 20 s.
+- **Known caveat:** the opening segment "More, more." is room noise before the interview starts. Chapters/subtitles may trim it. Proper names (e.g. the interviewee's name) may need manual correction.
+- `data/transcript.json` is committed (metadata, small). The audio is not.
