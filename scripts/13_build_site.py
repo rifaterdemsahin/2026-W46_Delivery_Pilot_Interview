@@ -96,7 +96,7 @@ page("youtube.html", "YouTube", f"""<h1>▶️ YouTube</h1><p class="mut">Copy e
 {box("yt_tags", tags, 3, 500, "Tags")}
 {box("yt_pin", pinned, 2, None, "Pinned comment")}
 <div class="card"><b>Checklist</b><ul><li>Upload <code>C1193_combined</code> render, set the thumbnail</li><li>Add the subtitles: <a href="assets/subtitles.srt" download>subtitles.srt</a> (English)</li>
-<li>Replace <code>[ADD LINK]</code> for the Skool community and the Eventbrite workshops</li><li>Category: Science and Technology · Language: English · Not made for kids</li><li>Chapters appear automatically from the description</li></ul></div>""")
+<li>Links to the Skool community and the Eventbrite event are already in the description</li><li>Category: Science and Technology · Language: English · Not made for kids</li><li>Chapters appear automatically from the description</li></ul></div>""")
 
 # ---------- linkedin ----------
 LONG = """I just watched a conversation that reframed how I think about AI at work.
@@ -112,6 +112,9 @@ Three ideas I'm taking away:
 → Continuous integration has become possible with AI. Continuous delivery is the next step, and that is where the "Delivery Pilot" comes in.
 
 The full conversation with Marianna is 25 minutes: [LINK]
+
+Join the free Skool community: https://www.skool.com/delivery-pilot-8938
+Build your own AI agents in Cambridge: https://www.eventbrite.co.uk/e/cambridge-ai-academy-build-your-own-ai-agents-tickets-2003566080080
 
 Are you a rider, a driver or a pilot today?
 

@@ -3,6 +3,9 @@
 Every deliverable is versioned. Scheme: `0.MINOR.PATCH` for the whole project, one git tag per version, a snapshot of the
 small deliverables in `versions/v<version>/` (with `manifest.json`), and an entry here. New version: `scripts/version.py bump minor "notes"`.
 
+## v0.13.1 - 2026-11-09
+Real Skool and Eventbrite links in description, LinkedIn post and site
+
 ## v0.13.0 - 2026-11-09
 GitHub Pages site: overview, YouTube/LinkedIn/X copy pages, costs; workflow publishes site/ only
 

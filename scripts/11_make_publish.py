@@ -39,8 +39,8 @@ In this conversation with Marianna:
 🧑‍💻 Guest: Rifat Erdem Sahin
 
 🔗 Join in
-Skool community: [ADD LINK]
-Cambridge workshops (Eventbrite): [ADD LINK]
+Skool community (free to join): https://www.skool.com/delivery-pilot-8938
+Cambridge AI Academy, Build Your Own AI Agents (Eventbrite): https://www.eventbrite.co.uk/e/cambridge-ai-academy-build-your-own-ai-agents-tickets-2003566080080
 
 If you lead teams, build products or wonder where your job goes next, tell us in the comments: are you a rider, a driver or a pilot today?
 
@@ -80,8 +80,7 @@ Alternatives:
 {PINNED}
 
 ## To fill in before publishing
-- Skool community link
-- Eventbrite link
+- The YouTube URL, once the video is live (used in the LinkedIn and X posts as `[LINK]`)
 - Confirm the spelling of names and products against the audio (see `data/corrections.json`)
 """
 open("docs/PUBLISH.md", "w").write(md)
