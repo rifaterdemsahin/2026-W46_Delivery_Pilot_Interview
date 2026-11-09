@@ -15,11 +15,12 @@ AI pipeline: transcribe an English interview, add subtitles, chapters, cuts, ani
 - **Always make three thumbnails** (A/B/C), completely different concepts (different hook, colours, layout; e.g. number+question, imperative, no-face), for YouTube Test & Compare. `scripts/10_make_thumbnail.sh` renders all three into `assets/thumbnails/`; keep earlier sets, name new sets `test2_...`.
 - **Keep the checklist and workflow current:** edit `scripts/site_pages.py` (STAGES, CHECKLIST) when a step is done or added, then rebuild the site. One checklist page, one video production workflow page, always in sync with the project.
 - **Deploy after every push that changes `site/`:** push-triggered Pages runs have been failing with no jobs, so run `gh workflow run static.yml` and confirm with `gh run watch`; then check the live URL returns 200.
-- **Platform versions:** LinkedIn cut must stay under 14:00 (asserted in `07_plan_cuts.py`). Never repeat a duplicated idea in a shorter cut.
+- **Platform versions (asserted in `07_plan_cuts.py`):** LinkedIn under 14:00; X under 2:15 (standard X accounts allow 2:20, so a longer video fails to upload; the closing card links to the YouTube URL). Check a platform's duration/size limits before making a version for it. Never repeat a duplicated idea in a shorter cut.
 - **Record the user's prompts and stages** in `docs/WORKFLOW.md`.
 - **Show an estimated completion time** for long jobs (transcription prints one; do the same for renders).
 - **Preview in Google Chrome:** `open -a "Google Chrome" http://localhost:3000` for Remotion Studio.
 - **Cost-effective fal.ai models** (e.g. `fal-ai/flux/schnell`), cache results, log cost in `data/visuals_manifest.json`, and record spend in the costs page. Image models garble text, so ask for text-free art and draw words in Remotion.
+- **Sound:** effects and music come from fal.ai (`14_generate_audio.py`, cached, levelled) and are placed by `src/Sound.tsx` from the same edit list; tune levels only in `SOUND` there. Every render gets a final `-16 LUFS` pass in `06_render_and_embed.sh`.
 - **Measure, do not guess** (audio SNR, durations, frame counts). Verify visuals by rendering stills and looking at them. Proofread every cut join.
 
 ## Edit conventions
@@ -32,7 +33,7 @@ AI pipeline: transcribe an English interview, add subtitles, chapters, cuts, ani
 - Look: white captions, spoken word red; red accent `#ff2b2b`; left-side explainer panel; footer section bar in the Combined composition.
 
 ## Pipeline (run order)
-`01_extract_audio.sh` > `02_transcribe.py` > `02b_apply_corrections.py` > `03_make_subtitles.py` > `04_make_chapters.py` > `05_make_proxy.sh` > `05b_clean_audio.py` > `07_plan_cuts.py` > `08_plan_explainers.py` > `09_generate_visuals.py` > `10_make_thumbnail.sh` (3 thumbnails) / `12_generate_thumbnail_art.py --set A|B|C_driver|C_pilot` > `11_make_publish.py` > `13_build_site.py` (site + docs/CHECKLIST.md + docs/VIDEO_PRODUCTION.md) > `06_render_and_embed.sh highlights|main|combined|linkedin`. Python runs as `.venv/bin/python -I scripts/<name>.py`.
+`01_extract_audio.sh` > `02_transcribe.py` > `02b_apply_corrections.py` > `03_make_subtitles.py` > `04_make_chapters.py` > `05_make_proxy.sh` > `05b_clean_audio.py` > `07_plan_cuts.py` > `08_plan_explainers.py` > `09_generate_visuals.py` > `10_make_thumbnail.sh` (3 thumbnails) / `12_generate_thumbnail_art.py --set A|B|C_driver|C_pilot` > `14_generate_audio.py` (fal.ai sound + music) > `11_make_publish.py` > `13_build_site.py` (site + docs/CHECKLIST.md + docs/VIDEO_PRODUCTION.md) > `06_render_and_embed.sh highlights|main|combined|linkedin`. Python runs as `.venv/bin/python -I scripts/<name>.py`.
 
 ## Gotchas found the hard way
 - Remotion's bundler ignores symlinks in `public/`: `public/proxy.mp4` must be a **hard link** (done by `05_make_proxy.sh` / `05b_clean_audio.py`).

@@ -42,6 +42,15 @@ export const RemotionRoot = () => (
       width={WIDTH}
       height={HEIGHT}
     />
+    <Composition
+      id="X"
+      component={Edit}
+      defaultProps={{ mode: "x" as const }}
+      durationInFrames={totalFrames(timelines.x)}
+      fps={FPS}
+      width={WIDTH}
+      height={HEIGHT}
+    />
     <Still id="Thumbnail" component={Thumbnail} width={WIDTH} height={HEIGHT} />
     <Still id="ThumbnailA" component={ThumbnailA} width={WIDTH} height={HEIGHT} />
     <Still id="ThumbnailB" component={ThumbnailB} width={WIDTH} height={HEIGHT} />

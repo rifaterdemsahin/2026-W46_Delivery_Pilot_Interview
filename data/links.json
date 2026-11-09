@@ -4,5 +4,23 @@
   "skool": "https://www.skool.com/delivery-pilot-8938",
   "eventbrite": "https://www.eventbrite.co.uk/e/cambridge-ai-academy-build-your-own-ai-agents-tickets-2003566080080",
   "linkedin": "https://lnkd.in/p/e5GMfT5V",
-  "linkedin_note": "LinkedIn post, documented 2026-11-09 (shortened lnkd.in link as shared by the user)."
+  "linkedin_note": "LinkedIn post, documented 2026-11-09 (shortened lnkd.in link as shared by the user).",
+  "x": "https://x.com/rifaterdemsahin/status/2119868364722208900",
+  "x_note": "X post, documented 2026-11-09. The X video is the 1:22 cut (out/x_final.mp4).",
+  "host": {
+    "name": "Marianna Nechypor",
+    "linkedin": "https://www.linkedin.com/in/mariannanechypor"
+  },
+  "guest": {
+    "name": "Erdem Sahin",
+    "linkedin": "https://www.linkedin.com/in/rifaterdemsahin"
+  },
+  "event": {
+    "name": "Cambridge AI Academy: Build your own AI Agents",
+    "date": "Wed, 25 Nov • 18:00",
+    "location": "Hills Road Sixth Form College",
+    "tickets": "https://www.eventbrite.co.uk/e/cambridge-ai-academy-build-your-own-ai-agents-tickets-2003566080080",
+    "more": "https://cambridgeaiacademy.co.uk/",
+    "note": "Tickets link is the Eventbrite URL without the tracking parameters (aff, utm, sg) that came with the shared link; it opens the same event."
+  }
 }

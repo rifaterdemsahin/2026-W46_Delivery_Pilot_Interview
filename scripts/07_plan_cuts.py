@@ -183,6 +183,34 @@ for a, b, label, *opt in LINKEDIN:
 assert all(x["src_end"] <= y["src_start"] for x, y in zip(linkedin, linkedin[1:])), "linkedin spans overlap or are out of order"
 
 
+# ---- X (standard accounts allow 2:20; we cap at 2:15): the sharpest distinct moments, chronological ----
+X_MAX_S = 135
+XSPANS = [  # (start phrase, end phrase, section)
+    ("we are right now entered into", "building another ai", "Hook: AI is building AI"),
+    ("i have 300 bots running", "write other bots", "300 bots, one writes the rest"),
+    ("so i separated the ai skills into three", "you are not driving anymore", "Rider, driver, pilot"),
+    ("instead of going to their keyboards", "observing and directing", "Stop typing, start directing"),
+    ("they go out if they cant find the food in tesco", "any olives that we can eat", "A bot finds a way"),
+    ("once i give you the task", "goal to be achieved", "The goal is what matters"),
+    ("with a plane the risk is higher", "get certified", "Pilots need more training"),
+    ("once ai does the job we either go to our corner", "learning and creating", "Closing"),
+]
+xcut, x_sections = [], []
+for a, b, label in XSPANS:
+    ia, ib = span(a, b)
+    assert i0 <= ia <= ib <= i1, f"x span outside main range: {a!r}"
+    cur, n0 = ia, len(xcut)
+    for x in removed:  # never reintroduce a removed duplicate
+        if x["ib"] < ia or x["ia"] > ib: continue
+        assert x["ia"] >= ia and x["ib"] <= ib, f"dedupe span straddles x span {label!r}"
+        if x["ia"] > cur: xcut += tighten(cur, x["ia"] - 1, label)
+        cur = x["ib"] + 1
+    xcut += tighten(cur, ib, label)
+    for iv in xcut[n0:]: iv["label"] = label
+    x_sections.append(label)
+assert all(a["src_end"] <= b["src_start"] for a, b in zip(xcut, xcut[1:])), "x spans overlap or are out of order"
+
+
 # ---- timeline remap (source seconds -> output seconds) ----
 def build_map(ivs):
     m, acc = [], 0
@@ -203,6 +231,8 @@ def to_out(m, total, sec):
 m_main, tot_main = build_map(main)
 m_hl, tot_hl = build_map(highlights)
 m_li, tot_li = build_map(linkedin)
+m_x, tot_x = build_map(xcut)
+assert tot_x / FPS <= X_MAX_S, f"X cut is {tot_x / FPS:.0f}s, over the {X_MAX_S}s limit"
 assert tot_li / FPS <= LINKEDIN_MAX_S, f"LinkedIn cut is {tot_li / FPS:.0f}s, over the {LINKEDIN_MAX_S}s limit"
 
 def srt_ts(x):
@@ -246,6 +276,7 @@ hl_s, main_s = tot_hl / FPS, tot_main / FPS
 write_srt("data/subtitles.main.srt", cue_entries(m_main, tot_main, main))
 write_chapters("chapters.main", [dict(c) for c in main_chs], main_s)
 write_srt("data/subtitles.linkedin.srt", cue_entries(m_li, tot_li, linkedin))
+write_srt("data/subtitles.x.srt", cue_entries(m_x, tot_x, xcut))
 # combined: highlights first, then the full (tightened) interview
 write_srt("data/subtitles.combined.srt",
           cue_entries(m_hl, tot_hl, highlights) + cue_entries(m_main, tot_main, main, offset=hl_s))
@@ -259,10 +290,10 @@ stats = {
     "source_s": src_len, "main_s": round(tot_main / FPS, 1), "removed_s": round(src_len - tot_main / FPS, 1),
     "duplicates_removed_s": round(dedupe_s, 1), "duplicate_cuts": len(removed),
     "main_cuts": len(main), "highlights_s": round(tot_hl / FPS, 1), "highlight_clips": len(HIGHLIGHTS),
-    "highlight_intervals": len(highlights), "linkedin_s": round(tot_li / FPS, 1), "linkedin_sections": len(LINKEDIN), "combined_s": round((tot_hl + tot_main) / FPS, 1),
+    "highlight_intervals": len(highlights), "linkedin_s": round(tot_li / FPS, 1), "x_s": round(tot_x / FPS, 1), "x_sections": len(XSPANS), "linkedin_sections": len(LINKEDIN), "combined_s": round((tot_hl + tot_main) / FPS, 1),
 }
 removed_out = [{k: (round(v, 2) if isinstance(v, float) else v) for k, v in x.items() if k not in ("ia", "ib")} for x in removed]
-json.dump({"stats": stats, "main": main, "highlights": highlights, "linkedin": linkedin, "removed": removed_out}, open("data/cuts.json", "w"), indent=1)
+json.dump({"stats": stats, "main": main, "highlights": highlights, "linkedin": linkedin, "x": xcut, "removed": removed_out}, open("data/cuts.json", "w"), indent=1)
 
 
 # ---- TIMELINE.md: always regenerated with the cuts ----
@@ -311,6 +342,14 @@ lines += ["", f"## LinkedIn version ({mmss(tot_li / FPS)}, limit 14:00)", "",
 acc = 0.0
 for sec in li_sections:
     part = [iv for iv in linkedin if iv["label"] == sec]
+    d = sum(iv["src_end"] - iv["src_start"] for iv in part)
+    lines.append(f"| {mmss(acc)} | {mmss(part[0]['src_start'])}-{mmss(part[-1]['src_end'])} | {d:.0f} s | {sec} |"); acc += d
+lines += ["", f"## X version ({mmss(tot_x / FPS)}, standard-account limit 2:20)", "",
+          "Eight distinct moments in chronological order, captions burned in, closing card with the YouTube link. Render: `scripts/06_render_and_embed.sh x`.", "",
+          "| Output time | Source time | Length | Section |", "|---|---|---|---|"]
+acc = 0.0
+for sec in x_sections:
+    part = [iv for iv in xcut if iv["label"] == sec]
     d = sum(iv["src_end"] - iv["src_start"] for iv in part)
     lines.append(f"| {mmss(acc)} | {mmss(part[0]['src_start'])}-{mmss(part[-1]['src_end'])} | {d:.0f} s | {sec} |"); acc += d
 lines += ["", "## Kept footage (main edit)", "", f"{len(main)} intervals; everything not listed was cut (pre-roll, long pauses, duplicates).", "",

@@ -10,6 +10,8 @@
   "highlight_clips": 7,
   "highlight_intervals": 7,
   "linkedin_s": 755.6,
+  "x_s": 82.2,
+  "x_sections": 8,
   "linkedin_sections": 12,
   "combined_s": 1548.6
  },
@@ -260,6 +262,56 @@
    "src_end": 1688.16,
    "reason": "Not for me? and closing",
    "label": "Not for me? and closing"
+  }
+ ],
+ "x": [
+  {
+   "src_start": 239.44,
+   "src_end": 245.68,
+   "reason": "Hook: AI is building AI",
+   "label": "Hook: AI is building AI"
+  },
+  {
+   "src_start": 286.36,
+   "src_end": 295.84,
+   "reason": "300 bots, one writes the rest",
+   "label": "300 bots, one writes the rest"
+  },
+  {
+   "src_start": 356.36,
+   "src_end": 382.12,
+   "reason": "Rider, driver, pilot",
+   "label": "Rider, driver, pilot"
+  },
+  {
+   "src_start": 403.92,
+   "src_end": 410.6,
+   "reason": "Stop typing, start directing",
+   "label": "Stop typing, start directing"
+  },
+  {
+   "src_start": 864.04,
+   "src_end": 873.92,
+   "reason": "A bot finds a way",
+   "label": "A bot finds a way"
+  },
+  {
+   "src_start": 886.08,
+   "src_end": 892.24,
+   "reason": "The goal is what matters",
+   "label": "The goal is what matters"
+  },
+  {
+   "src_start": 1074.92,
+   "src_end": 1082.08,
+   "reason": "Pilots need more training",
+   "label": "Pilots need more training"
+  },
+  {
+   "src_start": 1461.4,
+   "src_end": 1472.28,
+   "reason": "Closing",
+   "label": "Closing"
   }
  ],
  "removed": [

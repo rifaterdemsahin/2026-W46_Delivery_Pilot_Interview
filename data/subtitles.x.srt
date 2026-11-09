@@ -1,0 +1,103 @@
+1
+00:00:00,000 --> 00:00:03,780
+we are right now entered into an era in 2026.
+
+2
+00:00:04,060 --> 00:00:06,100
+AI is building another AI.
+
+3
+00:00:06,380 --> 00:00:09,780
+I have 300 bots running at the same time right now.
+
+4
+00:00:10,020 --> 00:00:13,180
+What's happening is I cannot go and write the bot.
+
+5
+00:00:13,340 --> 00:00:15,720
+I write one bot to write other bots.
+
+6
+00:00:15,840 --> 00:00:19,320
+So I separated the AI skills into three basic categories.
+
+7
+00:00:19,560 --> 00:00:21,080
+The first one is being a rider.
+
+8
+00:00:21,380 --> 00:00:24,280
+You use the web chat to be able to do your things.
+
+9
+00:00:24,560 --> 00:00:28,740
+You manually instruct them like riding a horse or riding a motorcycle.
+
+10
+00:00:28,980 --> 00:00:30,140
+You are very very hands-on.
+
+11
+00:00:30,380 --> 00:00:35,060
+Once you become a driver, you You start using Claude Code to build a website,
+
+12
+00:00:35,220 --> 00:00:37,700
+to do the things that you want to build with automation.
+
+13
+00:00:38,160 --> 00:00:41,400
+Once you become a pilot, you are not driving anymore.
+
+14
+00:00:41,560 --> 00:00:45,020
+Instead of going to their keyboards and typing, they will stop
+
+15
+00:00:45,020 --> 00:00:47,980
+typing, they will start observing and directing.
+
+16
+00:00:48,220 --> 00:00:52,140
+They go out, if they can't find the food in Tesco, they will go to Sainsbury.
+
+17
+00:00:52,160 --> 00:00:55,660
+If they can't go to the Sainsbury, they will knock on the door to Maria
+
+18
+00:00:55,660 --> 00:00:57,940
+and say, do you guys have any olives that we can eat?
+
+19
+00:00:58,040 --> 00:01:00,960
+once I give you the task, I really don't care how you
+
+20
+00:01:00,960 --> 00:01:03,940
+complete that task. I want that goal to be achieved.
+
+21
+00:01:04,360 --> 00:01:06,380
+With a plane, the risk is higher.
+
+22
+00:01:06,840 --> 00:01:09,280
+If I had 300 bots, I'm more dangerous.
+
+23
+00:01:09,620 --> 00:01:11,360
+So I need to get certified.
+
+24
+00:01:11,360 --> 00:01:15,580
+once ai does the job we either go to our corner or we
+
+25
+00:01:15,580 --> 00:01:20,920
+become very creative and we become self-learners and our job becomes learning
+
+26
+00:01:20,920 --> 00:01:22,240
+and creating

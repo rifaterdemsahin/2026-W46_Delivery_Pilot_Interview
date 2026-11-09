@@ -3,6 +3,7 @@
 Chapter times come from data/chapters.combined.json, so they match the Combined render
 (highlights first). Writes docs/PUBLISH.md and data/description.txt. Edit the TEXT below to taste."""
 import json
+LK = json.load(open("data/links.json"))
 
 TITLE = "Become a Delivery Pilot: Why AI Is Building AI (and What to Do About It)"
 ALT_TITLES = [
@@ -35,12 +36,17 @@ In this conversation with Marianna:
 ⏱ Chapters
 {chapters}
 
-🎙 Host: Marianna
-🧑‍💻 Guest: Rifat Erdem Sahin
+👥 People
+🎙 Host: {LK["host"]["name"]} - {LK["host"]["linkedin"]}
+🧑‍💻 Guest: {LK["guest"]["name"]} - {LK["guest"]["linkedin"]}
 
-🔗 Join in
-Skool community (free to join): https://www.skool.com/delivery-pilot-8938
-Cambridge AI Academy, Build Your Own AI Agents (Eventbrite): https://www.eventbrite.co.uk/e/cambridge-ai-academy-build-your-own-ai-agents-tickets-2003566080080
+🎓 {LK["event"]["name"]}
+📅 Date: {LK["event"]["date"]}
+📍 Location: {LK["event"]["location"]}
+🎟 Tickets: {LK["event"]["tickets"]}
+ℹ️ More about Cambridge AI Academy: {LK["event"]["more"]}
+
+🔗 Join the free Skool community: {LK["skool"]}
 
 If you lead teams, build products or wonder where your job goes next, tell us in the comments: are you a rider, a driver or a pilot today?
 

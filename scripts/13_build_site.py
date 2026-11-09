@@ -8,6 +8,7 @@ VERSION = open("VERSION").read().strip()
 LINKS = json.load(open("data/links.json"))
 YT = LINKS.get("youtube", "")
 LI = LINKS.get("linkedin", "")
+XP = LINKS.get("x", "")
 link = lambda s: s.replace("[LINK]", YT) if YT else s  # fill the YouTube URL into posts once the video is live
 urlcount = lambda s: re.sub(r"https?://\S+", "x" * 23, s.replace("[LINK]", "x" * 23))  # X and LinkedIn count every link as 23 characters
 REPO = "https://github.com/rifaterdemsahin/2026-W46_Delivery_Pilot_Interview"
@@ -23,7 +24,7 @@ TOTAL = mmss(round(cuts["combined_s"]))
 os.makedirs("site/assets", exist_ok=True)
 for src, dst in [("assets/thumbnail.jpg", "thumbnail.jpg"), ("assets/thumbnails/v1-generic-become-a-delivery-pilot.jpg", "thumbnail_v1.jpg"),
                  ("assets/thumbnails/v2-curiosity-300-bots-1-pilot.jpg", "thumbnail_v2.jpg"), ("data/subtitles.combined.srt", "subtitles.srt"),
-                 ("data/description.txt", "description.txt"), ("data/subtitles.linkedin.srt", "subtitles_linkedin.srt"),
+                 ("data/description.txt", "description.txt"), ("data/subtitles.linkedin.srt", "subtitles_linkedin.srt"), ("data/subtitles.x.srt", "subtitles_x.srt"),
                  ("assets/thumbnails/test1_A_300bots-1pilot.jpg", "thumb_A.jpg"), ("assets/thumbnails/test1_B_stop-typing.jpg", "thumb_B.jpg"), ("assets/thumbnails/test1_C_driver-or-pilot.jpg", "thumb_C.jpg")]:
     shutil.copy(src, f"site/assets/{dst}")
 open("site/.nojekyll", "w").write("")
@@ -65,7 +66,7 @@ def box(id, text, rows=8, limit=None, label=""):
 # ---------- index ----------
 page("index.html", "Overview", f"""
 <h1>Become a Delivery Pilot: the AI interview kit</h1>
-<p><a class="btn" href="{YT}">▶️ Watch on YouTube</a> <a class="btn" href="{LI}">💼 See the LinkedIn post</a></p>
+<p><a class="btn" href="{YT}">▶️ Watch on YouTube</a> <a class="btn" href="{LI}">💼 See the LinkedIn post</a> <a class="btn" href="{XP}">✖️ See the X post</a></p>
 <p class="mut">Rifat Erdem Sahin in conversation with Marianna. Everything below was produced by an AI-assisted pipeline: Whisper transcript, AI-chosen chapters and cuts, Remotion edit, fal.ai visuals.</p>
 <img src="assets/thumbnail.jpg" alt="Thumbnail: 300 bots, 1 pilot">
 <div class="grid" style="margin-top:14px">
@@ -177,8 +178,10 @@ for t in SINGLES + THREAD:
     assert len(urlcount(t)) <= 280, f"too long ({len(t)}): {t[:40]}"
 x_html = "".join(box(f"x_s{i}", link(t), 5, 280, f"Post {i+1}") for i, t in enumerate(SINGLES))
 t_html = "".join(box(f"x_t{i}", link(t), 5, 280, f"Thread {i+1}/{len(THREAD)}") for i, t in enumerate(THREAD))
-page("x.html", "X", f"""<h1>✖️ X</h1><p class="mut">Each post is checked to fit 280 characters (a link counts as 23). Attach the thumbnail to the first post. The YouTube link is already filled in.</p>
+page("x.html", "X", f"""<h1>✖️ X</h1>
+<div class="card">✖️ <b>Live post:</b> <a href="{XP}">{XP}</a><br><span class="mut">{esc(LINKS.get("x_note", ""))}</span></div><p class="mut">Each post is checked to fit 280 characters (a link counts as 23). Attach the thumbnail to the first post. The YouTube link is already filled in.</p>
 <p><a class="btn" href="assets/thumbnail.jpg" download>Download image</a></p>
+<div class="card"><b>🎞️ X video: {mmss(cuts["x_s"])} (standard accounts allow 2:20, Premium more)</b><br><span class="mut">The full video was too long for X, so this is a dedicated cut: 8 distinct moments, captions burned in, music and effects, and a closing card pointing to <a href="{YT}">{YT}</a>. Render: <code>scripts/06_render_and_embed.sh x</code> (plain H.264/AAC MP4, 18 MB, 1280x720; file stays on the machine, not in git).</span><p><a class="btn" href="assets/subtitles_x.srt" download>Subtitles (.srt)</a></p></div>
 <h2>Single posts (pick one)</h2>{x_html}<h2>Thread</h2>{t_html}""")
 
 # ---------- costs ----------
@@ -192,21 +195,29 @@ for k, v in manifest.items():
 discarded = mp("agent_bot_robot") * PRICE  # first agent/bot/robot image had garbled text and was regenerated
 fal += discarded
 rows.append(("agent_bot_robot (first try, discarded: garbled text)", "fal-ai/flux/schnell", "1024x768", f"${discarded:.4f}"))
+audio = json.load(open("data/audio_manifest.json")) if os.path.exists("data/audio_manifest.json") else {}
+audio_total = sum(v["est_cost_usd"] for v in audio.values())
+audio_rows = "".join(f"<tr><td>{esc(k)}</td><td>{esc(v['model'])}</td><td>{v['seconds']} s</td><td>${v['est_cost_usd']:.4f}</td></tr>" for k, v in audio.items())
 page("costs.html", "Costs", f"""<h1>💸 Costs</h1>
 <p class="mut">What producing this video cost. fal.ai amounts are <b>estimates</b> from the published list price (about $0.003 per megapixel for <code>flux/schnell</code>): check your fal.ai dashboard for exact billing.</p>
 <div class="grid"><div class="card"><div class="k">${fal:.3f}</div><span class="mut">fal.ai images (est.)</span></div>
+<div class="card"><div class="k">${audio_total:.3f}</div><span class="mut">fal.ai sound and music (est.)</span></div>
+<div class="card"><div class="k">${fal + audio_total:.2f}</div><span class="mut">total fal.ai (est.)</span></div>
 <div class="card"><div class="k">$0</div><span class="mut">local compute and hosting</span></div>
 <div class="card"><div class="k">{len(manifest)+1}</div><span class="mut">images generated</span></div></div>
 <h2>fal.ai images</h2>
 <table><tr><th>Image</th><th>Model</th><th>Size</th><th>Est. cost</th></tr>{"".join(f"<tr><td>{esc(a)}</td><td>{esc(b)}</td><td>{c}</td><td>{d}</td></tr>" for a,b,c,d in rows)}
 <tr><td><b>Total</b></td><td></td><td></td><td><b>${fal:.4f}</b></td></tr></table>
+<h2>fal.ai sound effects and music</h2>
+<table><tr><th>Clip</th><th>Model</th><th>Length</th><th>Est. cost</th></tr>{audio_rows}<tr><td><b>Total</b></td><td></td><td></td><td><b>${audio_total:.4f}</b></td></tr></table>
+<p class="mut">Audio prices are <b>assumed</b> list prices (about $0.01 per effect and $0.02 per music minute); the API does not return a cost, so check the fal.ai dashboard for the real figure.</p>
 <h2>Everything else</h2>
 <table><tr><th>Item</th><th>Cost</th><th>Notes</th></tr>
 <tr><td>Transcription (Whisper large-v3-turbo, MLX)</td><td>$0</td><td>Runs locally on Apple Silicon, about 2 minutes</td></tr>
 <tr><td>720p proxy, audio cleanup, renders (Remotion + ffmpeg)</td><td>$0</td><td>Local: proxy 10 min, Combined render 14 min</td></tr>
 <tr><td>Hosting (GitHub Pages) and repo</td><td>$0</td><td>Free for public repositories</td></tr>
 <tr><td>Claude Code (planning, code, copy, chapters, cuts)</td><td>not measured</td><td>Billed through your Claude plan; see your usage page</td></tr>
-<tr><td>Sound effects and music (fal.ai)</td><td>planned</td><td>Not generated yet; will be added here when done</td></tr></table>
+<tr><td>Rendering the X, LinkedIn and Combined videos</td><td>$0</td><td>Local: X 1 min, LinkedIn 7 min, Combined 15 min</td></tr></table>
 <h2>How costs are kept low</h2><ul><li>Cheapest suitable model (4-step <code>flux/schnell</code>), one image per idea</li><li>Images are cached: re-running never pays twice (<code>--force --only</code> to redo one)</li>
 <li>Text-free art, words drawn in Remotion, so fewer regenerations</li><li>Everything heavy (transcription, rendering) runs locally for free</li><li>Cost logged per image in <code>data/visuals_manifest.json</code></li></ul>""")
 page("workflow.html", "Workflow", SP.workflow_body())

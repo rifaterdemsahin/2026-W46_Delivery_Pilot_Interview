@@ -6,7 +6,7 @@ export type Cut = { src_start: number; src_end: number };
 export type TimelineCut = { srcFrom: number; dur: number; outFrom: number };
 export type Word = { w: string; start: number; end: number };
 export type Cue = { start: number; end: number; words: Word[] };
-export type Mode = "main" | "highlights" | "combined" | "linkedin";
+export type Mode = "main" | "highlights" | "combined" | "linkedin" | "x";
 
 export const cues = cuesJson as Cue[];
 
@@ -29,6 +29,8 @@ export const timelines: Record<Mode, TimelineCut[]> = {
   combined: toTimeline([...cutsJson.highlights, ...cutsJson.main]),
   // <= 14 min cut for LinkedIn
   linkedin: toTimeline(cutsJson.linkedin),
+  // <= 2:15 cut for X (standard accounts cap video at 2:20)
+  x: toTimeline(cutsJson.x),
 };
 
 export const totalFrames = (tl: TimelineCut[]) => tl.reduce((a, c) => a + c.dur, 0);
@@ -53,3 +55,18 @@ export const cutAt = (tl: TimelineCut[], outFrame: number) =>
 
 /** Frames before the full interview starts (0 unless highlights are placed first). */
 export const mainOffset = (mode: Mode) => (mode === "combined" ? totalFrames(timelines.highlights) : 0);
+
+/** Output frames where a new labelled section starts (highlight clips, LinkedIn/X sections). */
+export const labelStarts = (cuts: { src_start: number; src_end: number; label?: string }[]) => {
+  let acc = 0, prev: string | undefined;
+  const out: number[] = [];
+  for (const c of cuts) {
+    if (c.label !== prev) out.push(acc);
+    prev = c.label;
+    acc += Math.max(1, Math.round((c.src_end - c.src_start) * FPS));
+  }
+  return out;
+};
+
+/** True if this source second is inside footage that is actually kept on the timeline. */
+export const isKept = (tl: TimelineCut[], srcSec: number) => tl.some((c) => srcSec * FPS >= c.srcFrom && srcSec * FPS < c.srcFrom + c.dur);

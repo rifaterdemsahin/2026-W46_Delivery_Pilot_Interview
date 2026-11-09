@@ -2,8 +2,8 @@ import { AbsoluteFill, Img, interpolate, spring, staticFile, useCurrentFrame, us
 import explainersJson from "../data/explainers.json";
 import { srcSecondsAt, type TimelineCut } from "./edit";
 
-type Beat = { id: string; kind: string; title: string; start: number; end: number; dur: number; image?: string; data: any };
-const beats = explainersJson as Beat[];
+export type Beat = { id: string; kind: string; title: string; start: number; end: number; dur: number; image?: string; data: any };
+export const beats = explainersJson as Beat[];
 
 const RED = "#ff2b2b", GREEN = "#35d07f", AMBER = "#ffb020", GREY = "#8899aa";
 const FONT = "Helvetica, Arial, sans-serif";
@@ -176,4 +176,23 @@ export const Explainers = ({ timeline, offset = 0 }: { timeline: TimelineCut[]; 
       </div>
     </AbsoluteFill>
   );
+};
+
+export type Sfx = "whoosh" | "pop" | "ding" | "buzz";
+/** Seconds after the beat starts, and which sound, mirroring the reveal timing of each graphic. */
+export const beatCues = (b: Beat): { t: number; sfx: Sfx }[] => {
+  const d = b.data;
+  const cues: { t: number; sfx: Sfx }[] = [{ t: 0, sfx: "whoosh" }];
+  if (b.kind === "flow") {
+    const gap = Math.min(1.3, (b.dur - 1.5) / d.nodes.length);
+    d.nodes.forEach((n: any, i: number) => cues.push({ t: 0.5 + i * gap, sfx: n.state === "fail" ? "buzz" : n.state === "ok" ? "ding" : "pop" }));
+  } else if (b.kind === "tree") cues.push({ t: 0.8, sfx: "pop" });
+  else if (b.kind === "network") d.nodes.forEach((_: any, i: number) => cues.push({ t: 0.3 + i * 0.5, sfx: "pop" }));
+  else if (b.kind === "stat") cues.push({ t: 0.2, sfx: "ding" });
+  else if (b.kind === "card") d.bullets.forEach((_: any, i: number) => cues.push({ t: 0.5 + i * 1.6, sfx: "pop" }));
+  else if (b.kind === "infographic") {
+    const gap = Math.min(2.5, (b.dur - 2) / d.items.length);
+    d.items.forEach((_: any, i: number) => cues.push({ t: 0.8 + i * gap, sfx: "pop" }));
+  }
+  return cues;
 };

@@ -1,0 +1,66 @@
+{
+ "sfx_whoosh": {
+  "kind": "sfx",
+  "model": "cassetteai/sound-effects-generator",
+  "prompt": "soft smooth whoosh swipe transition, short and clean, no music",
+  "seconds": 2.0,
+  "bytes": 41317,
+  "est_cost_usd": 0.01
+ },
+ "sfx_pop": {
+  "kind": "sfx",
+  "model": "cassetteai/sound-effects-generator",
+  "prompt": "single soft subtle UI pop click, very short, no music",
+  "seconds": 1.0,
+  "bytes": 21464,
+  "est_cost_usd": 0.01
+ },
+ "sfx_ding": {
+  "kind": "sfx",
+  "model": "cassetteai/sound-effects-generator",
+  "prompt": "pleasant soft success chime ding, short, clean, no music",
+  "seconds": 2.0,
+  "bytes": 41317,
+  "est_cost_usd": 0.01
+ },
+ "sfx_buzz": {
+  "kind": "sfx",
+  "model": "cassetteai/sound-effects-generator",
+  "prompt": "short soft low error buzz, brief, gentle, no music",
+  "seconds": 1.0,
+  "bytes": 21464,
+  "est_cost_usd": 0.01
+ },
+ "sfx_impact": {
+  "kind": "sfx",
+  "model": "cassetteai/sound-effects-generator",
+  "prompt": "cinematic subtle impact hit with a short reverb tail, trailer boom, no music",
+  "seconds": 3.0,
+  "bytes": 61170,
+  "est_cost_usd": 0.01
+ },
+ "music_hook": {
+  "kind": "music",
+  "model": "cassetteai/music-generator",
+  "prompt": "energetic modern technology documentary intro, driving pulse, optimistic, instrumental, no vocals",
+  "seconds": 45.0,
+  "bytes": 901268,
+  "est_cost_usd": 0.015
+ },
+ "music_bed1": {
+  "kind": "music",
+  "model": "cassetteai/music-generator",
+  "prompt": "calm minimal ambient electronic background, soft pads and a gentle pulse, unobtrusive, instrumental, no vocals",
+  "seconds": 90.0,
+  "bytes": 1801448,
+  "est_cost_usd": 0.03
+ },
+ "music_bed2": {
+  "kind": "music",
+  "model": "cassetteai/music-generator",
+  "prompt": "warm minimal piano and soft synth background, thoughtful, unobtrusive, instrumental, no vocals",
+  "seconds": 90.0,
+  "bytes": 1801448,
+  "est_cost_usd": 0.03
+ }
+}

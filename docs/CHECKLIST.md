@@ -2,7 +2,7 @@
 
 Generated from `scripts/site_pages.py`. The site's Checklist page has the same items with tickable boxes (saved in your browser).
 
-**Progress: 30 of 45 done.**
+**Progress: 37 of 53 done.**
 
 ## Set up
 
@@ -35,14 +35,19 @@ Generated from `scripts/site_pages.py`. The site's Checklist page has the same i
 
 - [x] 6 simple animated explainers
 - [x] 3 fal.ai infographics (text-free art, Remotion labels)
-- [ ] Sound effects with fal.ai
-- [ ] Music bed with fal.ai
-- [ ] Re-render Combined and LinkedIn with sound
+- [x] Sound effects with fal.ai
+- [x] Music bed with fal.ai
+- [x] Re-render Combined and LinkedIn with sound
+- [x] Skool version exported: Combined with music and effects (C1193_skool_v0.15.0.mp4, 25:49)
+- [ ] Upload the Skool version to the Skool community
+- [ ] Confirm the caption "Cambridge Sixth-form college" (about 25:13 in the interview) against the audio: the event is at Hills Road Sixth Form College. If it is wrong, change the rule in corrections.json and re-render
+- [ ] Listen to the mix once: music level under speech, effects not too busy
 
 ## Render
 
 - [x] Combined video rendered (25:49, 720p)
 - [x] LinkedIn video rendered (12:36)
+- [x] X video rendered (1:22, under the 2:20 limit)
 - [ ] Optional: re-render from the 4K original for a sharper final
 
 ## Thumbnails
@@ -64,11 +69,14 @@ Generated from `scripts/site_pages.py`. The site's Checklist page has the same i
 ## Go live
 
 - [x] Upload the Combined video to YouTube: https://youtu.be/VOtlOfpXVU8
+- [x] X video (C1193_x, 1:22) uploaded and posted
 - [ ] Add the SRT and the three thumbnails (Test & Compare) to that YouTube video
+- [ ] Paste the new description into YouTube (host and guest links, Cambridge AI Academy event details)
 - [x] LinkedIn post is live: https://lnkd.in/p/e5GMfT5V
 - [ ] Add the LinkedIn SRT to the LinkedIn video if it was not added
 - [x] YouTube URL filled into the LinkedIn and X posts
 - [ ] Replace the YouTube upload with the sound-and-music version (or add it as an update)
-- [ ] Post on X, pin the YouTube comment
+- [x] X post is live: https://x.com/rifaterdemsahin/status/2119868364722208900
+- [ ] Pin the YouTube comment
 - [ ] Reply to comments in the first hour
 - [ ] After a week: record views, watch time and the thumbnail winner

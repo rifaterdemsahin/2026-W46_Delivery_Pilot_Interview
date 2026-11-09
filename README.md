@@ -1,6 +1,6 @@
 # 🎬 Delivery Pilot Interview: AI video processing (C1193.MP4)
 
-▶️ **Watch the video:** https://youtu.be/VOtlOfpXVU8 · 💼 **LinkedIn post:** https://lnkd.in/p/e5GMfT5V
+▶️ **Watch the video:** https://youtu.be/VOtlOfpXVU8 · 💼 **LinkedIn post:** https://lnkd.in/p/e5GMfT5V · ✖️ **X post:** https://x.com/rifaterdemsahin/status/2119868364722208900
 
 🌐 **Live site:** https://rifaterdemsahin.github.io/2026-W46_Delivery_Pilot_Interview/ (▶️ YouTube · 💼 LinkedIn · ✖️ X copy-and-publish pages, 💸 costs)
 
@@ -32,7 +32,8 @@
 | 🖼️ | Three A/B/C thumbnails | ✅ done (`assets/thumbnails/test1_*`) |
 | ✅ | Checklist and 🎬 video production workflow pages | ✅ on the site, mirrored in `docs/CHECKLIST.md` and `docs/VIDEO_PRODUCTION.md` |
 | 🌐 | GitHub Pages site (overview, YouTube, LinkedIn, X, costs) | ✅ deployed |
-| 🔊 | Sound effects and music (fal.ai) | ⏳ next |
+| 🔊 | Sound effects and music (fal.ai, 8 clips) | ✅ generated and mixed in |
+| 𝕏 | X version (1:22, under X's 2:20 limit) | ✅ rendered (`out/x_final.mp4`) |
 
 ## 🔀 Flow
 
@@ -158,6 +159,8 @@ Needs `ffmpeg`/`ffprobe` (Homebrew) and an Apple Silicon Mac for mlx-whisper. �
 | 9 | 🎬 | `scripts/06_render_and_embed.sh main` | `out/final.mp4` with chapters + soft subs | ~20-30 min |
 | 10 | 🎞️ | `scripts/06_render_and_embed.sh combined` | `out/combined_final.mp4` | ~15 min |
 | 10b | 💼 | `scripts/06_render_and_embed.sh linkedin` | `out/linkedin_final.mp4` (12:36) | ~7 min |
+| 10c | 𝕏 | `scripts/06_render_and_embed.sh x` | `out/x_final.mp4` (1:22) | ~1 min |
+| 9 | 🔊 | `.venv/bin/python -I scripts/14_generate_audio.py` | `public/audio/*.mp3`, `data/audio_manifest.json` | ~1 min, ~$0.13 (needs `.env`) |
 | 11 | 🖼️ | `scripts/10_make_thumbnail.sh` | three thumbnails A/B/C in `assets/thumbnails/` (+ `assets/thumbnail.jpg` = A) | ~30 s |
 | 13 | 🌐 | `.venv/bin/python -I scripts/13_build_site.py` then push | `site/` (deployed to GitHub Pages by the workflow) | instant |
 | 12 | 📣 | `.venv/bin/python -I scripts/11_make_publish.py` | `docs/PUBLISH.md`, `data/description.txt` (title, description, chapters, tags) | instant |

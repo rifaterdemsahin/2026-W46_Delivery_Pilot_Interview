@@ -124,6 +124,21 @@ Own edit of the deduplicated interview: no repeated cold open, strongest section
 | 11:04 | 25:13-25:41 | 29 s | Join the workshops |
 | 11:33 | 27:05-28:08 | 63 s | Not for me? and closing |
 
+## X version (01:22, standard-account limit 2:20)
+
+Eight distinct moments in chronological order, captions burned in, closing card with the YouTube link. Render: `scripts/06_render_and_embed.sh x`.
+
+| Output time | Source time | Length | Section |
+|---|---|---|---|
+| 00:00 | 03:59-04:06 | 6 s | Hook: AI is building AI |
+| 00:06 | 04:46-04:56 | 9 s | 300 bots, one writes the rest |
+| 00:16 | 05:56-06:22 | 26 s | Rider, driver, pilot |
+| 00:41 | 06:44-06:51 | 7 s | Stop typing, start directing |
+| 00:48 | 14:24-14:34 | 10 s | A bot finds a way |
+| 00:58 | 14:46-14:52 | 6 s | The goal is what matters |
+| 01:04 | 17:55-18:02 | 7 s | Pilots need more training |
+| 01:11 | 24:21-24:32 | 11 s | Closing |
+
 ## Kept footage (main edit)
 
 21 intervals; everything not listed was cut (pre-roll, long pauses, duplicates).

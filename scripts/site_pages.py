@@ -11,18 +11,18 @@ STAGES = [
  ("4", "Subtitles and chapters", "03_make_subtitles, 04_make_chapters", "SRT/VTT, cues, 13 chapters", "Claude segments topics", "done", "Cues from word timing (42 chars/line, 2 lines). Chapters anchored by exact phrases."),
  ("5", "Proxy and clean audio", "ffmpeg h264_videotoolbox, afftdn + gate + loudnorm", "work/proxy.mp4 (not in git)", "Code, measured", "done", "720p proxy for fast edits; dialogue cleaned (speech-to-noise gap 28 to 44 dB), -16 LUFS."),
  ("6", "Decide the cuts", "07_plan_cuts.py", "cuts.json, TIMELINE.md", "Claude picks; code enforces", "done", "Edit decision list in source time; pre/post-roll and long pauses out; 8 duplicate ideas removed (159 s) with proof-read joins."),
- ("7", "Highlights and platform cuts", "07_plan_cuts.py", "Highlights 0:53, LinkedIn 12:36", "Claude picks the claims", "done", "Hook-first highlights reel; a separate LinkedIn cut capped at 14:00 with context for every section."),
+ ("7", "Highlights and platform cuts", "07_plan_cuts.py", "Highlights 0:53, LinkedIn 12:36, X 1:22", "Claude picks the claims", "done", "Hook-first highlights reel; a LinkedIn cut capped at 14:00; an X cut capped at 2:15 (X allows 2:20 on standard accounts) with a closing card linking to YouTube."),
  ("8", "Explainer visuals", "08_plan_explainers, 09_generate_visuals, fal.ai flux/schnell", "explainers.json, visuals/*.jpg", "Claude picks moments; fal.ai art", "done", "6 simple animated graphics (free) and 3 infographics (AI art, labels drawn in Remotion)."),
- ("9", "Sound effects and music", "fal.ai (audio models)", "public/audio/*.mp3", "fal.ai", "todo", "Whooshes for chapter cards and panels, ticks for reveals, a ding/buzz for success/fail, a low music bed."),
+ ("9", "Sound effects and music", "14_generate_audio.py, fal.ai cassetteai models, Sound.tsx", "public/audio/*.mp3 (8 clips)", "fal.ai generates; code places every cue", "done", "5 effects (whoosh, pop, ding, buzz, impact) on chapter cards, clip changes and explainer reveals; hook music and two alternating beds about 14 dB under speech; final loudness pass."),
  ("10", "Assemble in Remotion", "Remotion compositions", "Highlights, Main, Combined, LinkedIn", "Code", "done", "Animated white/red captions, 1.22x zoom, left-side explainers, chapter cards, section-length footer."),
- ("11", "Render and package", "06_render_and_embed.sh", "out/*.mp4 (not in git)", "Code", "done", "Combined 25:49 and LinkedIn 12:36 rendered; chapters and subtitle track muxed in. ETA shown while rendering."),
+ ("11", "Render and package", "06_render_and_embed.sh", "out/*.mp4 (not in git)", "Code", "done", "Combined, LinkedIn and X rendered with music and effects and a final -16 LUFS pass; chapters and subtitle track muxed in (not on X). The Combined render with sound is the Skool community version. ETA shown while rendering."),
  ("12", "Thumbnails (always 3)", "10_make_thumbnail.sh, 12_generate_thumbnail_art.py", "assets/thumbnails/test1_A/B/C", "fal.ai art; text drawn in Remotion", "done", "Three different concepts for YouTube Test & Compare: number+question, imperative, no-face identity."),
  ("13", "Write the publishing copy", "11_make_publish.py, 13_build_site.py", "PUBLISH.md, site pages", "Claude drafts; Rifat approves", "done", "YouTube title/description/chapters/tags, LinkedIn (first person), X posts and thread, all with character counters."),
  ("14", "Publish and test", "YouTube Studio, LinkedIn, X", "live posts", "Human", "todo", "Upload, set the 3 thumbnails, post, replace [LINK] with the YouTube URL, pin the comment, read results."),
  ("15", "Govern", "version.py, CHANGELOG, DECISIONS, pre-commit hook", "v0.x tags, snapshots", "Code + Claude", "done", "Every step documented, versioned, committed and pushed; keys only in .env; costs tracked."),
 ]
 
-SOUND = False  # flipped to True when the sound-and-music render is done
+SOUND = True  # flipped to True when the sound-and-music render is done
 CHECKLIST = [
  ("Set up", [
   ("Probe the source video and write the plan", True), ("Install mlx-whisper (venv) and Remotion", True),
@@ -39,9 +39,9 @@ CHECKLIST = [
   ("Zoom 1.22x, captions low, footer bigger", True)]),
  ("Visuals and sound", [
   ("6 simple animated explainers", True), ("3 fal.ai infographics (text-free art, Remotion labels)", True),
-  ("Sound effects with fal.ai", SOUND), ("Music bed with fal.ai", SOUND), ("Re-render Combined and LinkedIn with sound", SOUND)]),
+  ("Sound effects with fal.ai", SOUND), ("Music bed with fal.ai", SOUND), ("Re-render Combined and LinkedIn with sound", SOUND), ("Skool version exported: Combined with music and effects (C1193_skool_v0.15.0.mp4, 25:49)", True), ("Upload the Skool version to the Skool community", False), ("Confirm the caption \"Cambridge Sixth-form college\" (about 25:13 in the interview) against the audio: the event is at Hills Road Sixth Form College. If it is wrong, change the rule in corrections.json and re-render", False), ("Listen to the mix once: music level under speech, effects not too busy", False)]),
  ("Render", [
-  ("Combined video rendered (25:49, 720p)", True), ("LinkedIn video rendered (12:36)", True),
+  ("Combined video rendered (25:49, 720p)", True), ("LinkedIn video rendered (12:36)", True), ("X video rendered (1:22, under the 2:20 limit)", True),
   ("Optional: re-render from the 4K original for a sharper final", False)]),
  ("Thumbnails", [
   ("Three different thumbnails made (A number+question, B imperative, C no-face)", True), ("Upload all three to YouTube Test & Compare", False),
@@ -51,9 +51,9 @@ CHECKLIST = [
   ("X posts and thread (each at most 280 characters)", True), ("Real Skool and Eventbrite links added", True),
   ("GitHub Pages site deployed", True), ("Costs page", True), ("Workflow, checklist and thumbnails pages", True)]),
  ("Go live", [
-  ("Upload the Combined video to YouTube: https://youtu.be/VOtlOfpXVU8", True), ("Add the SRT and the three thumbnails (Test & Compare) to that YouTube video", False),
+  ("Upload the Combined video to YouTube: https://youtu.be/VOtlOfpXVU8", True), ("X video (C1193_x, 1:22) uploaded and posted", True), ("Add the SRT and the three thumbnails (Test & Compare) to that YouTube video", False), ("Paste the new description into YouTube (host and guest links, Cambridge AI Academy event details)", False),
   ("LinkedIn post is live: https://lnkd.in/p/e5GMfT5V", True), ("Add the LinkedIn SRT to the LinkedIn video if it was not added", False), ("YouTube URL filled into the LinkedIn and X posts", True),
-  ("Replace the YouTube upload with the sound-and-music version (or add it as an update)", False), ("Post on X, pin the YouTube comment", False),
+  ("Replace the YouTube upload with the sound-and-music version (or add it as an update)", False), ("X post is live: https://x.com/rifaterdemsahin/status/2119868364722208900", True), ("Pin the YouTube comment", False),
   ("Reply to comments in the first hour", False), ("After a week: record views, watch time and the thumbnail winner", False)]),
 ]
 
