@@ -23,5 +23,14 @@ export const RemotionRoot = () => (
       width={WIDTH}
       height={HEIGHT}
     />
+    <Composition
+      id="Combined"
+      component={Edit}
+      defaultProps={{ mode: "combined" as const }}
+      durationInFrames={totalFrames(timelines.combined)}
+      fps={FPS}
+      width={WIDTH}
+      height={HEIGHT}
+    />
   </>
 );

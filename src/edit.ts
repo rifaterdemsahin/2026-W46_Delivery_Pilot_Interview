@@ -6,7 +6,7 @@ export type Cut = { src_start: number; src_end: number };
 export type TimelineCut = { srcFrom: number; dur: number; outFrom: number };
 export type Word = { w: string; start: number; end: number };
 export type Cue = { start: number; end: number; words: Word[] };
-export type Mode = "main" | "highlights";
+export type Mode = "main" | "highlights" | "combined";
 
 export const cues = cuesJson as Cue[];
 
@@ -25,6 +25,8 @@ export const toTimeline = (cuts: Cut[]): TimelineCut[] => {
 export const timelines: Record<Mode, TimelineCut[]> = {
   main: toTimeline(cutsJson.main),
   highlights: toTimeline(cutsJson.highlights),
+  // highlights first, then the tightened full interview
+  combined: toTimeline([...cutsJson.highlights, ...cutsJson.main]),
 };
 
 export const totalFrames = (tl: TimelineCut[]) => tl.reduce((a, c) => a + c.dur, 0);
@@ -46,3 +48,6 @@ export const outFrameAt = (tl: TimelineCut[], srcSec: number) => {
 /** The kept cut that output frame falls in. */
 export const cutAt = (tl: TimelineCut[], outFrame: number) =>
   tl.find((x) => outFrame >= x.outFrom && outFrame < x.outFrom + x.dur) ?? tl[tl.length - 1];
+
+/** Frames before the full interview starts (0 unless highlights are placed first). */
+export const mainOffset = (mode: Mode) => (mode === "combined" ? totalFrames(timelines.highlights) : 0);

@@ -81,3 +81,9 @@
 - **Known leftover:** "the boats are building the boats" (about 08:04) was not in the list, so it is unchanged. It probably means "bots".
 - **Chapter title** now reads "Skool Community". The sixth-form rule lowercases "college" as written ("Cambridge Sixth-form college"); adjust the rule if you prefer the proper-noun capitals.
 - **Speakers:** Marianna asks the questions, Rifat Erdem Sahin answers (`data/speakers.json`, intro chapter summary). Whisper does not label speakers, so this is metadata only, not per-line labels.
+
+## 14. Combined timeline + section indicator (2026-11-09)
+- **`Combined` composition:** the 7-clip highlights reel first (52.8 s), then the tightened full interview (1658.3 s). 1711.1 s total. It is just `[...cuts.highlights, ...cuts.main]` in the same edit list, so captions, cuts and audio need no new logic.
+- **Why highlights first:** the hook plays before the viewer can leave, then the full conversation follows (cold-open pattern).
+- **Bottom indicator (`SectionBar`):** one segment per section (Highlights + 13 chapters), each as wide as the section is long, filling as it plays. A label on the left shows the current section and `elapsed / length` (for example `CH 2/13 - Why a Delivery Pilot? 0:06 / 1:15`). Chapter cards are offset by the highlights length so they still land on the right moment. Captions sit 44 px up in this mode to clear the bar.
+- **Sync:** `07_plan_cuts.py` also writes `subtitles.combined.srt` and `chapters.combined.*` (Highlights as chapter 0). Subtitle cues are now clipped to the words actually inside the kept footage.

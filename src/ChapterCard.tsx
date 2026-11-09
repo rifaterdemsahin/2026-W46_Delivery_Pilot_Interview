@@ -4,10 +4,10 @@ import { outFrameAt, type TimelineCut } from "./edit";
 
 const SHOW_S = 5; // seconds a chapter title card stays on screen
 
-export const ChapterCard = ({ timeline }: { timeline: TimelineCut[] }) => {
+export const ChapterCard = ({ timeline, offset = 0 }: { timeline: TimelineCut[]; offset?: number }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const starts = chapters.map((c) => outFrameAt(timeline, c.start));
+  const starts = chapters.map((c) => outFrameAt(timeline, c.start) + offset);
   const idx = starts.findLastIndex((f) => frame >= f);
   const chapter = chapters[idx];
   if (!chapter) return null;

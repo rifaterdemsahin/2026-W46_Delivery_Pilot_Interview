@@ -5,7 +5,7 @@ const WHITE = "#ffffff";
 const RED = "#ff2b2b";
 
 /** Animated captions: cue springs in, every word is white, the word being spoken turns red and pops. */
-export const Subtitles = ({ timeline }: { timeline: TimelineCut[] }) => {
+export const Subtitles = ({ timeline, bottom = 28 }: { timeline: TimelineCut[]; bottom?: number }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const s = srcSecondsAt(timeline, frame);
@@ -24,7 +24,7 @@ export const Subtitles = ({ timeline }: { timeline: TimelineCut[] }) => {
   const activeIdx = words.reduce((a, w, i) => (w.start <= s ? i : a), -1);
 
   return (
-    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 28 }}>
+    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: bottom }}>
       <div
         style={{
           display: "flex",

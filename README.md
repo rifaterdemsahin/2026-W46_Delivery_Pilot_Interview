@@ -71,7 +71,8 @@ Needs `ffmpeg`/`ffprobe` (Homebrew) and an Apple Silicon Mac for mlx-whisper. So
 | 4 | `.venv/bin/python -I scripts/04_make_chapters.py` | chapters JSON, ffmetadata, YouTube list | instant |
 | 5 | `scripts/05_make_proxy.sh` | `work/proxy.mp4`, `public/proxy.mp4` hard link | ~10 min |
 | 6 | `.venv/bin/python -I scripts/07_plan_cuts.py` | `data/cuts.json` + remapped subtitles/chapters | instant |
-| 7 | `npm run studio` (then open http://localhost:3000 in Chrome) | live preview of `Main` and `Highlights` | |
+| 6b | (same script) | `subtitles.combined.srt`, `chapters.combined.*` | |
+| 7 | `npm run studio` (then open http://localhost:3000 in Chrome) | live preview of `Main`, `Highlights` and `Combined` (highlights first, then the full interview, with a section-length bar) | |
 | 8 | `scripts/06_render_and_embed.sh highlights` | `out/highlights.mp4` | ~35 s |
 | 9 | `scripts/06_render_and_embed.sh main` | `out/final.mp4` with chapters + soft subs | ~18 min |
 

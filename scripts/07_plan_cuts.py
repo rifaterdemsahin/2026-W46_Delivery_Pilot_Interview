@@ -116,41 +116,58 @@ def to_out(m, total, sec):
 m_main, tot_main = build_map(main)
 m_hl, tot_hl = build_map(highlights)
 
-# main-timeline subtitles (SRT) and chapters (ffmetadata) so the muxed file matches the edit
 def srt_ts(x):
     ms = round(x * 1000); h, ms = divmod(ms, 3600000); mi, ms = divmod(ms, 60000); s, ms = divmod(ms, 1000)
     return f"{h:02}:{mi:02}:{s:02},{ms:03}"
 
-lo, hi = main[0]["src_start"], main[-1]["src_end"]
-kept = [c for c in cues if lo <= c["words"][0]["start"] <= hi]
-lines = []
-for n, c in enumerate(kept, 1):
-    s = to_out(m_main, tot_main, c["words"][0]["start"])
-    e = max(to_out(m_main, tot_main, c["words"][-1]["end"]), s + 0.8)
-    if n < len(kept):
-        e = min(e, to_out(m_main, tot_main, kept[n]["words"][0]["start"]))
-    body = " ".join(w["w"] for w in c["words"])
-    lines.append(f"{n}\n{srt_ts(s)} --> {srt_ts(e)}\n{body}\n")
-open("data/subtitles.main.srt", "w").write("\n".join(lines))
 
-ch_out = []
-for c in chapters:
-    if c["start"] >= hi:
-        continue
-    ch_out.append({"title": c["title"], "start": round(to_out(m_main, tot_main, c["start"]), 2)})
-for i, c in enumerate(ch_out):
-    c["end"] = ch_out[i + 1]["start"] if i + 1 < len(ch_out) else round(tot_main / FPS, 2)
-json.dump(ch_out, open("data/chapters.main.json", "w"), indent=1)
-with open("data/chapters.main.ffmetadata", "w") as f:
-    f.write(";FFMETADATA1\n")
-    for c in ch_out:
-        f.write(f"[CHAPTER]\nTIMEBASE=1/1000\nSTART={round(c['start']*1000)}\nEND={round(c['end']*1000)}\ntitle={c['title']}\n")
+def cue_entries(m, total, ivs, offset=0.0):
+    """Cues restricted to words inside kept intervals, on the output timeline: [(start, end, text)]."""
+    out = []
+    for c in cues:
+        ws = [w for w in c["words"] if any(iv["src_start"] <= (w["start"] + w["end"]) / 2 <= iv["src_end"] for iv in ivs)]
+        if ws:
+            s = to_out(m, total, ws[0]["start"]) + offset
+            e = max(to_out(m, total, ws[-1]["end"]) + offset, s + 0.8)
+            out.append([s, e, " ".join(w["w"] for w in ws)])
+    for i in range(len(out) - 1):
+        out[i][1] = min(out[i][1], out[i + 1][0])
+    return out
+
+
+def write_srt(path, entries):
+    open(path, "w").write("\n".join(f"{n}\n{srt_ts(s)} --> {srt_ts(e)}\n{t}\n" for n, (s, e, t) in enumerate(entries, 1)))
+
+
+def write_chapters(stem, chs, total_s):
+    for i, c in enumerate(chs):
+        c["end"] = chs[i + 1]["start"] if i + 1 < len(chs) else round(total_s, 2)
+    json.dump(chs, open(f"data/{stem}.json", "w"), indent=1)
+    with open(f"data/{stem}.ffmetadata", "w") as f:
+        f.write(";FFMETADATA1\n")
+        for c in chs:
+            f.write(f"[CHAPTER]\nTIMEBASE=1/1000\nSTART={round(c['start']*1000)}\nEND={round(c['end']*1000)}\ntitle={c['title']}\n")
+
+
+hi = main[-1]["src_end"]
+main_chs = [{"title": c["title"], "start": round(to_out(m_main, tot_main, c["start"]), 2)} for c in chapters if c["start"] < hi]
+hl_s, main_s = tot_hl / FPS, tot_main / FPS
+
+# main only
+write_srt("data/subtitles.main.srt", cue_entries(m_main, tot_main, main))
+write_chapters("chapters.main", [dict(c) for c in main_chs], main_s)
+# combined: highlights first, then the full (tightened) interview
+write_srt("data/subtitles.combined.srt",
+          cue_entries(m_hl, tot_hl, highlights) + cue_entries(m_main, tot_main, main, offset=hl_s))
+write_chapters("chapters.combined",
+               [{"title": "Highlights", "start": 0.0}] + [{"title": c["title"], "start": round(c["start"] + hl_s, 2)} for c in main_chs],
+               hl_s + main_s)
 
 src_len = chapters[-1]["end"]
 stats = {
     "source_s": src_len, "main_s": round(tot_main / FPS, 1), "removed_s": round(src_len - tot_main / FPS, 1),
     "main_cuts": len(main), "highlights_s": round(tot_hl / FPS, 1), "highlight_clips": len(HIGHLIGHTS),
-    "highlight_intervals": len(highlights),
+    "highlight_intervals": len(highlights), "combined_s": round((tot_hl + tot_main) / FPS, 1),
 }
 json.dump({"stats": stats, "main": main, "highlights": highlights}, open("data/cuts.json", "w"), indent=1)
 print(json.dumps(stats, indent=1))
