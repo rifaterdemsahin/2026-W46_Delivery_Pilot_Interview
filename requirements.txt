@@ -1,0 +1,6 @@
+mlx==0.32.4
+mlx-metal==0.32.4
+mlx-whisper==0.4.3
+numpy==2.5.4
+tiktoken==0.14.0
+torch==2.15.0
