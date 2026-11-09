@@ -2,7 +2,7 @@
 
 Generated from `scripts/site_pages.py`. The site's Checklist page has the same items with tickable boxes (saved in your browser).
 
-**Progress: 27 of 42 done.**
+**Progress: 29 of 44 done.**
 
 ## Set up
 
@@ -63,9 +63,11 @@ Generated from `scripts/site_pages.py`. The site's Checklist page has the same i
 
 ## Go live
 
-- [ ] Upload the Combined video to YouTube with the SRT and thumbnails
+- [x] Upload the Combined video to YouTube: https://youtu.be/VOtlOfpXVU8
+- [ ] Add the SRT and the three thumbnails (Test & Compare) to that YouTube video
 - [ ] Upload the LinkedIn video (and its SRT) to LinkedIn
-- [ ] Put the YouTube URL in every [LINK] on the LinkedIn and X pages and rebuild the site
+- [x] YouTube URL filled into the LinkedIn and X posts
+- [ ] Replace the YouTube upload with the sound-and-music version (or add it as an update)
 - [ ] Post on LinkedIn, post on X, pin the YouTube comment
 - [ ] Reply to comments in the first hour
 - [ ] After a week: record views, watch time and the thumbnail winner

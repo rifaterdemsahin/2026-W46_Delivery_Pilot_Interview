@@ -5,6 +5,10 @@ Deployed by .github/workflows/static.yml (uploads site/). Run after any change: 
 import html, json, os, re, shutil
 
 VERSION = open("VERSION").read().strip()
+LINKS = json.load(open("data/links.json"))
+YT = LINKS.get("youtube", "")
+link = lambda s: s.replace("[LINK]", YT) if YT else s  # fill the YouTube URL into posts once the video is live
+urlcount = lambda s: re.sub(r"https?://\S+", "x" * 23, s.replace("[LINK]", "x" * 23))  # X and LinkedIn count every link as 23 characters
 REPO = "https://github.com/rifaterdemsahin/2026-W46_Delivery_Pilot_Interview"
 SITE_URL = "https://rifaterdemsahin.github.io/2026-W46_Delivery_Pilot_Interview/"
 cuts = json.load(open("data/cuts.json"))["stats"]
@@ -40,7 +44,7 @@ button.ok{background:#1f9d55}.row{display:flex;gap:10px;align-items:center;flex-
 """
 JS = """function copyFrom(id,btn){var t=document.getElementById(id);t.select();var v=t.value;
  (navigator.clipboard?navigator.clipboard.writeText(v):Promise.reject()).catch(function(){document.execCommand('copy')}).then(function(){btn.textContent='Copied';btn.className='ok';setTimeout(function(){btn.textContent='Copy';btn.className=''},1600)})}
-function count(id,out,limit){var t=document.getElementById(id),o=document.getElementById(out);function u(){var n=t.value.replace(/\\[LINK\\]/g,'x'.repeat(23)).length;o.textContent=n+(limit?' / '+limit:'')+' characters';o.className='cnt'+(limit&&n>limit?' bad':'')}t.addEventListener('input',u);u()}"""
+function count(id,out,limit){var t=document.getElementById(id),o=document.getElementById(out);function u(){var n=t.value.replace(/\\[LINK\\]/g,'x'.repeat(23)).replace(/https?:\\/\\/\\S+/g,'x'.repeat(23)).length;o.textContent=n+(limit?' / '+limit:'')+' characters';o.className='cnt'+(limit&&n>limit?' bad':'')}t.addEventListener('input',u);u()}"""
 import sys; sys.path.insert(0, "scripts"); import site_pages as SP
 open("site/style.css", "w").write(CSS + SP.EXTRA_CSS); open("site/copy.js", "w").write(JS)
 
@@ -60,6 +64,7 @@ def box(id, text, rows=8, limit=None, label=""):
 # ---------- index ----------
 page("index.html", "Overview", f"""
 <h1>Become a Delivery Pilot: the AI interview kit</h1>
+<p><a class="btn" href="{YT}">▶️ Watch on YouTube</a></p>
 <p class="mut">Rifat Erdem Sahin in conversation with Marianna. Everything below was produced by an AI-assisted pipeline: Whisper transcript, AI-chosen chapters and cuts, Remotion edit, fal.ai visuals.</p>
 <img src="assets/thumbnail.jpg" alt="Thumbnail: 300 bots, 1 pilot">
 <div class="grid" style="margin-top:14px">
@@ -94,6 +99,7 @@ tags = re.search(r"TAGS = \[(.*?)\]", open("scripts/11_make_publish.py").read(),
 tags = ", ".join(re.findall(r'"(.+?)"', tags))
 pinned = re.search(r'PINNED = "(.+?)"', open("scripts/11_make_publish.py").read()).group(1)
 page("youtube.html", "YouTube", f"""<h1>▶️ YouTube</h1><p class="mut">Copy each block into YouTube Studio. Video length {TOTAL}.</p>
+<div class="card">▶️ <b>Live:</b> <a href="{YT}">{YT}</a><br><span class="mut">{esc(LINKS.get("youtube_note", ""))}</span></div>
 <img src="assets/thumbnail.jpg" alt="thumbnail" style="max-width:480px"><p><a class="btn" href="assets/thumbnail.jpg" download>Download thumbnail (1280x720)</a></p>
 {box("yt_title", title, 2, 100, "Title (limit 100)")}
 <div class="card"><b>Alternative titles</b><ul>{"".join(f"<li>{esc(a)}</li>" for a in alts)}</ul></div>
@@ -144,11 +150,11 @@ Join the free Skool community: https://www.skool.com/delivery-pilot-8938
 Rider, driver or pilot: where are you today?
 
 #AI #AIAgents #FutureOfWork"""
-page("linkedin.html", "LinkedIn", f"""<h1>💼 LinkedIn</h1><p class="mut">Written in Rifat Erdem Sahin's voice, to post from his profile when the video goes live. Add the YouTube link where it says <code>[LINK]</code> (put it in the first comment instead if you want more reach). Use the thumbnail as the image.</p>
+page("linkedin.html", "LinkedIn", f"""<h1>💼 LinkedIn</h1><p class="mut">Written in Rifat Erdem Sahin's voice, to post from his profile. The YouTube link is already in the post (put it in the first comment instead if you want more reach). Use the thumbnail as the image.</p>
 <p><a class="btn" href="assets/thumbnail.jpg" download>Download image</a></p>
 <div class="card"><b>🎞️ LinkedIn video: {mmss(cuts["linkedin_s"])} (limit 14:00)</b><br><span class="mut">A separate cut of the strongest sections, captions burned in, no repeated cold open. Render: <code>scripts/06_render_and_embed.sh linkedin</code> (file stays on the machine, not in git).</span><p><a class="btn" href="assets/subtitles_linkedin.srt" download>Download its subtitles (.srt)</a></p></div>
-{box("li_long", LONG, 24, 3000, "Long post (limit 3,000)")}
-{box("li_short", SHORT, 9, 3000, "Short post")}
+{box("li_long", link(LONG), 24, 3000, "Long post (limit 3,000)")}
+{box("li_short", link(SHORT), 9, 3000, "Short post")}
 <div class="card"><b>Tips</b><ul><li>First two lines are what shows before "see more": keep the hook there</li><li>Tag Marianna (she asked the questions) if she agrees</li><li>Reply to every comment in the first hour</li></ul></div>""")
 
 # ---------- x ----------
@@ -166,10 +172,10 @@ THREAD = [
  "5/ CI became possible with AI. Continuous delivery is next. That's the Delivery Pilot.\n\nFull conversation with Marianna (25 min): [LINK]\n\nRider, driver or pilot: where are you today?",
 ]
 for t in SINGLES + THREAD:
-    assert len(t.replace("[LINK]", "x" * 23)) <= 280, f"too long ({len(t)}): {t[:40]}"
-x_html = "".join(box(f"x_s{i}", t, 5, 280, f"Post {i+1}") for i, t in enumerate(SINGLES))
-t_html = "".join(box(f"x_t{i}", t, 5, 280, f"Thread {i+1}/{len(THREAD)}") for i, t in enumerate(THREAD))
-page("x.html", "X", f"""<h1>✖️ X</h1><p class="mut">Each post is checked to fit 280 characters (a link counts as 23). Attach the thumbnail to the first post. Replace <code>[LINK]</code> with the YouTube URL.</p>
+    assert len(urlcount(t)) <= 280, f"too long ({len(t)}): {t[:40]}"
+x_html = "".join(box(f"x_s{i}", link(t), 5, 280, f"Post {i+1}") for i, t in enumerate(SINGLES))
+t_html = "".join(box(f"x_t{i}", link(t), 5, 280, f"Thread {i+1}/{len(THREAD)}") for i, t in enumerate(THREAD))
+page("x.html", "X", f"""<h1>✖️ X</h1><p class="mut">Each post is checked to fit 280 characters (a link counts as 23). Attach the thumbnail to the first post. The YouTube link is already filled in.</p>
 <p><a class="btn" href="assets/thumbnail.jpg" download>Download image</a></p>
 <h2>Single posts (pick one)</h2>{x_html}<h2>Thread</h2>{t_html}""")
 

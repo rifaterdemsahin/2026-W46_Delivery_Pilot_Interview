@@ -1,5 +1,7 @@
 # 🎬 Delivery Pilot Interview: AI video processing (C1193.MP4)
 
+▶️ **Watch the video:** https://youtu.be/VOtlOfpXVU8
+
 🌐 **Live site:** https://rifaterdemsahin.github.io/2026-W46_Delivery_Pilot_Interview/ (▶️ YouTube · 💼 LinkedIn · ✖️ X copy-and-publish pages, 💸 costs)
 
 🤖 An AI-based flow that **transcribes** an English interview, builds **subtitles** and **chapter markers**, decides the **cuts**, adds **animated explainer visuals**, and edits everything in **Remotion** with animated white/red captions.

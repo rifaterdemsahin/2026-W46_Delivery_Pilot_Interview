@@ -22,6 +22,7 @@ STAGES = [
  ("15", "Govern", "version.py, CHANGELOG, DECISIONS, pre-commit hook", "v0.x tags, snapshots", "Code + Claude", "done", "Every step documented, versioned, committed and pushed; keys only in .env; costs tracked."),
 ]
 
+SOUND = False  # flipped to True when the sound-and-music render is done
 CHECKLIST = [
  ("Set up", [
   ("Probe the source video and write the plan", True), ("Install mlx-whisper (venv) and Remotion", True),
@@ -38,7 +39,7 @@ CHECKLIST = [
   ("Zoom 1.22x, captions low, footer bigger", True)]),
  ("Visuals and sound", [
   ("6 simple animated explainers", True), ("3 fal.ai infographics (text-free art, Remotion labels)", True),
-  ("Sound effects with fal.ai", False), ("Music bed with fal.ai", False), ("Re-render Combined and LinkedIn with sound", False)]),
+  ("Sound effects with fal.ai", SOUND), ("Music bed with fal.ai", SOUND), ("Re-render Combined and LinkedIn with sound", SOUND)]),
  ("Render", [
   ("Combined video rendered (25:49, 720p)", True), ("LinkedIn video rendered (12:36)", True),
   ("Optional: re-render from the 4K original for a sharper final", False)]),
@@ -50,8 +51,9 @@ CHECKLIST = [
   ("X posts and thread (each at most 280 characters)", True), ("Real Skool and Eventbrite links added", True),
   ("GitHub Pages site deployed", True), ("Costs page", True), ("Workflow, checklist and thumbnails pages", True)]),
  ("Go live", [
-  ("Upload the Combined video to YouTube with the SRT and thumbnails", False), ("Upload the LinkedIn video (and its SRT) to LinkedIn", False),
-  ("Put the YouTube URL in every [LINK] on the LinkedIn and X pages and rebuild the site", False), ("Post on LinkedIn, post on X, pin the YouTube comment", False),
+  ("Upload the Combined video to YouTube: https://youtu.be/VOtlOfpXVU8", True), ("Add the SRT and the three thumbnails (Test & Compare) to that YouTube video", False),
+  ("Upload the LinkedIn video (and its SRT) to LinkedIn", False), ("YouTube URL filled into the LinkedIn and X posts", True),
+  ("Replace the YouTube upload with the sound-and-music version (or add it as an update)", False), ("Post on LinkedIn, post on X, pin the YouTube comment", False),
   ("Reply to comments in the first hour", False), ("After a week: record views, watch time and the thumbnail winner", False)]),
 ]
 
