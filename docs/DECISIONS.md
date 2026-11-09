@@ -113,3 +113,14 @@
 - **Title:** 72 characters, keyword first, a curiosity hook, no clickbait claims. Three alternatives listed.
 - **Description:** hook, bullet summary of what is covered, exact chapter timestamps from `chapters.combined.json` (first at 0:00, all over 10 s, as YouTube requires), host/guest, link placeholders, hashtags. Skool and Eventbrite links were not provided, so they are marked `[ADD LINK]` rather than invented.
 - `scripts/11_make_publish.py` generates `docs/PUBLISH.md` and `data/description.txt`, so chapter times stay correct if cuts change.
+
+## 19. Audio cleanup (2026-11-09)
+- `scripts/05b_clean_audio.py` cleans the dialogue and swaps it into the proxy (video stream copied, no re-encode): high-pass 70 Hz, one conservative FFT denoise pass (`afftdn`), a soft downward gate, then two-pass loudness normalisation to -16 LUFS (true peak -1.5 dB).
+- **Measured, not guessed:** room noise in a silent gap fell from -53.2 to -63.6 dB, and the speech-to-noise gap grew from 28.3 to 43.7 dB. Loudness went from -20.9 to -16.0 LUFS; peak -4.3 to -1.5 dBFS.
+- **My first attempt was wrong:** I used a compressor, which lifted the quiet pauses and cancelled the denoise gain (gap stayed about 28 dB). Caught by measuring the gap, replaced by the gate.
+- **Why not stronger:** a second denoise pass or a harder gate reaches about 48 dB but risks warbly or unnaturally dead pauses. I cannot listen, so I chose the conservative setting. Please listen once; the knobs are `BASE` in the script.
+- Transcription was done on the original audio, which is fine since timings are identical.
+
+## 20. Bigger footer and tighter zoom (2026-11-09)
+- Footer (`SectionBar`) is 48 px tall (was 30) with 21 px text and a thicker segmented bar; captions in the Combined timeline sit 66 px up to clear it.
+- `ZOOM` raised from 1.12 to 1.22, still anchored at 68%/45% so the speaker stays framed.

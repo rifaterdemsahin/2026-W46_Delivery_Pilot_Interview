@@ -23,10 +23,10 @@ export const SectionBar = () => {
 
   return (
     <AbsoluteFill style={{ justifyContent: "flex-end" }}>
-      <div style={{ display: "flex", height: 30, background: "rgba(0,0,0,0.82)", fontFamily: "Helvetica, Arial, sans-serif" }}>
-        <div style={{ width: 430, padding: "0 12px", color: "white", display: "flex", alignItems: "center", gap: 10, whiteSpace: "nowrap", overflow: "hidden" }}>
-          <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: 0.5, overflow: "hidden", textOverflow: "ellipsis" }}>{label}</span>
-          <span style={{ marginLeft: "auto", fontSize: 13, fontVariantNumeric: "tabular-nums", color: RED, fontWeight: 700 }}>
+      <div style={{ display: "flex", height: 48, background: "rgba(0,0,0,0.82)", fontFamily: "Helvetica, Arial, sans-serif" }}>
+        <div style={{ width: 600, padding: "0 16px", color: "white", display: "flex", alignItems: "center", gap: 12, whiteSpace: "nowrap", overflow: "hidden" }}>
+          <span style={{ fontSize: 21, fontWeight: 700, letterSpacing: 0.5, overflow: "hidden", textOverflow: "ellipsis" }}>{label}</span>
+          <span style={{ marginLeft: "auto", fontSize: 21, fontVariantNumeric: "tabular-nums", color: RED, fontWeight: 700 }}>
             {mmss(el)} / {mmss(len)}
           </span>
         </div>
@@ -34,7 +34,7 @@ export const SectionBar = () => {
           {secs.map((x, i) => {
             const frac = Math.min(1, Math.max(0, (frame - x.s) / (x.e - x.s)));
             return (
-              <div key={i} style={{ flex: x.e - x.s, height: i === idx ? 14 : 8, background: "rgba(255,255,255,0.22)", position: "relative", borderRadius: 2, overflow: "hidden" }}>
+              <div key={i} style={{ flex: x.e - x.s, height: i === idx ? 24 : 12, background: "rgba(255,255,255,0.22)", position: "relative", borderRadius: 2, overflow: "hidden" }}>
                 <div style={{ width: `${frac * 100}%`, height: "100%", background: i === 0 ? "#ffffff" : RED }} />
               </div>
             );

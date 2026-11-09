@@ -9,5 +9,5 @@ export type Chapter = { title: string; start: number; end: number; summary: stri
 export const chapters = chaptersJson as Chapter[]; // start/end in SOURCE seconds
 
 // Slight punch-in on the footage. Origin leans right so the speaker stays framed.
-export const ZOOM = 1.12;
+export const ZOOM = 1.22;
 export const ZOOM_ORIGIN = "68% 45%";

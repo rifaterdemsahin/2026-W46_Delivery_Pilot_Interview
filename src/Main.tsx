@@ -25,7 +25,7 @@ export const Edit = ({ mode }: { mode: Mode }) => {
       {mode === "main" && <ChapterCard timeline={tl} />}
       {mode === "combined" && <ChapterCard timeline={timelines.main} offset={offset} />}
       {mode !== "highlights" && <Explainers timeline={tl} offset={offset} />}
-      <Subtitles timeline={tl} bottom={mode === "combined" ? 44 : 28} />
+      <Subtitles timeline={tl} bottom={mode === "combined" ? 66 : 28} />
       {mode === "main" && <ProgressBar timeline={tl} />}
       {mode === "combined" && <SectionBar />}
     </AbsoluteFill>
