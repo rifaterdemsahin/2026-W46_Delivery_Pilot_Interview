@@ -22,6 +22,7 @@
 | 🎨 | Explainers (6 animated graphics, 3 fal.ai infographics) | ✅ done |
 | 🖥️ | Remotion edit (captions, cards, section bar, zoom) | ✅ done |
 | 🎞️ | Highlights reel render | ✅ rendered and checked |
+| 🖼️ | Thumbnail, title, description ([docs/PUBLISH.md](docs/PUBLISH.md)) | ✅ done |
 | 🚀 | Full `Combined` render | 🟡 scripted, not run yet (about 20-30 min) |
 
 ## 🔀 Flow
@@ -144,6 +145,8 @@ Needs `ffmpeg`/`ffprobe` (Homebrew) and an Apple Silicon Mac for mlx-whisper. �
 | 8 | ⚡ | `scripts/06_render_and_embed.sh highlights` | `out/highlights.mp4` | ~35 s |
 | 9 | 🎬 | `scripts/06_render_and_embed.sh main` | `out/final.mp4` with chapters + soft subs | ~20-30 min |
 | 10 | 🎞️ | `scripts/06_render_and_embed.sh combined` | `out/combined_final.mp4` | ~20-30 min |
+| 11 | 🖼️ | `scripts/10_make_thumbnail.sh [seconds]` | `assets/thumbnail.jpg` (1280x720) | ~10 s |
+| 12 | 📣 | `.venv/bin/python -I scripts/11_make_publish.py` | `docs/PUBLISH.md`, `data/description.txt` (title, description, chapters, tags) | instant |
 
 ## 🗂️ Repo map
 ```

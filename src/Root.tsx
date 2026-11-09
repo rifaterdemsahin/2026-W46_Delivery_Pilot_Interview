@@ -1,5 +1,6 @@
-import { Composition } from "remotion";
+import { Composition, Still } from "remotion";
 import { Edit } from "./Main";
+import { Thumbnail } from "./Thumbnail";
 import { FPS, HEIGHT, WIDTH } from "./config";
 import { timelines, totalFrames } from "./edit";
 
@@ -32,5 +33,6 @@ export const RemotionRoot = () => (
       width={WIDTH}
       height={HEIGHT}
     />
+    <Still id="Thumbnail" component={Thumbnail} width={WIDTH} height={HEIGHT} />
   </>
 );

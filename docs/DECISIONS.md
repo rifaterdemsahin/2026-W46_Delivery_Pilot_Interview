@@ -107,3 +107,9 @@
 ## 17. Slight zoom (2026-11-09)
 - Footage is scaled 1.12x (`ZOOM` in `src/config.ts`), anchored at 68% / 45% so the speaker on the right stays framed and the empty window area on the left is cropped. Applies to Main, Highlights and Combined. Only the video layer scales, so captions, panel and bars are unaffected. Change `ZOOM` (1.0 = none) to adjust.
 - Source is 4K and the proxy is 720p, so a zoom softens the proxy slightly. For a final 4K render, render from the original to keep it sharp.
+
+## 18. Thumbnail, title, description (2026-11-09)
+- **Thumbnail:** a real frame (6:44, expressive gesture, empty window area on the left for text) from the **4K source** (sharper than the proxy) plus a three-word headline drawn in Remotion ("Become a Delivery Pilot", PILOT in red) and the line "AI builds the bots. You fly them." Same white/red look as the captions. Text is drawn by Remotion, not an image model. 1280x720 JPG, 166 KB. Gotcha: `OffthreadVideo startFrom` is ignored in a single-frame Still (it showed the empty chair), so the frame is extracted with ffmpeg and used as an image.
+- **Title:** 72 characters, keyword first, a curiosity hook, no clickbait claims. Three alternatives listed.
+- **Description:** hook, bullet summary of what is covered, exact chapter timestamps from `chapters.combined.json` (first at 0:00, all over 10 s, as YouTube requires), host/guest, link placeholders, hashtags. Skool and Eventbrite links were not provided, so they are marked `[ADD LINK]` rather than invented.
+- `scripts/11_make_publish.py` generates `docs/PUBLISH.md` and `data/description.txt`, so chapter times stay correct if cuts change.
