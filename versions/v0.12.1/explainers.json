@@ -1,0 +1,197 @@
+[
+ {
+  "id": "ci_cd",
+  "kind": "flow",
+  "title": "From CI to CD",
+  "data": {
+   "nodes": [
+    {
+     "label": "Code",
+     "sub": "write"
+    },
+    {
+     "label": "Continuous Integration",
+     "sub": "possible now with AI",
+     "state": "done"
+    },
+    {
+     "label": "Continuous Delivery",
+     "sub": "the next step",
+     "state": "next"
+    },
+    {
+     "label": "Delivery Pilot",
+     "sub": "the new role",
+     "state": "ok"
+    }
+   ]
+  },
+  "start": 69.04,
+  "end": 78.84,
+  "dur": 9.8
+ },
+ {
+  "id": "bots_build_bots",
+  "kind": "tree",
+  "title": "Bots build bots",
+  "data": {
+   "root": "1 bot",
+   "count": 300,
+   "caption": "I write one bot to write other bots"
+  },
+  "start": 286.48,
+  "end": 296.24,
+  "dur": 9.76
+ },
+ {
+  "id": "levels",
+  "kind": "infographic",
+  "title": "Rider, Driver, Pilot",
+  "data": {
+   "items": [
+    {
+     "label": "Rider",
+     "sub": "web chat, hands-on"
+    },
+    {
+     "label": "Driver",
+     "sub": "Claude Code builds things"
+    },
+    {
+     "label": "Pilot",
+     "sub": "observes and directs bots"
+    }
+   ]
+  },
+  "start": 356.6,
+  "end": 410.8,
+  "dur": 54.2,
+  "prompt": "flat vector infographic illustration, clean minimal style, white background, navy and red accent colors, soft shapes, no text, no letters, no words, three stages of progress shown as a rising path from a horse rider to a car driver to an airplane pilot",
+  "image": "visuals/levels.jpg"
+ },
+ {
+  "id": "agent_network",
+  "kind": "network",
+  "title": "Agent to agent",
+  "data": {
+   "nodes": [
+    "Campaign bot",
+    "Finance bot",
+    "Capacity bot"
+   ],
+   "caption": "Bots talking to bots"
+  },
+  "start": 606.64,
+  "end": 622.2,
+  "dur": 15.56
+ },
+ {
+  "id": "agent_bot_robot",
+  "kind": "infographic",
+  "title": "Agent vs Bot vs Robot",
+  "data": {
+   "items": [
+    {
+     "label": "Agent",
+     "sub": "less autonomy, stays in its sandbox"
+    },
+    {
+     "label": "Bot",
+     "sub": "digital world, no body, goal-driven"
+    },
+    {
+     "label": "Robot",
+     "sub": "real world, has a body"
+    }
+   ]
+  },
+  "start": 828.0,
+  "end": 864.36,
+  "dur": 36.36,
+  "prompt": "flat vector infographic illustration, clean minimal style, white background, navy and red accent colors, soft shapes, no text, no letters, no words, three pictograms side by side: a small figure standing inside a closed box, a glowing cloud floating freely, and a tall humanoid robot, wordless icon illustration",
+  "image": "visuals/agent_bot_robot.jpg"
+ },
+ {
+  "id": "grocery_fallback",
+  "kind": "flow",
+  "title": "A bot finds a way",
+  "data": {
+   "nodes": [
+    {
+     "label": "Tesco",
+     "sub": "out of stock",
+     "state": "fail"
+    },
+    {
+     "label": "Sainsbury's",
+     "sub": "out of stock",
+     "state": "fail"
+    },
+    {
+     "label": "Knock on Maria's door",
+     "sub": "olives!",
+     "state": "ok"
+    }
+   ]
+  },
+  "start": 864.08,
+  "end": 874.24,
+  "dur": 10.16
+ },
+ {
+  "id": "desk_jobs",
+  "kind": "stat",
+  "title": "Desk-based jobs",
+  "data": {
+   "value": "20-30%",
+   "caption": "of the world does a desk-based job"
+  },
+  "start": 1228.16,
+  "end": 1233.8,
+  "dur": 5.64
+ },
+ {
+  "id": "pilot_traits",
+  "kind": "infographic",
+  "title": "What a pilot needs",
+  "data": {
+   "items": [
+    {
+     "label": "Creative"
+    },
+    {
+     "label": "Operative"
+    },
+    {
+     "label": "Builder"
+    },
+    {
+     "label": "Architect"
+    },
+    {
+     "label": "Strategist"
+    }
+   ]
+  },
+  "start": 1475.6,
+  "end": 1498.24,
+  "dur": 22.64,
+  "prompt": "flat vector infographic illustration, clean minimal style, white background, navy and red accent colors, soft shapes, no text, no letters, no words, airplane cockpit view with glowing icons of a lightbulb, a gear, a blueprint and a compass",
+  "image": "visuals/pilot_traits.jpg"
+ },
+ {
+  "id": "workshops",
+  "kind": "card",
+  "title": "Join the workshops",
+  "data": {
+   "bullets": [
+    "Eventbrite workshops in Cambridge",
+    "Free weekly session on Skool, Sundays 1:30",
+    "Showcase, one topic, gratitude, what we learned"
+   ]
+  },
+  "start": 1512.64,
+  "end": 1541.52,
+  "dur": 28.88
+ }
+]

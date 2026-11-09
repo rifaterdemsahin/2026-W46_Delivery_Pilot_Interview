@@ -3,6 +3,9 @@
 Every deliverable is versioned. Scheme: `0.MINOR.PATCH` for the whole project, one git tag per version, a snapshot of the
 small deliverables in `versions/v<version>/` (with `manifest.json`), and an entry here. New version: `scripts/version.py bump minor "notes"`.
 
+## v0.12.1 - 2026-11-09
+Exported Combined video: 25:49, 720p, -16.1 LUFS, 14 chapters + subtitle track (no SFX/music yet)
+
 ## v0.12.0 - 2026-11-09
 Versioning system (VERSION, CHANGELOG, versions/ snapshots, tags) and CLAUDE.md project rules
 

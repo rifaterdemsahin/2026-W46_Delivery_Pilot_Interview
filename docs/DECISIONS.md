@@ -146,3 +146,9 @@
 - **Retroactive versions:** v0.1.0 to v0.11.0 were tagged on the matching commits, and v0.8.0 to v0.11.0 were snapshotted from history. Verified: the v0.9.0 snapshot has the main edit at 1658.3 s, v0.10.0 at 1495.8 s.
 - **Thumbnails:** both kept, `assets/thumbnails/v1-generic-...jpg` and `v2-curiosity-...jpg`; `assets/thumbnail.jpg` is always the latest.
 - **CLAUDE.md:** the user's standing instructions (document rationale, commit/push every step, no media, never commit keys, keep README flow current, always timeline, always version, ETA, Chrome, cost-effective fal.ai) plus conventions and gotchas, so any future session follows the same rules without being re-told.
+
+## 24. Export of the Combined video (2026-11-09)
+- Rendered `Combined` (highlights, then the full interview) with `scripts/06_render_and_embed.sh combined`: 38,716 frames in about 14 minutes (ETA was shown live), then ffmpeg muxed 14 chapter markers and a soft subtitle track (`mov_text`).
+- **Result:** 25:49 (1548.65 s, matches the planned 1548.6 s), 1280x720 25 fps, H.264 + AAC, 366 MB, loudness -16.1 LUFS, peak -1.4 dBFS.
+- **Location:** `out/combined_final.mp4` (git-ignored) and a versioned copy `~/Downloads/C1193_combined_v0.12.0.mp4`. Media is not committed.
+- **Known limits:** it is 720p because it is rendered from the proxy; at the 1.22x zoom a 4K-source render would be sharper. This version has no sound effects or music yet. The footer label truncates long chapter names ("Chatbots, Agents and Bots Exp..."); widening the label fixes it.
