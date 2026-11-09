@@ -66,3 +66,7 @@
 - **Captions:** uppercase Impact, white with heavy black stroke. The cue springs in. The word being spoken turns red and pops (spring scale and slight tilt). Words outside the kept footage are hidden, so a cut that starts mid-cue never shows words that were cut. Checked on rendered frames.
 - **Gotcha:** Remotion's bundler does not follow symlinks in `public/` (404). `05_make_proxy.sh` now makes a hard link (no extra disk).
 - **Verified:** `out/highlights.mp4` rendered in 35 s, 52.8 s long, captions and audio present. The full main render (about 18 min) is scripted but not yet run.
+
+## 12. Studio + workflow record (2026-11-09)
+- Remotion Studio runs on port 3000 (`npm run studio`) and is opened in Google Chrome. It plays the 720p proxy through the same cut list as the renders, so the preview matches the output.
+- `docs/WORKFLOW.md` records the user prompts in order, the stages with their scripts/outputs, which outputs are committed vs not, the role of each AI/code step, and reusable prompt templates for the next video.
