@@ -52,8 +52,8 @@ CHECKLIST = [
   ("GitHub Pages site deployed", True), ("Costs page", True), ("Workflow, checklist and thumbnails pages", True)]),
  ("Go live", [
   ("Upload the Combined video to YouTube: https://youtu.be/VOtlOfpXVU8", True), ("Add the SRT and the three thumbnails (Test & Compare) to that YouTube video", False),
-  ("Upload the LinkedIn video (and its SRT) to LinkedIn", False), ("YouTube URL filled into the LinkedIn and X posts", True),
-  ("Replace the YouTube upload with the sound-and-music version (or add it as an update)", False), ("Post on LinkedIn, post on X, pin the YouTube comment", False),
+  ("LinkedIn post is live: https://lnkd.in/p/e5GMfT5V", True), ("Add the LinkedIn SRT to the LinkedIn video if it was not added", False), ("YouTube URL filled into the LinkedIn and X posts", True),
+  ("Replace the YouTube upload with the sound-and-music version (or add it as an update)", False), ("Post on X, pin the YouTube comment", False),
   ("Reply to comments in the first hour", False), ("After a week: record views, watch time and the thumbnail winner", False)]),
 ]
 

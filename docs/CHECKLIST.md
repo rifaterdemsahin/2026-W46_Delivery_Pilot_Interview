@@ -2,7 +2,7 @@
 
 Generated from `scripts/site_pages.py`. The site's Checklist page has the same items with tickable boxes (saved in your browser).
 
-**Progress: 29 of 44 done.**
+**Progress: 30 of 45 done.**
 
 ## Set up
 
@@ -65,9 +65,10 @@ Generated from `scripts/site_pages.py`. The site's Checklist page has the same i
 
 - [x] Upload the Combined video to YouTube: https://youtu.be/VOtlOfpXVU8
 - [ ] Add the SRT and the three thumbnails (Test & Compare) to that YouTube video
-- [ ] Upload the LinkedIn video (and its SRT) to LinkedIn
+- [x] LinkedIn post is live: https://lnkd.in/p/e5GMfT5V
+- [ ] Add the LinkedIn SRT to the LinkedIn video if it was not added
 - [x] YouTube URL filled into the LinkedIn and X posts
 - [ ] Replace the YouTube upload with the sound-and-music version (or add it as an update)
-- [ ] Post on LinkedIn, post on X, pin the YouTube comment
+- [ ] Post on X, pin the YouTube comment
 - [ ] Reply to comments in the first hour
 - [ ] After a week: record views, watch time and the thumbnail winner

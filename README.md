@@ -1,6 +1,6 @@
 # 🎬 Delivery Pilot Interview: AI video processing (C1193.MP4)
 
-▶️ **Watch the video:** https://youtu.be/VOtlOfpXVU8
+▶️ **Watch the video:** https://youtu.be/VOtlOfpXVU8 · 💼 **LinkedIn post:** https://lnkd.in/p/e5GMfT5V
 
 🌐 **Live site:** https://rifaterdemsahin.github.io/2026-W46_Delivery_Pilot_Interview/ (▶️ YouTube · 💼 LinkedIn · ✖️ X copy-and-publish pages, 💸 costs)
 

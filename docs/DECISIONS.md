@@ -179,3 +179,6 @@
 - The video is live at https://youtu.be/VOtlOfpXVU8 (`data/links.json` is now the single source for the YouTube, Skool and Eventbrite links). Assumption: this first upload is the Combined render v0.12.1 (25:49, no sound effects or music); a sound-and-music version follows.
 - The URL is filled into the LinkedIn posts, X posts and thread, the YouTube page and the site overview (Watch button) and the README. X counts every link as 23 characters, so the counters and the build-time 280-character check now treat any URL as 23 characters.
 - Checklist: "Upload the Combined video to YouTube" and "URL filled into posts" are ticked; adding the SRT and the three Test & Compare thumbnails to that video is a new open item.
+
+## 30. LinkedIn post documented (2026-11-09)
+- The LinkedIn post is live at https://lnkd.in/p/e5GMfT5V (shortened link as shared; stored in `data/links.json`, shown on the site's LinkedIn page and overview, in the README and ticked on the checklist). Open item: confirm the LinkedIn SRT was added to that video. I did not open the link, so what the post contains (which cut, which text) is the user's, not verified here.

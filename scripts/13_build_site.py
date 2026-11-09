@@ -7,6 +7,7 @@ import html, json, os, re, shutil
 VERSION = open("VERSION").read().strip()
 LINKS = json.load(open("data/links.json"))
 YT = LINKS.get("youtube", "")
+LI = LINKS.get("linkedin", "")
 link = lambda s: s.replace("[LINK]", YT) if YT else s  # fill the YouTube URL into posts once the video is live
 urlcount = lambda s: re.sub(r"https?://\S+", "x" * 23, s.replace("[LINK]", "x" * 23))  # X and LinkedIn count every link as 23 characters
 REPO = "https://github.com/rifaterdemsahin/2026-W46_Delivery_Pilot_Interview"
@@ -64,7 +65,7 @@ def box(id, text, rows=8, limit=None, label=""):
 # ---------- index ----------
 page("index.html", "Overview", f"""
 <h1>Become a Delivery Pilot: the AI interview kit</h1>
-<p><a class="btn" href="{YT}">▶️ Watch on YouTube</a></p>
+<p><a class="btn" href="{YT}">▶️ Watch on YouTube</a> <a class="btn" href="{LI}">💼 See the LinkedIn post</a></p>
 <p class="mut">Rifat Erdem Sahin in conversation with Marianna. Everything below was produced by an AI-assisted pipeline: Whisper transcript, AI-chosen chapters and cuts, Remotion edit, fal.ai visuals.</p>
 <img src="assets/thumbnail.jpg" alt="Thumbnail: 300 bots, 1 pilot">
 <div class="grid" style="margin-top:14px">
@@ -150,7 +151,8 @@ Join the free Skool community: https://www.skool.com/delivery-pilot-8938
 Rider, driver or pilot: where are you today?
 
 #AI #AIAgents #FutureOfWork"""
-page("linkedin.html", "LinkedIn", f"""<h1>💼 LinkedIn</h1><p class="mut">Written in Rifat Erdem Sahin's voice, to post from his profile. The YouTube link is already in the post (put it in the first comment instead if you want more reach). Use the thumbnail as the image.</p>
+page("linkedin.html", "LinkedIn", f"""<h1>💼 LinkedIn</h1>
+<div class="card">💼 <b>Live post:</b> <a href="{LI}">{LI}</a><br><span class="mut">{esc(LINKS.get("linkedin_note", ""))}</span></div><p class="mut">Written in Rifat Erdem Sahin's voice, to post from his profile. The YouTube link is already in the post (put it in the first comment instead if you want more reach). Use the thumbnail as the image.</p>
 <p><a class="btn" href="assets/thumbnail.jpg" download>Download image</a></p>
 <div class="card"><b>🎞️ LinkedIn video: {mmss(cuts["linkedin_s"])} (limit 14:00)</b><br><span class="mut">A separate cut of the strongest sections, captions burned in, no repeated cold open. Render: <code>scripts/06_render_and_embed.sh linkedin</code> (file stays on the machine, not in git).</span><p><a class="btn" href="assets/subtitles_linkedin.srt" download>Download its subtitles (.srt)</a></p></div>
 {box("li_long", link(LONG), 24, 3000, "Long post (limit 3,000)")}
