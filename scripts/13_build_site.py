@@ -99,40 +99,51 @@ page("youtube.html", "YouTube", f"""<h1>▶️ YouTube</h1><p class="mut">Copy e
 <li>Links to the Skool community and the Eventbrite event are already in the description</li><li>Category: Science and Technology · Language: English · Not made for kids</li><li>Chapters appear automatically from the description</li></ul></div>""")
 
 # ---------- linkedin ----------
-LONG = """I just watched a conversation that reframed how I think about AI at work.
+LONG = """I sat down with Marianna for a 25-minute conversation about something I care a lot about: moving from driving AI to piloting it. It's live now. 🎬
 
-Rifat Erdem Sahin says we are moving from riders (chatting with AI), to drivers (building with tools like Claude Code), to pilots: people who direct many AI bots and make sure the direction is right.
+The short version of what I explain in it:
 
-His own example: 300 bots running at once, and one bot that writes the other bots. The job is less about writing every line and more about observing, directing and being accountable.
+🐎 Riders chat with AI and do everything by hand.
+🚗 Drivers build with tools like Claude Code.
+✈️ Pilots direct bots and make sure the direction is right.
 
-Three ideas I'm taking away:
+I have 300 bots running right now, and I don't write them one by one. I write one bot that writes the other bots. My job is to observe, direct and stay accountable for the result.
 
-→ Pilots need MORE training, not less. More power means more responsibility.
-→ A bot is not the same as an agent. Agents stay inside their sandbox; bots chase the goal. No olives at Tesco? Try Sainsbury's. Still none? Knock on a neighbour's door.
-→ Continuous integration has become possible with AI. Continuous delivery is the next step, and that is where the "Delivery Pilot" comes in.
+Things I cover that you might not expect:
+• Why pilots need MORE training, not less. More power means more responsibility.
+• The difference between an agent, a bot and a robot, and why my grocery bot tries Tesco, then Sainsbury's, then knocks on a neighbour's door.
+• Why continuous integration has become possible with AI, and why continuous delivery is the next step. That is where the Delivery Pilot comes in.
+• Why I think adult education and self-learning are about to boom.
 
-The full conversation with Marianna is 25 minutes: [LINK]
+I got my first computer at the age of five and I always dreamed of becoming a pilot. This is the first time those two things have come together.
 
-Join the free Skool community: https://www.skool.com/delivery-pilot-8938
-Build your own AI agents in Cambridge: https://www.eventbrite.co.uk/e/cambridge-ai-academy-build-your-own-ai-agents-tickets-2003566080080
+Watch the full conversation: [LINK]
 
-Are you a rider, a driver or a pilot today?
+Want to learn this hands-on?
+👉 Join the free Skool community: https://www.skool.com/delivery-pilot-8938
+👉 Build your own AI agents with us in Cambridge: https://www.eventbrite.co.uk/e/cambridge-ai-academy-build-your-own-ai-agents-tickets-2003566080080
+
+Which one are you today: rider, driver or pilot? Tell me in the comments.
+
+Thank you, Marianna, for the great questions.
 
 #AI #AIAgents #FutureOfWork #ClaudeCode #ContinuousDelivery"""
-SHORT = """300 bots. 1 pilot.
+SHORT = """My conversation with Marianna about becoming a Delivery Pilot is live. 🎬
 
-Rifat Erdem Sahin on why we are moving from riders, to drivers, to pilots of AI, and why pilots need more training, not less.
+Riders chat with AI. Drivers build with it. Pilots direct bots and stay accountable for them. I have 300 bots running, and one bot writes the rest.
 
-25-minute conversation with Marianna: [LINK]
+Pilots need more training, not less. Here is why: [LINK]
+
+Join the free Skool community: https://www.skool.com/delivery-pilot-8938
 
 Rider, driver or pilot: where are you today?
 
 #AI #AIAgents #FutureOfWork"""
-page("linkedin.html", "LinkedIn", f"""<h1>💼 LinkedIn</h1><p class="mut">Post natively on LinkedIn; add the YouTube link where it says <code>[LINK]</code> (put it in the first comment instead if you want more reach). Use the thumbnail as the image.</p>
+page("linkedin.html", "LinkedIn", f"""<h1>💼 LinkedIn</h1><p class="mut">Written in Rifat Erdem Sahin's voice, to post from his profile when the video goes live. Add the YouTube link where it says <code>[LINK]</code> (put it in the first comment instead if you want more reach). Use the thumbnail as the image.</p>
 <p><a class="btn" href="assets/thumbnail.jpg" download>Download image</a></p>
 {box("li_long", LONG, 24, 3000, "Long post (limit 3,000)")}
 {box("li_short", SHORT, 9, 3000, "Short post")}
-<div class="card"><b>Tips</b><ul><li>First two lines are what shows before "see more": keep the hook there</li><li>Tag Marianna and Rifat Erdem Sahin if they agree</li><li>Reply to every comment in the first hour</li></ul></div>""")
+<div class="card"><b>Tips</b><ul><li>First two lines are what shows before "see more": keep the hook there</li><li>Tag Marianna (she asked the questions) if she agrees</li><li>Reply to every comment in the first hour</li></ul></div>""")
 
 # ---------- x ----------
 SINGLES = [
