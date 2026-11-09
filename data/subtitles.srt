@@ -65,13 +65,13 @@ things come true. One from my adult old,
 which is called continuous integration
 
 15
-00:00:57,400 --> 00:01:02,180
-and continuous delivery. 10 -20 years
-ago doing continuous integration
+00:00:57,400 --> 00:01:02,840
+and continuous delivery. 10-20 years
+ago doing continuous integration was
 
 16
-00:01:02,180 --> 00:01:05,280
-was impossible for most of the teams.
+00:01:02,840 --> 00:01:05,280
+impossible for most of the teams.
 
 17
 00:01:05,460 --> 00:01:08,080
@@ -440,7 +440,7 @@ a horse or riding a motorcycle.
 
 95
 00:06:09,620 --> 00:06:10,780
-You are very very hands -on.
+You are very very hands-on.
 
 96
 00:06:11,020 --> 00:06:15,700
@@ -885,7 +885,7 @@ humans to complete the operations.
 
 189
 00:12:30,220 --> 00:12:35,720
-such as I did Google AdWords 10 -15
+such as I did Google AdWords 10-15
 years ago, I was deciding the keywords,
 
 190
@@ -1124,7 +1124,7 @@ keyboard will be something of the past.
 
 239
 00:15:49,720 --> 00:15:55,080
-But that means the white -collar jobs
+But that means the white-collar jobs
 that people got used to do is getting
 
 240
@@ -1329,7 +1329,7 @@ more YouTube than ever.
 
 281
 00:18:58,040 --> 00:19:01,280
-YouTube is a non -fiction
+YouTube is a non-fiction
 source of education.
 
 282
@@ -1439,8 +1439,8 @@ they lose their meaning.
 
 304
 00:20:28,140 --> 00:20:33,380
-Right now most 20 -30 % of the
-world is doing a desk -based job.
+Right now most 20-30% of the
+world is doing a desk-based job.
 
 305
 00:20:33,540 --> 00:20:37,500
@@ -1504,7 +1504,7 @@ command the machines.
 
 317
 00:21:29,200 --> 00:21:33,820
-You do all the hands -on. But the future
+You do all the hands-on. But the future
 is there is going to be an intermediary.
 
 318
@@ -1674,7 +1674,7 @@ lot in the beginning you have
 352
 00:23:59,800 --> 00:24:05,540
 to adopt your mind to that right
-yes the self -learning that was
+yes the self-learning that was
 
 353
 00:24:05,540 --> 00:24:11,100
@@ -1684,7 +1684,7 @@ my core niche I started this niche
 354
 00:24:11,100 --> 00:24:15,060
 people in this niche still there's not
-that many people on the self -learning
+that many people on the self-learning
 
 355
 00:24:15,060 --> 00:24:20,120
@@ -1698,8 +1698,8 @@ job we either go to our corner or we
 
 357
 00:24:25,620 --> 00:24:30,960
-become very creative and we become self
--learners and our job becomes learning
+become very creative and we become
+self-learners and our job becomes learning
 
 358
 00:24:30,960 --> 00:24:36,660
@@ -1756,7 +1756,7 @@ platform where we come together every
 
 369
 00:25:26,140 --> 00:25:31,720
-week on Sunday 1 .30. So they can come
+week on Sunday 1.30. So they can come
 in and showcase what they are doing.
 
 370
@@ -1771,12 +1771,12 @@ we learned, what we implemented that
 
 372
 00:25:40,880 --> 00:25:45,800
-week. Our on -site sessions are mostly
+week. Our on-site sessions are mostly
 about people coming in, doing the
 
 373
 00:25:45,800 --> 00:25:49,960
-things hands -on because you always
+things hands-on because you always
 need somebody supporting this.
 
 374
@@ -1901,7 +1901,7 @@ the world is right now moving to an
 
 399
 00:27:31,260 --> 00:27:35,360
-AI -based world. and the large
+AI-based world. and the large
 language models are just the engine.
 
 400
@@ -1926,8 +1926,8 @@ now in an era everybody is putting
 
 404
 00:27:57,640 --> 00:28:03,180
-their chips in into this new AI
--based, new bot -based world.
+their chips in into this new
+AI-based, new bot-based world.
 
 405
 00:28:03,380 --> 00:28:05,140

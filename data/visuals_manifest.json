@@ -1,0 +1,29 @@
+{
+ "levels": {
+  "model": "fal-ai/flux/schnell",
+  "prompt": "flat vector infographic illustration, clean minimal style, white background, navy and red accent colors, soft shapes, no text, no letters, no words, three stages of progress shown as a rising path from a horse rider to a car driver to an airplane pilot",
+  "seed": 1064068088,
+  "width": 1024,
+  "height": 768,
+  "bytes": 246872,
+  "est_cost_usd": 0.0024
+ },
+ "agent_bot_robot": {
+  "model": "fal-ai/flux/schnell",
+  "prompt": "flat vector infographic illustration, clean minimal style, white background, navy and red accent colors, soft shapes, no text, no letters, no words, three pictograms side by side: a small figure standing inside a closed box, a glowing cloud floating freely, and a tall humanoid robot, wordless icon illustration",
+  "seed": 1938669223,
+  "width": 1024,
+  "height": 768,
+  "bytes": 235439,
+  "est_cost_usd": 0.0024
+ },
+ "pilot_traits": {
+  "model": "fal-ai/flux/schnell",
+  "prompt": "flat vector infographic illustration, clean minimal style, white background, navy and red accent colors, soft shapes, no text, no letters, no words, airplane cockpit view with glowing icons of a lightbulb, a gear, a blueprint and a compass",
+  "seed": 1769851780,
+  "width": 1024,
+  "height": 768,
+  "bytes": 384320,
+  "est_cost_usd": 0.0024
+ }
+}

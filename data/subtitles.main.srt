@@ -43,12 +43,12 @@ Once you said let's do delivery pilot, it made two of my childhood
 things come true. One from my adult old, which is called continuous integration
 
 12
-00:00:47,680 --> 00:00:52,460
-and continuous delivery. 10 -20 years ago doing continuous integration
+00:00:47,680 --> 00:00:53,120
+and continuous delivery. 10-20 years ago doing continuous integration was
 
 13
-00:00:52,460 --> 00:00:55,560
-was impossible for most of the teams.
+00:00:53,120 --> 00:00:55,560
+impossible for most of the teams.
 
 14
 00:00:55,740 --> 00:00:58,360
@@ -364,7 +364,7 @@ You manually instruct them like riding a horse or riding a motorcycle.
 
 92
 00:05:57,900 --> 00:05:59,060
-You are very very hands -on.
+You are very very hands-on.
 
 93
 00:05:59,300 --> 00:06:03,980
@@ -740,7 +740,7 @@ Once it becomes a bot, it doesn't rely humans to complete the operations.
 
 186
 00:12:14,740 --> 00:12:20,240
-such as I did Google AdWords 10 -15 years ago, I was deciding the keywords,
+such as I did Google AdWords 10-15 years ago, I was deciding the keywords,
 
 187
 00:12:20,540 --> 00:12:22,720
@@ -940,7 +940,7 @@ People looking at a screen using a keyboard will be something of the past.
 
 236
 00:15:32,800 --> 00:15:38,160
-But that means the white -collar jobs that people got used to do is getting
+But that means the white-collar jobs that people got used to do is getting
 
 237
 00:15:38,160 --> 00:15:43,680
@@ -1108,7 +1108,7 @@ realize they already watch more YouTube than ever.
 
 278
 00:18:35,440 --> 00:18:38,680
-YouTube is a non -fiction source of education.
+YouTube is a non-fiction source of education.
 
 279
 00:18:38,920 --> 00:18:40,200
@@ -1200,7 +1200,7 @@ Once the horses are not there they lose their meaning.
 
 301
 00:20:05,540 --> 00:20:10,780
-Right now most 20 -30 % of the world is doing a desk -based job.
+Right now most 20-30% of the world is doing a desk-based job.
 
 302
 00:20:10,940 --> 00:20:14,900
@@ -1252,7 +1252,7 @@ You are the robot. You command the machines.
 
 314
 00:21:06,600 --> 00:21:11,220
-You do all the hands -on. But the future is there is going to be an intermediary.
+You do all the hands-on. But the future is there is going to be an intermediary.
 
 315
 00:21:11,340 --> 00:21:16,540
@@ -1392,7 +1392,7 @@ but it's not possible to do a lot in the beginning you have
 
 349
 00:23:36,280 --> 00:23:42,020
-to adopt your mind to that right yes the self -learning that was
+to adopt your mind to that right yes the self-learning that was
 
 350
 00:23:42,020 --> 00:23:47,580
@@ -1400,7 +1400,7 @@ my core niche I started this niche 10 years ago there was not that many
 
 351
 00:23:47,580 --> 00:23:51,540
-people in this niche still there's not that many people on the self -learning
+people in this niche still there's not that many people on the self-learning
 
 352
 00:23:51,540 --> 00:23:56,600
@@ -1412,7 +1412,7 @@ learners because once ai does the job we either go to our corner or we
 
 354
 00:24:02,100 --> 00:24:07,440
-become very creative and we become self -learners and our job becomes learning
+become very creative and we become self-learners and our job becomes learning
 
 355
 00:24:07,440 --> 00:24:13,140
@@ -1460,7 +1460,7 @@ We have a free session on the Skool platform where we come together every
 
 366
 00:24:56,820 --> 00:25:02,400
-week on Sunday 1 .30. So they can come in and showcase what they are doing.
+week on Sunday 1.30. So they can come in and showcase what they are doing.
 
 367
 00:25:02,560 --> 00:25:07,560
@@ -1472,11 +1472,11 @@ about what we are grateful of, what we learned, what we implemented that
 
 369
 00:25:11,560 --> 00:25:16,480
-week. Our on -site sessions are mostly about people coming in, doing the
+week. Our on-site sessions are mostly about people coming in, doing the
 
 370
 00:25:16,480 --> 00:25:20,640
-things hands -on because you always need somebody supporting this.
+things hands-on because you always need somebody supporting this.
 
 371
 00:25:20,820 --> 00:25:26,000
@@ -1580,7 +1580,7 @@ You can still stay there, but all of the world is right now moving to an
 
 396
 00:27:00,500 --> 00:27:04,600
-AI -based world. and the large language models are just the engine.
+AI-based world. and the large language models are just the engine.
 
 397
 00:27:05,060 --> 00:27:10,360
@@ -1600,7 +1600,7 @@ the investments. So we are right now in an era everybody is putting
 
 401
 00:27:26,880 --> 00:27:32,420
-their chips in into this new AI -based, new bot -based world.
+their chips in into this new AI-based, new bot-based world.
 
 402
 00:27:32,620 --> 00:27:34,380

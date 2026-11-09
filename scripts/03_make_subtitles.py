@@ -4,7 +4,14 @@ break preferably at sentence ends / pauses."""
 import json
 
 MAX_LINE, MAX_CHARS, MAX_DUR, PAUSE = 42, 76, 5.5, 0.6
-words = [w for s in json.load(open("data/transcript.json"))["segments"] for w in s["words"]]
+import re
+raw_words = [dict(w) for s in json.load(open("data/transcript.json"))["segments"] for w in s["words"]]
+words = []
+for w in raw_words:  # Whisper splits "20-30%" / "desk-based" / "1.30" into pieces: glue them back together
+    if words and re.match(r"^[-%.,!?;:)]", w["w"]):
+        words[-1]["w"] += w["w"]; words[-1]["end"] = w["end"]
+    else:
+        words.append(w)
 
 cues, cur = [], []
 def flush():
