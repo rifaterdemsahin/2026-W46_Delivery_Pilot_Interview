@@ -58,3 +58,13 @@ for n, c in enumerate(cues):
     caps.append({"text": wrap(" ".join(x["w"] for x in c)), "startMs": round(start * 1000),
                  "endMs": round(end * 1000), "timestampMs": round(start * 1000), "confidence": None})
 json.dump(caps, open("data/captions.json", "w"), ensure_ascii=False)
+
+# Cues with per-word timing (source timeline) for the animated white/red subtitles and for remapping after cuts
+cues_out = []
+for n, c in enumerate(cues):
+    end = max(c[-1]["end"], c[0]["start"] + 0.8)
+    if n + 1 < len(cues):
+        end = min(end, cues[n + 1][0]["start"])
+    cues_out.append({"start": c[0]["start"], "end": round(end, 2),
+                     "words": [{"w": x["w"], "start": x["start"], "end": x["end"]} for x in c]})
+json.dump(cues_out, open("data/cues.json", "w"), ensure_ascii=False)

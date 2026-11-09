@@ -1,0 +1,66 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=0
+END=29640
+title=Introduction
+[CHAPTER]
+TIMEBASE=1/1000
+START=29640
+END=105220
+title=Why a Delivery Pilot?
+[CHAPTER]
+TIMEBASE=1/1000
+START=105220
+END=185240
+title=40 Years of Technology: From Atari to AI
+[CHAPTER]
+TIMEBASE=1/1000
+START=185240
+END=308240
+title=From Rider to Driver to Pilot
+[CHAPTER]
+TIMEBASE=1/1000
+START=308240
+END=489820
+title=The Three Levels of AI Skills
+[CHAPTER]
+TIMEBASE=1/1000
+START=489820
+END=610480
+title=The Journey to Pilot Level
+[CHAPTER]
+TIMEBASE=1/1000
+START=610480
+END=873920
+title=Chatbots, Agents and Bots Explained
+[CHAPTER]
+TIMEBASE=1/1000
+START=873920
+END=1071040
+title=Do We Still Need to Learn Coding?
+[CHAPTER]
+TIMEBASE=1/1000
+START=1071040
+END=1144180
+title=Continuous Learning and Adult Education
+[CHAPTER]
+TIMEBASE=1/1000
+START=1144180
+END=1360260
+title=Teaching, Gatekeepers and the Future of Work
+[CHAPTER]
+TIMEBASE=1/1000
+START=1360260
+END=1474740
+title=Adapting the Mind and Self-Learning
+[CHAPTER]
+TIMEBASE=1/1000
+START=1474740
+END=1594900
+title=Cambridge Workshops and the School Community
+[CHAPTER]
+TIMEBASE=1/1000
+START=1594900
+END=1658280
+title="AI Isn't for Me" and the Bigger Picture

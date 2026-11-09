@@ -1,0 +1,137 @@
+{
+ "stats": {
+  "source_s": 1693.44,
+  "main_s": 1658.3,
+  "removed_s": 35.2,
+  "main_cuts": 16,
+  "highlights_s": 52.8,
+  "highlight_clips": 7,
+  "highlight_intervals": 7
+ },
+ "main": [
+  {
+   "src_start": 9.72,
+   "src_end": 194.8,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 195.44,
+   "src_end": 348.28,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 349.64,
+   "src_end": 622.04,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 622.92,
+   "src_end": 627.2,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 627.8,
+   "src_end": 634.92,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 635.92,
+   "src_end": 647.28,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 648.08,
+   "src_end": 740.68,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 741.16,
+   "src_end": 892.24,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 893.68,
+   "src_end": 998.48,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 998.96,
+   "src_end": 1045.36,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 1049.56,
+   "src_end": 1068.88,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 1069.88,
+   "src_end": 1382.72,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 1383.64,
+   "src_end": 1498.12,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 1503.92,
+   "src_end": 1624.08,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 1624.92,
+   "src_end": 1630.84,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 1631.44,
+   "src_end": 1689.04,
+   "reason": "speech (pauses tightened)"
+  }
+ ],
+ "highlights": [
+  {
+   "src_start": 239.44,
+   "src_end": 245.68,
+   "reason": "Hook: the boldest claim, opens the reel",
+   "label": "Hook: the boldest claim, opens the reel"
+  },
+  {
+   "src_start": 286.36,
+   "src_end": 295.84,
+   "reason": "Concrete proof of scale, makes the hook credible",
+   "label": "Concrete proof of scale, makes the hook credible"
+  },
+  {
+   "src_start": 299.28,
+   "src_end": 305.48,
+   "reason": "The core metaphor in one line",
+   "label": "The core metaphor in one line"
+  },
+  {
+   "src_start": 403.92,
+   "src_end": 410.6,
+   "reason": "Vivid change in how people work",
+   "label": "Vivid change in how people work"
+  },
+  {
+   "src_start": 886.08,
+   "src_end": 892.24,
+   "reason": "What a bot is, in plain words",
+   "label": "What a bot is, in plain words"
+  },
+  {
+   "src_start": 1074.92,
+   "src_end": 1082.08,
+   "reason": "Honest risk beat, adds credibility",
+   "label": "Honest risk beat, adds credibility"
+  },
+  {
+   "src_start": 1461.4,
+   "src_end": 1472.28,
+   "reason": "Closing payoff: the human role",
+   "label": "Closing payoff: the human role"
+  }
+ ]
+}

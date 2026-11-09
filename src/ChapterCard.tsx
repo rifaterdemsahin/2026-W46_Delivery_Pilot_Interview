@@ -1,16 +1,17 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
 import { chapters } from "./config";
+import { outFrameAt, type TimelineCut } from "./edit";
 
 const SHOW_S = 5; // seconds a chapter title card stays on screen
 
-export const ChapterCard = () => {
+export const ChapterCard = ({ timeline }: { timeline: TimelineCut[] }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const t = frame / fps;
-  const idx = chapters.findLastIndex((c) => t >= c.start);
+  const starts = chapters.map((c) => outFrameAt(timeline, c.start));
+  const idx = starts.findLastIndex((f) => frame >= f);
   const chapter = chapters[idx];
   if (!chapter) return null;
-  const local = (t - chapter.start) * fps;
+  const local = frame - starts[idx];
   const total = SHOW_S * fps;
   if (local >= total) return null;
   const fade = 12;
@@ -23,8 +24,8 @@ export const ChapterCard = () => {
           opacity,
           transform: `translateX(${x}px)`,
           fontFamily: "Helvetica, Arial, sans-serif",
-          background: "rgba(10,25,60,0.85)",
-          borderLeft: "8px solid #4da3ff",
+          background: "rgba(0,0,0,0.78)",
+          borderLeft: "8px solid #ff2b2b",
           color: "white",
           padding: "14px 26px",
           borderRadius: 6,

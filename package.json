@@ -10,7 +10,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "studio": "remotion studio src/index.ts",
     "typecheck": "tsc",
-    "still": "remotion still src/index.ts Main out/still.png --frame=1500"
+    "still": "remotion still src/index.ts Main out/still.png --frame=1500",
+    "render:highlights": "remotion render src/index.ts Highlights out/highlights.mp4 --codec=h264 --crf=20",
+    "render:main": "scripts/06_render_and_embed.sh main"
   },
   "repository": {
     "type": "git",

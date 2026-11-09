@@ -9,3 +9,7 @@ ffmpeg -y -hide_banner -loglevel error -stats -i "$SOURCE_VIDEO" \
   -c:v h264_videotoolbox -b:v 4M -pix_fmt yuv420p \
   -c:a aac -b:a 128k -ac 2 -movflags +faststart "$WORK_DIR/proxy.mp4"
 ls -lh "$WORK_DIR/proxy.mp4"
+# Remotion's bundler ignores symlinks in public/, so use a hard link (same file, no extra disk).
+mkdir -p public
+rm -f public/proxy.mp4
+ln "$WORK_DIR/proxy.mp4" public/proxy.mp4

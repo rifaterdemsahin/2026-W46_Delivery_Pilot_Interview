@@ -49,3 +49,20 @@
 - **Captions as JSON:** `scripts/03_make_subtitles.py` also writes `data/captions.json` in `@remotion/captions` format, so the composition needs no runtime SRT parsing or delayRender fetch.
 - **Media access:** `public/proxy.mp4` is a symlink to `work/proxy.mp4`. Both are git-ignored, so no video ever enters the repo.
 - **Delivery:** `scripts/06_render_and_embed.sh` renders, then ffmpeg stream-copies and adds native MP4 chapters (from `chapters.ffmetadata`) and a toggleable `mov_text` subtitle track. Burned-in captions suit social platforms; the soft track suits players.
+
+## 9. Transcript saved + ETA (2026-11-09)
+- `data/transcript.json` (word timings) and `data/transcript.txt` (readable, `[mm:ss] text`) are committed. They are text metadata (about 400 KB).
+- `02_transcribe.py` now prints the audio length and an up-front estimated finish time, then a live line every 5 s (`% done, ETA clock time, minutes left`). It swaps mlx-whisper's tqdm bar for one that does this. Verified on a 6-minute clip: 27x realtime, ETA lines correct. Estimate uses 20x realtime before measuring.
+
+## 10. Cut decisions (2026-11-09)
+- **Approach:** an edit decision list (EDL) in source time, `data/cuts.json`, produced by `scripts/07_plan_cuts.py`. Remotion never hard-codes cut times, so the edit is code-reviewable and re-runnable.
+- **Main edit:** drop pre-roll and post-roll, shorten pauses over 0.8 s to about 0.4 s, cut fillers. Result: 16 cuts, 35.2 s removed (1693.4 to 1658.3 s). The saving is small because this speaker rarely pauses long. I chose not to cut more, because removing content or mid-sentence breaths would hurt the interview's natural feel.
+- **Highlights reel:** 7 self-contained claims chosen by Claude from the transcript, hook first ("AI is building another AI"), then scale (300 bots), the pilot metaphor, the new way of working, what a bot is, a risk beat, and a payoff close. Each is found by exact start/end phrase at word level (asserted unique), so timing follows the transcript. Total 52.8 s.
+- **Frame snapping:** all cut points are snapped to the 25 fps grid, so Python's output timeline equals Remotion's frame count exactly (rendered reel measured 52.800 s).
+- **Kept in sync:** because cuts shift time, `07` also writes `subtitles.main.srt` and `chapters.main.*` on the output timeline. The mux step uses these, not the source-time files.
+
+## 11. Remotion edit + animated captions (2026-11-09)
+- `Main` and `Highlights` compositions share one `Edit` component: `Series` of `OffthreadVideo` clips (`startFrom` from the EDL), then captions, chapter cards (main only) and progress bar (main only).
+- **Captions:** uppercase Impact, white with heavy black stroke. The cue springs in. The word being spoken turns red and pops (spring scale and slight tilt). Words outside the kept footage are hidden, so a cut that starts mid-cue never shows words that were cut. Checked on rendered frames.
+- **Gotcha:** Remotion's bundler does not follow symlinks in `public/` (404). `05_make_proxy.sh` now makes a hard link (no extra disk).
+- **Verified:** `out/highlights.mp4` rendered in 35 s, 52.8 s long, captions and audio present. The full main render (about 18 min) is scripted but not yet run.
