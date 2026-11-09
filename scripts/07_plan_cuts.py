@@ -68,11 +68,65 @@ def tighten(i0, i1, reason):
 
 
 # ---- MAIN ----
+real = [i for i, x in enumerate(toks) if x]  # skip punctuation-only tokens such as "%"
+ftoks = [toks[i] for i in real]
+
+
+def span(a, b):
+    """Word-index span from start phrase a to the first end phrase b after it (start asserted unique)."""
+    pa = [x for x in map(norm, a.split()) if x]
+    pb = [x for x in map(norm, b.split()) if x]
+    ha = [k for k in range(len(ftoks) - len(pa) + 1) if ftoks[k:k + len(pa)] == pa]
+    assert len(ha) == 1, f"start phrase {a!r} matched {len(ha)}"
+    hb = [k for k in range(ha[0], len(ftoks) - len(pb) + 1) if ftoks[k:k + len(pb)] == pb]
+    assert hb, f"end phrase {b!r} not found after start"
+    return real[ha[0]], real[hb[0] + len(pb) - 1]
+
+
+# Duplicated ideas removed from the MAIN edit. Rule: keep the first / fullest statement, drop restatements,
+# never cut a sentence whose meaning is not said elsewhere. (start phrase, end phrase, why, where the idea is kept)
+DEDUPE = [
+    ("right it seems that today we dont need programmers", "crazy program that happened",
+     "Host restates the guest's point (no need for programmers, build apps without coding)", "2:44-3:15 guest says it first"),
+    ("what we need to become is become pilots", "doing their jobs properly",
+     "Repeats 'become pilots rather than drivers' and the Cambridge-bots aside; host then says the bots tangent was too fast", "5:56-6:50 explains rider/driver/pilot in full"),
+    ("if we never use ai we need to first become a writer", "old way of doing things",
+     "Recap of rider/driver/pilot and 'AI builds the AI', already explained twice", "5:56-7:13 levels; 4:38-5:00 bots build bots"),
+    ("what is happening right now is because the language", "but that means",
+     "Says again that people become pilots and stop using keyboards", "6:44-7:13 stop typing, start directing"),
+    ("a pilot versus a driver", "to answer your question",
+     "Third telling of the horse/car/plane ladder, plus a stuttered repeat of 'to answer your question'", "5:56-6:50 levels"),
+    ("a plane versus a car", "do meaningful stuff",
+     "Repeats plane-versus-car and 'become more creative'", "24:35-25:01 what a pilot needs (creative, builder...)"),
+    ("so the bot is more probabilistic", "complete the goal",
+     "Repeats 'bots are probabilistic' within seconds of saying it", "9:16-9:35 and 14:19 first statements"),
+    ("lets talk about ai skills first", "ai skills first",
+     "Host asks to 'talk about AI skills' twice in 30 seconds", "5:22 first ask"),
+]
 first_seg = next(s for s in segs if "hello" in s["text"].lower())
-last_seg = [s for s in segs if "thank you" in s["text"].lower()][-1]
+last_seg = [s for s in segs if "thank you very much" in s["text"].lower()][-1]  # drops the extra trailing "Thank you."
 i0 = next(i for i, w in enumerate(words) if w["start"] >= first_seg["start"] - 0.01)
 i1 = max(i for i, w in enumerate(words) if w["end"] <= last_seg["end"] + 0.01)
-main = tighten(i0, i1, "speech (pauses tightened)")
+
+removed = []
+for a, b, why, kept in DEDUPE:
+    ia, ib = span(a, b)
+    assert i0 <= ia <= ib <= i1, f"dedupe span outside main range: {a!r}"
+    removed.append(dict(ia=ia, ib=ib, src_start=words[ia]["start"], src_end=words[ib]["end"],
+                        text=" ".join(w["w"] for w in words[ia:ib + 1]), why=why, kept_at=kept))
+removed.sort(key=lambda x: x["ia"])
+for x, y in zip(removed, removed[1:]):
+    assert x["ib"] < y["ia"], "overlapping dedupe spans"
+
+main, cur = [], i0
+for x in removed:
+    if x["ia"] > cur:
+        main += tighten(cur, x["ia"] - 1, "speech (pauses tightened)")
+    cur = x["ib"] + 1
+main += tighten(cur, i1, "speech (pauses tightened)")
+for x in removed:  # show each join so the edit can be proof-read
+    ctx = lambda lo, hi: " ".join(w["w"] for w in words[lo:hi])
+    print(f"CUT {x['src_start']:7.1f}-{x['src_end']:7.1f} ({x['src_end']-x['src_start']:4.1f}s)  ...{ctx(max(0,x['ia']-7),x['ia'])} [X] {ctx(x['ib']+1,x['ib']+8)}...")
 
 # ---- HIGHLIGHTS ----  (start phrase, end phrase, why it lands)
 HIGHLIGHTS = [
@@ -164,10 +218,62 @@ write_chapters("chapters.combined",
                hl_s + main_s)
 
 src_len = chapters[-1]["end"]
+dedupe_s = sum(x["src_end"] - x["src_start"] for x in removed)
 stats = {
     "source_s": src_len, "main_s": round(tot_main / FPS, 1), "removed_s": round(src_len - tot_main / FPS, 1),
+    "duplicates_removed_s": round(dedupe_s, 1), "duplicate_cuts": len(removed),
     "main_cuts": len(main), "highlights_s": round(tot_hl / FPS, 1), "highlight_clips": len(HIGHLIGHTS),
     "highlight_intervals": len(highlights), "combined_s": round((tot_hl + tot_main) / FPS, 1),
 }
-json.dump({"stats": stats, "main": main, "highlights": highlights}, open("data/cuts.json", "w"), indent=1)
+removed_out = [{k: (round(v, 2) if isinstance(v, float) else v) for k, v in x.items() if k not in ("ia", "ib")} for x in removed]
+json.dump({"stats": stats, "main": main, "highlights": highlights, "removed": removed_out}, open("data/cuts.json", "w"), indent=1)
+
+
+# ---- TIMELINE.md: always regenerated with the cuts ----
+def mmss(x):
+    x = int(round(x)); return f"{x // 60:02}:{x % 60:02}"
+clean = lambda s: re.sub(r"[:;#\"]", "-", s)
+comb_chs = json.load(open("data/chapters.combined.json"))
+lines = ["# Timeline", "",
+         "Regenerated by `scripts/07_plan_cuts.py` every time the cuts change. Times are on the **Combined** output "
+         f"(highlights first, then the full interview), total **{mmss((tot_hl + tot_main) / FPS)}**.", "",
+         "## Overview", "", "```mermaid", "gantt", "    title Combined timeline (mm:ss)", "    dateFormat mm:ss", "    axisFormat %M:%S",
+         "    section Sections"]
+for i, ch in enumerate(comb_chs):
+    lines.append(f"    {clean(ch['title'])} :{'done' if i == 0 else 'active' if i % 2 else 'crit'}, c{i}, {mmss(ch['start'])}, {mmss(max(ch['end'], ch['start'] + 1))}")
+ex_path = "data/explainers.json"
+exs = json.load(open(ex_path)) if __import__("os").path.exists(ex_path) else []
+if exs:
+    lines.append("    section Explainers (left panel)")
+    for i, e in enumerate(exs):
+        s0 = to_out(m_main, tot_main, e["start"]) + hl_s
+        lines.append(f"    {clean(e['title'])} :e{i}, {mmss(s0)}, {mmss(s0 + e['dur'])}")
+lines += ["```", "", "## Numbers", "", "| | seconds |", "|---|---|",
+          f"| Source video | {stats['source_s']} |", f"| Main edit | {stats['main_s']} |",
+          f"| Removed in total | {stats['removed_s']} |", f"| of which duplicated ideas | {stats['duplicates_removed_s']} ({len(removed)} cuts) |",
+          f"| Highlights reel | {stats['highlights_s']} |", f"| Combined | {stats['combined_s']} |", "",
+          "## Duplicates removed (meaning kept)", "",
+          "| Source time | Length | Removed | Why | Idea kept at |", "|---|---|---|---|---|"]
+for x in removed:
+    txt = x["text"] if len(x["text"]) < 150 else x["text"][:70] + " ... " + x["text"][-70:]
+    lines.append(f"| {mmss(x['src_start'])}-{mmss(x['src_end'])} | {x['src_end'] - x['src_start']:.0f} s | {txt} | {x['why']} | {x['kept_at']} |")
+lines += ["", "## Sections", "", "| Output time | Section | Length |", "|---|---|---|"]
+for ch in comb_chs:
+    lines.append(f"| {mmss(ch['start'])} | {ch['title']} | {mmss(ch['end'] - ch['start'])} |")
+if exs:
+    lines += ["", "## Explainers", "", "| Output time | Kind | Title | Length |", "|---|---|---|---|"]
+    for e in exs:
+        lines.append(f"| {mmss(to_out(m_main, tot_main, e['start']) + hl_s)} | {e['kind']} | {e['title']} | {e['dur']:.0f} s |")
+lines += ["", "## Highlights reel (first 52.8 s)", "", "| Output time | Source time | Why it is in |", "|---|---|---|"]
+acc = 0.0
+for h in highlights:
+    d = h["src_end"] - h["src_start"]
+    lines.append(f"| {mmss(acc)} | {mmss(h['src_start'])}-{mmss(h['src_end'])} | {h.get('label', '')} |"); acc += d
+lines += ["", "## Kept footage (main edit)", "", f"{len(main)} intervals; everything not listed was cut (pre-roll, long pauses, duplicates).", "",
+          "| Output time | Source time | Length |", "|---|---|---|"]
+acc = hl_s
+for iv in main:
+    d = iv["src_end"] - iv["src_start"]
+    lines.append(f"| {mmss(acc)} | {mmss(iv['src_start'])}-{mmss(iv['src_end'])} | {d:.0f} s |"); acc += d
+open("docs/TIMELINE.md", "w").write("\n".join(lines) + "\n")
 print(json.dumps(stats, indent=1))

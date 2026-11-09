@@ -4,7 +4,7 @@
 
 > 🚫 **This repo holds code, metadata and docs only.** The raw video (`~/Downloads/C1193.MP4`, 20.9 GB) and every generated video/audio file (`work/`, `out/`, `public/*.mp4`) are git-ignored and never committed.
 
-📚 **Docs:** [🧭 workflow: prompts and stages](docs/WORKFLOW.md) · [🗺️ plan](docs/PLAN.md) · [🧠 rationale for every step](docs/DECISIONS.md) · [📝 readable transcript](data/transcript.txt)
+📚 **Docs:** [🕒 timeline](docs/TIMELINE.md) · [🧭 workflow: prompts and stages](docs/WORKFLOW.md) · [🗺️ plan](docs/PLAN.md) · [🧠 rationale for every step](docs/DECISIONS.md) · [📝 readable transcript](data/transcript.txt)
 
 ## 👥 Speakers
 🎙️ **Marianna** asks the questions · 🧑‍💻 **Rifat Erdem Sahin** answers ([data/speakers.json](data/speakers.json)).

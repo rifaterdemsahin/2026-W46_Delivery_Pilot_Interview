@@ -1,13 +1,15 @@
 {
  "stats": {
   "source_s": 1693.44,
-  "main_s": 1658.3,
-  "removed_s": 35.2,
-  "main_cuts": 16,
+  "main_s": 1495.8,
+  "removed_s": 197.6,
+  "duplicates_removed_s": 159.0,
+  "duplicate_cuts": 8,
+  "main_cuts": 21,
   "highlights_s": 52.8,
   "highlight_clips": 7,
   "highlight_intervals": 7,
-  "combined_s": 1711.1
+  "combined_s": 1548.6
  },
  "main": [
   {
@@ -16,12 +18,22 @@
    "reason": "speech (pauses tightened)"
   },
   {
-   "src_start": 195.44,
+   "src_start": 223.04,
+   "src_end": 299.28,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 318.44,
    "src_end": 348.28,
    "reason": "speech (pauses tightened)"
   },
   {
-   "src_start": 349.64,
+   "src_start": 352.24,
+   "src_end": 440.28,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 497.84,
    "src_end": 622.04,
    "reason": "speech (pauses tightened)"
   },
@@ -47,17 +59,27 @@
   },
   {
    "src_start": 741.16,
+   "src_end": 875.52,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 879.72,
    "src_end": 892.24,
    "reason": "speech (pauses tightened)"
   },
   {
    "src_start": 893.68,
+   "src_end": 930.16,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 950.8,
    "src_end": 998.48,
    "reason": "speech (pauses tightened)"
   },
   {
    "src_start": 998.96,
-   "src_end": 1045.36,
+   "src_end": 1023.96,
    "reason": "speech (pauses tightened)"
   },
   {
@@ -67,6 +89,11 @@
   },
   {
    "src_start": 1069.88,
+   "src_end": 1362.96,
+   "reason": "speech (pauses tightened)"
+  },
+  {
+   "src_start": 1371.36,
    "src_end": 1382.72,
    "reason": "speech (pauses tightened)"
   },
@@ -87,7 +114,7 @@
   },
   {
    "src_start": 1631.44,
-   "src_end": 1689.04,
+   "src_end": 1688.16,
    "reason": "speech (pauses tightened)"
   }
  ],
@@ -133,6 +160,64 @@
    "src_end": 1472.28,
    "reason": "Closing payoff: the human role",
    "label": "Closing payoff: the human role"
+  }
+ ],
+ "removed": [
+  {
+   "src_start": 195.6,
+   "src_end": 222.9,
+   "text": "Right, it seems that today we don't need programmers as much as we needed them before because today we can build a lot without even being a friend with software engineer. And I mean that without knowing about coding we can create an application. Isn't it amazing? Isn't it that crazy program that happened?",
+   "why": "Host restates the guest's point (no need for programmers, build apps without coding)",
+   "kept_at": "2:44-3:15 guest says it first"
+  },
+  {
+   "src_start": 299.38,
+   "src_end": 318.26,
+   "text": "What we need to become is, become pilots rather than drivers and make sure that this is working all together. I created the bots to invite people to the Cambridge events. It sometimes works, sometimes doesn't work. I need to make sure I fly over it. I understand the direction is correct. So the bots are doing their jobs properly.",
+   "why": "Repeats 'become pilots rather than drivers' and the Cambridge-bots aside; host then says the bots tangent was too fast",
+   "kept_at": "5:56-6:50 explains rider/driver/pilot in full"
+  },
+  {
+   "src_start": 349.8,
+   "src_end": 351.86,
+   "text": "Let's talk about AI skills first.",
+   "why": "Host asks to 'talk about AI skills' twice in 30 seconds",
+   "kept_at": "5:22 first ask"
+  },
+  {
+   "src_start": 440.42,
+   "src_end": 497.86,
+   "text": "If we never use AI, we need to first become a writer. Then we need to understand, oh, there is Claude Code, we can create programs. We don't need to buy the programs anymore. Then we are going to go into a world of bots. We are going to understand AI is going to build the AI, not us building the AI, not me building the boats. That's a completely different world. Once we come there, then we have the necessary skills of the future. Driving and riding is still the old dinosaur world that I'm coming from. Once people see the code, they are like, okay, I can create my website. Yes, you can create your website. That's good. That's not a bad skill. from a rider to driver definitely but focus on the new world the boats are building the boats that the economic pressures are getting removed so this is a critical world that we are gonna go riding driving technology is the old way of doing things",
+   "why": "Recap of rider/driver/pilot and 'AI builds the AI', already explained twice",
+   "kept_at": "5:56-7:13 levels; 4:38-5:00 bots build bots"
+  },
+  {
+   "src_start": 875.58,
+   "src_end": 879.42,
+   "text": "So the bot is more probabilistic to be able to complete the goal.",
+   "why": "Repeats 'bots are probabilistic' within seconds of saying it",
+   "kept_at": "9:16-9:35 and 14:19 first statements"
+  },
+  {
+   "src_start": 930.26,
+   "src_end": 950.8,
+   "text": "What is happening right now is because the language gets abstracted, people are going to become pilots rather than riders or drivers. Those riding and driving will still exist in a hobby level. People looking at a screen using a keyboard will be something of the past. But that means",
+   "why": "Says again that people become pilots and stop using keyboards",
+   "kept_at": "6:44-7:13 stop typing, start directing"
+  },
+  {
+   "src_start": 1024.2,
+   "src_end": 1045.12,
+   "text": "A pilot versus a driver. A pilot has more places to go than a car driver. A car driver has more places than a go than a rider because rider always depends on the horse car also depends on the car the pilot depends on the plane the plane has more engineering in it to answer your question",
+   "why": "Third telling of the horse/car/plane ladder, plus a stuttered repeat of 'to answer your question'",
+   "kept_at": "5:56-6:50 levels"
+  },
+  {
+   "src_start": 1362.98,
+   "src_end": 1371.04,
+   "text": "a plane versus a car you You need to become much, much, much more creative and do meaningful stuff.",
+   "why": "Repeats plane-versus-car and 'become more creative'",
+   "kept_at": "24:35-25:01 what a pilot needs (creative, builder...)"
   }
  ]
 }
