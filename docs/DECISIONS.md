@@ -204,3 +204,6 @@
 - **Open check:** the captions say "Cambridge Sixth-form college" (from correction rule 10), but the event location is Hills Road Sixth Form College. I do not know what the guest actually said, so I left the captions alone and added a checklist item; if the audio says Hills Road, add a rule and re-render.
 - **X post** documented: https://x.com/rifaterdemsahin/status/2119868364722208900 (links.json, X page, overview, README, checklist).
 - **Skool version:** the full `Combined` render with music and sound effects, exported as `~/Downloads/C1193_skool_v0.15.0.mp4` (25:49, 345 MB, 1280x720, -16.0 LUFS, peak -1.2 dBFS, 14 chapters, soft subtitle track). The LinkedIn cut with sound is `C1193_linkedin_sound_v0.15.0.mp4` (12:36) and the X cut is `C1193_x_v0.15.0.mp4` (1:22). The YouTube upload is the earlier Combined without sound. I verified duration, streams, chapters and loudness; I have not listened to the mix.
+
+## 34. Audio assets are committed (2026-11-09)
+- `.gitignore` blocked `*.mp3`, so the 8 generated clips were not in v0.15.0. They are small (5.6 MB in total) and regenerating costs money and gives different results, so `public/audio/*.mp3` is now committed alongside `data/audio_manifest.json` (prompt, model, length, estimated cost). Video and the raw source stay out of git. A fresh clone can now render the sound versions without calling fal.ai.

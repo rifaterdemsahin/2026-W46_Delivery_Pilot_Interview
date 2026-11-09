@@ -25,3 +25,6 @@ __pycache__/
 *.pem
 public/thumb_frame.jpg
 public/thumb_frame_b.jpg
+
+# Generated sound effects and music are project assets (small, listed in data/audio_manifest.json)
+!public/audio/*.mp3
