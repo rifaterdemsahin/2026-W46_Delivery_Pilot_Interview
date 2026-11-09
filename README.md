@@ -4,7 +4,7 @@
 
 > 🚫 **This repo holds code, metadata and docs only.** The raw video (`~/Downloads/C1193.MP4`, 20.9 GB) and every generated video/audio file (`work/`, `out/`, `public/*.mp4`) are git-ignored and never committed.
 
-📚 **Docs:** [🕒 timeline](docs/TIMELINE.md) · [🧭 workflow: prompts and stages](docs/WORKFLOW.md) · [🗺️ plan](docs/PLAN.md) · [🧠 rationale for every step](docs/DECISIONS.md) · [📝 readable transcript](data/transcript.txt)
+📚 **Docs:** [🕒 timeline](docs/TIMELINE.md) · [🏷️ changelog](CHANGELOG.md) · [🤖 CLAUDE.md](CLAUDE.md) · [🧭 workflow: prompts and stages](docs/WORKFLOW.md) · [🗺️ plan](docs/PLAN.md) · [🧠 rationale for every step](docs/DECISIONS.md) · [📝 readable transcript](data/transcript.txt)
 
 ## 👥 Speakers
 🎙️ **Marianna** asks the questions · 🧑‍💻 **Rifat Erdem Sahin** answers ([data/speakers.json](data/speakers.json)).
@@ -114,6 +114,9 @@ flowchart TD
 
 💸 Images use `fal-ai/flux/schnell`, a cheap 4-step model (about $0.01 for everything). The art is text-free and **labels are drawn by Remotion**, because image models garble text.
 
+## 🏷️ Versions
+Every deliverable is versioned: current **v0.12.0** (see [CHANGELOG](CHANGELOG.md)). Each version has a git tag and a snapshot in `versions/v*/`; earlier thumbnails are kept in `assets/thumbnails/`. New version: `scripts/version.py bump minor "notes"`.
+
 ## 🔐 Secrets
 🗝️ API keys live only in `.env` (git-ignored; copy `.env.example`). 🛡️ `.githooks/pre-commit` blocks any commit containing something that looks like a key. Enable it once per clone:
 ```bash
@@ -151,6 +154,8 @@ Needs `ffmpeg`/`ffprobe` (Homebrew) and an Apple Silicon Mac for mlx-whisper. �
 ## 🗂️ Repo map
 ```
 README.md          you are here
+CLAUDE.md          project rules for Claude Code (read first)
+CHANGELOG.md       every version, and VERSION / versions/v*/ snapshots
 docs/              PLAN, DECISIONS (rationale per step), WORKFLOW (prompts and stages)
 scripts/           01-09 pipeline scripts (+ 02b corrections, 06 render)
 data/              transcript, subtitles, chapters, cuts (EDL), explainers, corrections, speakers

@@ -1,0 +1,30 @@
+{
+ "version": "0.9.0",
+ "date": "2026-11-09",
+ "based_on_commit": "9cbe92e",
+ "notes": "Audio v2 (denoise + gate, -16 LUFS), bigger footer, zoom 1.22 - main edit still 27:38 (before dedupe)",
+ "files": [
+  "data/cuts.json",
+  "data/chapters.json",
+  "data/chapters.main.json",
+  "data/chapters.combined.json",
+  "data/explainers.json",
+  "data/corrections.json",
+  "data/description.txt",
+  "data/subtitles.combined.srt",
+  "data/subtitles.main.srt",
+  "data/transcript.txt",
+  "docs/PUBLISH.md",
+  "assets/thumbnail.jpg"
+ ],
+ "stats": {
+  "source_s": 1693.44,
+  "main_s": 1658.3,
+  "removed_s": 35.2,
+  "main_cuts": 16,
+  "highlights_s": 52.8,
+  "highlight_clips": 7,
+  "highlight_intervals": 7,
+  "combined_s": 1711.1
+ }
+}

@@ -139,3 +139,10 @@
 - **fal.ai:** 3 background variants with `fal-ai/flux/schnell` (about $0.005 total, cheap model), I picked the pilot-facing-the-wall one. Others: a swarm of red drones in a storm sky, and an airplane made of bots. The art is text-free and all words are drawn in Remotion, since image models garble text.
 - **Honesty check:** "300 bots" is the guest's own claim in the interview (04:38), not invented.
 - **A/B idea:** upload `assets/thumbnail.jpg` and test it against the earlier "Become a Delivery Pilot" version in YouTube's thumbnail test.
+
+## 23. Versions and CLAUDE.md (2026-11-09)
+- **Versioning scheme:** one project version `0.MINOR.PATCH` (file `VERSION`), a git tag per version, a snapshot of the small deliverables in `versions/v<version>/` with `manifest.json` (commit, date, notes, stats), and an entry in `CHANGELOG.md` plus a "current artifact versions" table at its top. `scripts/version.py bump` does the snapshot, changelog and version bump in one command; `scripts/version.py snapshot <ref> <ver>` recovers an old version from git history.
+- **Why snapshots, not only tags:** tags freeze the whole repo, but the user wants to compare artifacts side by side (thumbnail v1 vs v2, main edit 27:38 vs 24:56) without checking out old commits. Snapshots hold only small text/metadata and the thumbnail (about 300 KB each, 1.2 MB for the four recovered ones); media is excluded and reproducible.
+- **Retroactive versions:** v0.1.0 to v0.11.0 were tagged on the matching commits, and v0.8.0 to v0.11.0 were snapshotted from history. Verified: the v0.9.0 snapshot has the main edit at 1658.3 s, v0.10.0 at 1495.8 s.
+- **Thumbnails:** both kept, `assets/thumbnails/v1-generic-...jpg` and `v2-curiosity-...jpg`; `assets/thumbnail.jpg` is always the latest.
+- **CLAUDE.md:** the user's standing instructions (document rationale, commit/push every step, no media, never commit keys, keep README flow current, always timeline, always version, ETA, Chrome, cost-effective fal.ai) plus conventions and gotchas, so any future session follows the same rules without being re-told.

@@ -17,6 +17,15 @@ Rule that applies to every stage: **document the rationale, commit and push at e
 | 8 | "there are type issues. Such as the person asking questions is Marianna, person answering is Rifat Erdem Sahin > do these updates: [17 before/after corrections, plus 5 unconfirmed left switched off]" | Transcript corrections as data + script, speakers recorded | `data/corrections.json`, `scripts/02b_apply_corrections.py`, `data/speakers.json` |
 | 9 | "create one more timeline where the highlights are at the start and then the Main goes in / at the bottom have an indicator how long one section is for. Use Fal.ai for the complex parts to be explained with visuals and graphics [key given] > use simple graphics on the left with animations explaining the subject, and if it is a complex one use an infographic. Use cost effective models. Never commit push my ai keys" | `Combined` timeline + section bar, explainers (simple animated graphics, fal.ai infographics), secret guard | `src/SectionBar.tsx`, `src/Explainer.tsx`, `scripts/08`, `scripts/09`, `.githooks/pre-commit` |
 
+| 10 | "zoom in a little bit" / "zoom in a bit more" / "make the bottom footer a bit bigger" | Footage zoom 1.12 then 1.22, footer 48 px | `src/config.ts`, `src/SectionBar.tsx` |
+| 11 | "create a thumbnail and title and description" | Thumbnail v1, title, description with chapters | `scripts/10_make_thumbnail.sh`, `scripts/11_make_publish.py`, `docs/PUBLISH.md` |
+| 12 | "remove the topics that are getting duplicated in the video, keep the meaning" and "always create a timeline" | 8 documented duplicate cuts; `docs/TIMELINE.md` generated every run | `scripts/07_plan_cuts.py`, `docs/TIMELINE.md` |
+| 13 | "make the audio better if you can, clean background noise" | Denoise + gate + loudness, measured | `scripts/05b_clean_audio.py` |
+| 14 | "make the thumbnail curiosity triggering, use the fal.ai" | Thumbnail v2 | `scripts/12_generate_thumbnail_art.py`, `src/Thumbnail.tsx` |
+| 15 | "always have versions on what you create. add a claude.md" | Versioning system and CLAUDE.md | `scripts/version.py`, `CHANGELOG.md`, `CLAUDE.md`, `versions/` |
+| 16 (queued) | "use sound effects wherever it makes sense and music, use fal.ai" | next | |
+| 17 (queued) | "include the costs in a page, create a page and deploy to GitHub Pages with the yaml, link at top of README" and "a YouTube metadata page, a LinkedIn page and one for X to copy and publish" | after sound | |
+
 (The API key was supplied in the chat; it is stored only in the git-ignored `.env` and is deliberately not recorded here.)
 
 ## Stages (pipeline)

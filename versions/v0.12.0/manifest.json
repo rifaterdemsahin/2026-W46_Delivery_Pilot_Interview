@@ -1,0 +1,33 @@
+{
+ "version": "0.12.0",
+ "date": "2026-11-09",
+ "based_on_commit": "410caf0",
+ "notes": "Versioning system (VERSION, CHANGELOG, versions/ snapshots, tags) and CLAUDE.md project rules",
+ "files": [
+  "data/cuts.json",
+  "data/chapters.json",
+  "data/chapters.main.json",
+  "data/chapters.combined.json",
+  "data/explainers.json",
+  "data/corrections.json",
+  "data/description.txt",
+  "data/subtitles.combined.srt",
+  "data/subtitles.main.srt",
+  "data/transcript.txt",
+  "docs/TIMELINE.md",
+  "docs/PUBLISH.md",
+  "assets/thumbnail.jpg"
+ ],
+ "stats": {
+  "source_s": 1693.44,
+  "main_s": 1495.8,
+  "removed_s": 197.6,
+  "duplicates_removed_s": 159.0,
+  "duplicate_cuts": 8,
+  "main_cuts": 21,
+  "highlights_s": 52.8,
+  "highlight_clips": 7,
+  "highlight_intervals": 7,
+  "combined_s": 1548.6
+ }
+}
