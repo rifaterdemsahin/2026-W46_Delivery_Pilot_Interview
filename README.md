@@ -17,19 +17,25 @@ flowchart TD
     WAV[("work/audio.wav<br/>git-ignored")]:::done
     S2["02 transcribe.py<br/>mlx-whisper large-v3-turbo<br/>prints ETA while running"]:::done
     FIX["02b apply_corrections.py<br/>data/corrections.json, 17 active rules"]:::done
-    TJ[/"data/transcript.json + transcript.txt<br/>corrected; transcript.raw.json = untouched Whisper"/]:::done
+    TJ[/"data/transcript.json + .txt<br/>corrected; transcript.raw.json = Whisper"/]:::done
     S3["03 make_subtitles.py"]:::done
-    SUB[/"subtitles.srt/.vtt, captions.json,<br/>cues.json (per-word timing)"/]:::done
+    SUB[/"subtitles.srt/.vtt, cues.json<br/>(per-word timing)"/]:::done
     S4["04 make_chapters.py<br/>Claude topic segmentation"]:::done
-    CH[/"chapters.json + .ffmetadata + .youtube.txt<br/>13 chapters"/]:::done
+    CH[/"chapters.json + .ffmetadata<br/>13 chapters"/]:::done
     S7["07 plan_cuts.py<br/>decide cuts for impact"]:::done
-    EDL[/"data/cuts.json (EDL)<br/>main: 16 cuts, 35 s removed<br/>highlights: 7 clips, 52.8 s<br/>+ subtitles.main.srt, chapters.main.*"/]:::done
+    EDL[/"data/cuts.json (EDL)<br/>main 16 cuts, highlights 7 clips<br/>+ main/combined subtitles + chapters"/]:::done
+    S8["08 plan_explainers.py<br/>Claude picks 9 concept moments"]:::done
+    EXP[/"data/explainers.json<br/>6 simple graphics, 3 infographics"/]:::done
+    ENV[(".env FAL_KEY<br/>git-ignored, guarded by pre-commit hook")]:::secret
+    S9["09 generate_visuals.py<br/>fal.ai flux/schnell, text-free art<br/>~$0.01 total"]:::done
+    IMG[/"public/visuals/*.jpg<br/>+ visuals_manifest.json"/]:::done
     S5["05 make_proxy.sh<br/>ffmpeg 720p proxy"]:::done
     PX[("work/proxy.mp4<br/>git-ignored")]:::done
-    RM["Remotion src/<br/>Series of cuts + animated white/red captions<br/>chapter cards + progress bar"]:::done
-    HL[("out/highlights.mp4<br/>rendered + checked, git-ignored")]:::done
-    S6["06 render_and_embed.sh main<br/>render + ffmpeg chapters + soft subs"]:::wip
-    OUT[("out/final.mp4<br/>git-ignored")]:::todo
+    RM["Remotion src/<br/>Series of cuts, animated white/red captions,<br/>left-side explainers, chapter cards"]:::done
+    COMB["Combined composition<br/>highlights, then main<br/>bottom section-length bar"]:::done
+    HL[("out/highlights.mp4<br/>rendered + checked")]:::done
+    S6["06 render_and_embed.sh combined<br/>render + ffmpeg chapters + soft subs"]:::wip
+    OUT[("out/combined_final.mp4<br/>git-ignored")]:::todo
 
     SRC --> S1 --> WAV --> S2 --> FIX --> TJ
     TJ --> S3 --> SUB
@@ -38,18 +44,29 @@ flowchart TD
     SUB --> S7
     CH --> S7
     S7 --> EDL
+    TJ --> S8 --> EXP
+    EXP --> S9
+    ENV -.-> S9
+    S9 --> IMG
     SRC --> S5 --> PX
     PX --> RM
     EDL --> RM
     SUB --> RM
     CH --> RM
+    EXP --> RM
+    IMG --> RM
+    RM --> COMB
     RM --> HL
-    RM --> S6 --> OUT
+    COMB --> S6 --> OUT
 
     classDef done fill:#c8f7c5,stroke:#2e7d32,color:#000
     classDef wip fill:#fff3b0,stroke:#b58900,color:#000
     classDef todo fill:#eee,stroke:#999,color:#555
+    classDef secret fill:#ffd6d6,stroke:#c62828,color:#000
 ```
+
+## Secrets
+API keys live only in `.env` (git-ignored; copy `.env.example`). `.githooks/pre-commit` blocks any commit containing something that looks like a key. Enable it once per clone: `git config core.hooksPath .githooks`.
 
 ## Speakers
 Marianna asks the questions; Rifat Erdem Sahin answers ([data/speakers.json](data/speakers.json)).
@@ -72,9 +89,12 @@ Needs `ffmpeg`/`ffprobe` (Homebrew) and an Apple Silicon Mac for mlx-whisper. So
 | 5 | `scripts/05_make_proxy.sh` | `work/proxy.mp4`, `public/proxy.mp4` hard link | ~10 min |
 | 6 | `.venv/bin/python -I scripts/07_plan_cuts.py` | `data/cuts.json` + remapped subtitles/chapters | instant |
 | 6b | (same script) | `subtitles.combined.srt`, `chapters.combined.*` | |
+| 6c | `.venv/bin/python -I scripts/08_plan_explainers.py` | `data/explainers.json` | instant |
+| 6d | `.venv/bin/python -I scripts/09_generate_visuals.py` | `public/visuals/*.jpg`, `data/visuals_manifest.json` | ~10 s, ~$0.01 (needs `.env`) |
 | 7 | `npm run studio` (then open http://localhost:3000 in Chrome) | live preview of `Main`, `Highlights` and `Combined` (highlights first, then the full interview, with a section-length bar) | |
 | 8 | `scripts/06_render_and_embed.sh highlights` | `out/highlights.mp4` | ~35 s |
-| 9 | `scripts/06_render_and_embed.sh main` | `out/final.mp4` with chapters + soft subs | ~18 min |
+| 9 | `scripts/06_render_and_embed.sh main` | `out/final.mp4` with chapters + soft subs | ~20-30 min |
+| 10 | `scripts/06_render_and_embed.sh combined` | `out/combined_final.mp4` (highlights first, explainers, section bar) | ~20-30 min |
 
 ## How the cuts are decided
 See the docstring in [`scripts/07_plan_cuts.py`](scripts/07_plan_cuts.py). In short: drop pre/post-roll, shorten pauses over 0.8 s, cut filler words (main edit); hook-first, claim-by-claim highlights picked by Claude and located by exact phrase (highlights reel). Remotion plays `data/cuts.json` back-to-back, so changing the edit means editing the script and re-running step 6, not touching video.

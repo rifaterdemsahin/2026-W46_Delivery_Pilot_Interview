@@ -15,6 +15,9 @@ Rule that applies to every stage: **document the rationale, commit and push at e
 | 6 | "have a code on how to cut to have the best impact and decide on how the cut should happen. Place the footage to remotion and have the animated white red subtitles" | Cut planner (EDL), Remotion timeline, animated white/red captions | `scripts/07_plan_cuts.py`, `data/cuts.json`, `src/Subtitles.tsx` |
 | 7 | "open this in remotion and record these prompts and stages as well for my workflow" | Remotion Studio opened in Chrome; this file | `docs/WORKFLOW.md` |
 | 8 | "there are type issues. Such as the person asking questions is Marianna, person answering is Rifat Erdem Sahin > do these updates: [17 before/after corrections, plus 5 unconfirmed left switched off]" | Transcript corrections as data + script, speakers recorded | `data/corrections.json`, `scripts/02b_apply_corrections.py`, `data/speakers.json` |
+| 9 | "create one more timeline where the highlights are at the start and then the Main goes in / at the bottom have an indicator how long one section is for. Use Fal.ai for the complex parts to be explained with visuals and graphics [key given] > use simple graphics on the left with animations explaining the subject, and if it is a complex one use an infographic. Use cost effective models. Never commit push my ai keys" | `Combined` timeline + section bar, explainers (simple animated graphics, fal.ai infographics), secret guard | `src/SectionBar.tsx`, `src/Explainer.tsx`, `scripts/08`, `scripts/09`, `.githooks/pre-commit` |
+
+(The API key was supplied in the chat; it is stored only in the git-ignored `.env` and is deliberately not recorded here.)
 
 ## Stages (pipeline)
 
@@ -27,6 +30,7 @@ Rule that applies to every stage: **document the rationale, commit and push at e
 | 3 Subtitles | Readable cues from word timing | `scripts/03_make_subtitles.py` | `subtitles.srt/.vtt`, `cues.json` | |
 | 4 Chapters | AI (Claude) topic segmentation, anchored to phrases | `scripts/04_make_chapters.py` | `chapters.json`, `.ffmetadata`, `.youtube.txt` | |
 | 5 Proxy | 720p proxy for fast preview/render | `scripts/05_make_proxy.sh` | | `work/proxy.mp4` |
+| 6a Explainers | Pick concept moments; simple animated graphics or fal.ai infographic art | `scripts/08_plan_explainers.py`, `scripts/09_generate_visuals.py` | `data/explainers.json`, `public/visuals/*.jpg`, `visuals_manifest.json` | |
 | 6 Cuts | Decide cuts for impact, write edit decision list | `scripts/07_plan_cuts.py` | `cuts.json`, `subtitles.main.srt`, `chapters.main.*` | |
 | 7 Edit | Play cuts in Remotion with animated captions, chapter cards | `src/*.tsx`, `npm run studio` | the code | |
 | 8 Render | Render, mux chapters and soft subs | `scripts/06_render_and_embed.sh` | | `out/*.mp4` |
@@ -42,4 +46,6 @@ Rule that applies to every stage: **document the rationale, commit and push at e
 3. *Transcribe:* "Show the estimated completion time while transcribing. Save the transcript and commit/push."
 4. *Cut:* "Write code that decides the cuts for best impact (tighten pauses, drop pre/post-roll, hook-first highlights), place the footage in Remotion, with animated white and red subtitles."
 5. *Fix:* "Here are before/after corrections (some unconfirmed, keep those switched off). Names: interviewer is X, guest is Y." (Rules live in `data/corrections.json`; re-run 02b, 03, 04, 07.)
-6. *Review:* "Open it in Remotion Studio in Chrome."
+6. *Visuals:* "Use simple animated graphics on the left for easy ideas and a fal.ai infographic for complex ones. Cheap models. Never commit my API keys." (Key goes in `.env` only.)
+7. *Combined:* "Add a timeline with the highlights first, then the main edit, with a bottom indicator of how long each section is."
+8. *Review:* "Open it in Remotion Studio in Chrome."

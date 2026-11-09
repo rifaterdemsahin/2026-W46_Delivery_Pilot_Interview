@@ -87,3 +87,19 @@
 - **Why highlights first:** the hook plays before the viewer can leave, then the full conversation follows (cold-open pattern).
 - **Bottom indicator (`SectionBar`):** one segment per section (Highlights + 13 chapters), each as wide as the section is long, filling as it plays. A label on the left shows the current section and `elapsed / length` (for example `CH 2/13 - Why a Delivery Pilot? 0:06 / 1:15`). Chapter cards are offset by the highlights length so they still land on the right moment. Captions sit 44 px up in this mode to clear the bar.
 - **Sync:** `07_plan_cuts.py` also writes `subtitles.combined.srt` and `chapters.combined.*` (Highlights as chapter 0). Subtitle cues are now clipped to the words actually inside the kept footage.
+
+## 15. Secrets (2026-11-09)
+- The fal.ai key lives only in `.env` (git-ignored). `.env.example` is committed with a placeholder. `scripts/09_generate_visuals.py` reads it and never prints it.
+- `.githooks/pre-commit` (enabled with `git config core.hooksPath .githooks`) blocks commits that contain env files or key-like strings (fal, Anthropic, OpenAI-style, AWS, `*_KEY=...`). Tested: it blocked a fake key. Verified the real key is not in tracked files or git history.
+- **Recommendation:** because the key was pasted into a chat, treat it as exposed and rotate it in the fal.ai dashboard when convenient, then update `.env`.
+
+## 16. Explainer visuals with fal.ai (2026-11-09)
+- **Selection:** Claude read the transcript and picked 9 moments where a concept is being explained (`scripts/08_plan_explainers.py`), each anchored to start/end phrases at word level (asserted unique). 6 are simple, 3 are complex.
+- **Simple (free):** native Remotion animation, no AI image needed: CI to CD flow, bots building bots (counter and growing grid), agent-to-agent network (moving pulses), the grocery fallback chain (Tesco, Sainsbury's, Maria's door), the 20-30% desk-jobs stat, and the workshops card.
+- **Complex (fal.ai):** Rider/Driver/Pilot, Agent vs Bot vs Robot, and what a pilot needs. Each shows an AI-generated illustration with animated, numbered labels overlaid.
+- **Cost-effective model:** `fal-ai/flux/schnell` (4 steps, about $0.003 per megapixel at the time of writing). 4 images at 1024x768 cost about $0.009 in total, including one regeneration. Verify against the fal.ai dashboard.
+- **Text-free art, labels in Remotion:** image models garble text (the first agent/bot/robot image contained "A Tovd Rigpot"), so prompts ask for wordless art and the real words are drawn by Remotion. The prompt was rewritten and that one image regenerated.
+- **Layout:** panel on the left, 560 px wide, where the footage has the window and the speaker sits on the right. It is sized to end above the captions (captions reduced from 56 to 48 px to guarantee that). It enters with a spring and fades out over 0.4 s. It is not shown during the highlights reel.
+- **Reproducible:** images are cached (skipped if present), `--force --only <id>` regenerates one, and `data/visuals_manifest.json` records prompt, seed, size and estimated cost.
+- **Caption fix found while testing:** Whisper split "20-30%", "desk-based" and "1.30" into pieces, which showed as "20 -30 %". `03_make_subtitles.py` now glues such tokens back together.
+- **Verified:** one still per explainer from the Combined composition, plus an 8 s video render of an infographic section. Full Combined render is scripted but not run (estimated 20-30 min).
