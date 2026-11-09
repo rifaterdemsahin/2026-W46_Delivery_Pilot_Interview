@@ -17,8 +17,8 @@ flowchart TD
     TJ[/"data/transcript.json<br/>283 segments, 4494 words"/]:::done
     S3["03 make_subtitles.py"]:::done
     SUB[/"data/subtitles.srt + .vtt"/]:::done
-    S4["04 make_chapters.py<br/>Claude topic segmentation"]:::todo
-    CH[/"data/chapters.json"/]:::todo
+    S4["04 make_chapters.py<br/>Claude topic segmentation, 13 chapters"]:::done
+    CH[/"data/chapters.json + .ffmetadata + .youtube.txt"/]:::done
     S5["05 make_proxy.sh<br/>ffmpeg 720p proxy"]:::wip
     PX[("work/proxy.mp4<br/>git-ignored")]:::wip
     RM["Remotion composition<br/>captions + chapter cards"]:::todo
@@ -50,5 +50,6 @@ npm install
 scripts/01_extract_audio.sh                  # ~2 s
 .venv/bin/python -I scripts/02_transcribe.py # ~2 min on Apple Silicon
 .venv/bin/python -I scripts/03_make_subtitles.py
+scripts/04_make_chapters.py
 scripts/05_make_proxy.sh                     # ~10 min, hardware H.264
 ```

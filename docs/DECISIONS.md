@@ -35,3 +35,10 @@
 ## 6. Proxy (2026-11-09)
 - `scripts/05_make_proxy.sh`: 1280x720, 25 fps, `h264_videotoolbox` 4 Mbit/s, AAC stereo, faststart.
 - **Why:** hardware encoding is several times faster than libx264 for a 4K source, and a 720p file previews smoothly in Remotion Studio.
+
+## 7. Chapters (2026-11-09)
+- **Method:** Claude read the whole timestamped transcript and chose 13 topic boundaries, titles and one-line summaries. These are encoded in `scripts/04_make_chapters.py`.
+- **Why not a pure algorithm:** topic-shift detection by embeddings is noisy on a conversational interview, and an LLM read gives human-quality titles. No external API call is needed, so there is no key or cost.
+- **Why anchors, not hard-coded times:** each chapter is tied to a unique phrase and snapped to that segment's start. If the transcript is re-run, times follow. The script asserts each anchor matches exactly one segment and that order is increasing.
+- **Outputs:** `chapters.json` (Remotion), `chapters.ffmetadata` (ffmpeg MP4 chapter atoms), `chapters.youtube.txt` (description paste).
+- **Review needed:** boundaries are my judgement, so please skim `data/chapters.youtube.txt`. The 28:05 closing thanks is folded into the last chapter.
