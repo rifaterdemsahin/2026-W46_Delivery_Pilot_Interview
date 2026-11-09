@@ -6,7 +6,7 @@ export type Cut = { src_start: number; src_end: number };
 export type TimelineCut = { srcFrom: number; dur: number; outFrom: number };
 export type Word = { w: string; start: number; end: number };
 export type Cue = { start: number; end: number; words: Word[] };
-export type Mode = "main" | "highlights" | "combined";
+export type Mode = "main" | "highlights" | "combined" | "linkedin";
 
 export const cues = cuesJson as Cue[];
 
@@ -27,6 +27,8 @@ export const timelines: Record<Mode, TimelineCut[]> = {
   highlights: toTimeline(cutsJson.highlights),
   // highlights first, then the tightened full interview
   combined: toTimeline([...cutsJson.highlights, ...cutsJson.main]),
+  // <= 14 min cut for LinkedIn
+  linkedin: toTimeline(cutsJson.linkedin),
 };
 
 export const totalFrames = (tl: TimelineCut[]) => tl.reduce((a, c) => a + c.dur, 0);

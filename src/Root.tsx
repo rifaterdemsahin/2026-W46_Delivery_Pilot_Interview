@@ -1,6 +1,6 @@
 import { Composition, Still } from "remotion";
 import { Edit } from "./Main";
-import { Thumbnail } from "./Thumbnail";
+import { Thumbnail, ThumbnailA, ThumbnailB, ThumbnailC } from "./Thumbnail";
 import { FPS, HEIGHT, WIDTH } from "./config";
 import { timelines, totalFrames } from "./edit";
 
@@ -33,6 +33,18 @@ export const RemotionRoot = () => (
       width={WIDTH}
       height={HEIGHT}
     />
+    <Composition
+      id="LinkedIn"
+      component={Edit}
+      defaultProps={{ mode: "linkedin" as const }}
+      durationInFrames={totalFrames(timelines.linkedin)}
+      fps={FPS}
+      width={WIDTH}
+      height={HEIGHT}
+    />
     <Still id="Thumbnail" component={Thumbnail} width={WIDTH} height={HEIGHT} />
+    <Still id="ThumbnailA" component={ThumbnailA} width={WIDTH} height={HEIGHT} />
+    <Still id="ThumbnailB" component={ThumbnailB} width={WIDTH} height={HEIGHT} />
+    <Still id="ThumbnailC" component={ThumbnailC} width={WIDTH} height={HEIGHT} />
   </>
 );

@@ -12,6 +12,10 @@ AI pipeline: transcribe an English interview, add subtitles, chapters, cuts, ani
 - **Keep `README.md` current:** emoji style, the Mermaid flow diagram, the status table and the steps table. Update on every step.
 - **Always create the timeline:** `scripts/07_plan_cuts.py` regenerates `docs/TIMELINE.md` (and chapters, subtitles) whenever cuts change. Run it after any edit change; link stays in the README.
 - **Always version what you create:** after a meaningful change run `scripts/version.py bump minor|patch "notes"`, commit, then `git tag -a vX.Y.Z` and push the tag. Keep earlier versions (e.g. `assets/thumbnails/v1-...jpg`, `versions/v*/`). Add the change to `CHANGELOG.md` and the artifact table at its top.
+- **Always make three thumbnails** (A/B/C), completely different concepts (different hook, colours, layout; e.g. number+question, imperative, no-face), for YouTube Test & Compare. `scripts/10_make_thumbnail.sh` renders all three into `assets/thumbnails/`; keep earlier sets, name new sets `test2_...`.
+- **Keep the checklist and workflow current:** edit `scripts/site_pages.py` (STAGES, CHECKLIST) when a step is done or added, then rebuild the site. One checklist page, one video production workflow page, always in sync with the project.
+- **Deploy after every push that changes `site/`:** push-triggered Pages runs have been failing with no jobs, so run `gh workflow run static.yml` and confirm with `gh run watch`; then check the live URL returns 200.
+- **Platform versions:** LinkedIn cut must stay under 14:00 (asserted in `07_plan_cuts.py`). Never repeat a duplicated idea in a shorter cut.
 - **Record the user's prompts and stages** in `docs/WORKFLOW.md`.
 - **Show an estimated completion time** for long jobs (transcription prints one; do the same for renders).
 - **Preview in Google Chrome:** `open -a "Google Chrome" http://localhost:3000` for Remotion Studio.
@@ -28,7 +32,7 @@ AI pipeline: transcribe an English interview, add subtitles, chapters, cuts, ani
 - Look: white captions, spoken word red; red accent `#ff2b2b`; left-side explainer panel; footer section bar in the Combined composition.
 
 ## Pipeline (run order)
-`01_extract_audio.sh` > `02_transcribe.py` > `02b_apply_corrections.py` > `03_make_subtitles.py` > `04_make_chapters.py` > `05_make_proxy.sh` > `05b_clean_audio.py` > `07_plan_cuts.py` > `08_plan_explainers.py` > `09_generate_visuals.py` > `10_make_thumbnail.sh` / `12_generate_thumbnail_art.py` > `11_make_publish.py` > `06_render_and_embed.sh`. Python runs as `.venv/bin/python -I scripts/<name>.py`.
+`01_extract_audio.sh` > `02_transcribe.py` > `02b_apply_corrections.py` > `03_make_subtitles.py` > `04_make_chapters.py` > `05_make_proxy.sh` > `05b_clean_audio.py` > `07_plan_cuts.py` > `08_plan_explainers.py` > `09_generate_visuals.py` > `10_make_thumbnail.sh` (3 thumbnails) / `12_generate_thumbnail_art.py --set A|B|C_driver|C_pilot` > `11_make_publish.py` > `13_build_site.py` (site + docs/CHECKLIST.md + docs/VIDEO_PRODUCTION.md) > `06_render_and_embed.sh highlights|main|combined|linkedin`. Python runs as `.venv/bin/python -I scripts/<name>.py`.
 
 ## Gotchas found the hard way
 - Remotion's bundler ignores symlinks in `public/`: `public/proxy.mp4` must be a **hard link** (done by `05_make_proxy.sh` / `05b_clean_audio.py`).

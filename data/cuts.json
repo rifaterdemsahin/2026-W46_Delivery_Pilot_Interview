@@ -9,6 +9,8 @@
   "highlights_s": 52.8,
   "highlight_clips": 7,
   "highlight_intervals": 7,
+  "linkedin_s": 755.6,
+  "linkedin_sections": 12,
   "combined_s": 1548.6
  },
  "main": [
@@ -160,6 +162,104 @@
    "src_end": 1472.28,
    "reason": "Closing payoff: the human role",
    "label": "Closing payoff: the human role"
+  }
+ ],
+ "linkedin": [
+  {
+   "src_start": 39.2,
+   "src_end": 114.8,
+   "reason": "Why a Delivery Pilot",
+   "label": "Why a Delivery Pilot"
+  },
+  {
+   "src_start": 223.04,
+   "src_end": 299.28,
+   "reason": "Rider, driver, pilot and bots building bots",
+   "label": "Rider, driver, pilot and bots building bots"
+  },
+  {
+   "src_start": 356.36,
+   "src_end": 440.28,
+   "reason": "The three levels of AI skills",
+   "label": "The three levels of AI skills"
+  },
+  {
+   "src_start": 531.68,
+   "src_end": 622.04,
+   "reason": "Frontier models, bots and agent-to-agent",
+   "label": "Frontier models, bots and agent-to-agent"
+  },
+  {
+   "src_start": 664.44,
+   "src_end": 740.68,
+   "reason": "Chatbot, agent, bot and Voltron",
+   "label": "Chatbot, agent, bot and Voltron"
+  },
+  {
+   "src_start": 741.16,
+   "src_end": 788.0,
+   "reason": "Chatbot, agent, bot and Voltron",
+   "label": "Chatbot, agent, bot and Voltron"
+  },
+  {
+   "src_start": 826.88,
+   "src_end": 875.52,
+   "reason": "Agent vs bot vs robot",
+   "label": "Agent vs bot vs robot"
+  },
+  {
+   "src_start": 879.72,
+   "src_end": 892.24,
+   "reason": "Agent vs bot vs robot",
+   "label": "Agent vs bot vs robot"
+  },
+  {
+   "src_start": 893.68,
+   "src_end": 904.16,
+   "reason": "Do we need to learn coding?",
+   "label": "Do we need to learn coding?"
+  },
+  {
+   "src_start": 1049.56,
+   "src_end": 1068.88,
+   "reason": "Pilots need more training",
+   "label": "Pilots need more training"
+  },
+  {
+   "src_start": 1069.88,
+   "src_end": 1094.96,
+   "reason": "Pilots need more training",
+   "label": "Pilots need more training"
+  },
+  {
+   "src_start": 1228.0,
+   "src_end": 1272.6,
+   "reason": "Jobs and directing bots",
+   "label": "Jobs and directing bots"
+  },
+  {
+   "src_start": 1443.6,
+   "src_end": 1498.12,
+   "reason": "Self-learners and the pilot",
+   "label": "Self-learners and the pilot"
+  },
+  {
+   "src_start": 1512.56,
+   "src_end": 1541.12,
+   "reason": "Join the workshops",
+   "label": "Join the workshops"
+  },
+  {
+   "src_start": 1624.92,
+   "src_end": 1630.84,
+   "reason": "Not for me? and closing",
+   "label": "Not for me? and closing"
+  },
+  {
+   "src_start": 1631.44,
+   "src_end": 1688.16,
+   "reason": "Not for me? and closing",
+   "label": "Not for me? and closing"
   }
  ],
  "removed": [

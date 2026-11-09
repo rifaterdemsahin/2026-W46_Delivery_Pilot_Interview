@@ -18,7 +18,8 @@ TOTAL = mmss(round(cuts["combined_s"]))
 os.makedirs("site/assets", exist_ok=True)
 for src, dst in [("assets/thumbnail.jpg", "thumbnail.jpg"), ("assets/thumbnails/v1-generic-become-a-delivery-pilot.jpg", "thumbnail_v1.jpg"),
                  ("assets/thumbnails/v2-curiosity-300-bots-1-pilot.jpg", "thumbnail_v2.jpg"), ("data/subtitles.combined.srt", "subtitles.srt"),
-                 ("data/description.txt", "description.txt")]:
+                 ("data/description.txt", "description.txt"), ("data/subtitles.linkedin.srt", "subtitles_linkedin.srt"),
+                 ("assets/thumbnails/test1_A_300bots-1pilot.jpg", "thumb_A.jpg"), ("assets/thumbnails/test1_B_stop-typing.jpg", "thumb_B.jpg"), ("assets/thumbnails/test1_C_driver-or-pilot.jpg", "thumb_C.jpg")]:
     shutil.copy(src, f"site/assets/{dst}")
 open("site/.nojekyll", "w").write("")
 
@@ -40,9 +41,10 @@ button.ok{background:#1f9d55}.row{display:flex;gap:10px;align-items:center;flex-
 JS = """function copyFrom(id,btn){var t=document.getElementById(id);t.select();var v=t.value;
  (navigator.clipboard?navigator.clipboard.writeText(v):Promise.reject()).catch(function(){document.execCommand('copy')}).then(function(){btn.textContent='Copied';btn.className='ok';setTimeout(function(){btn.textContent='Copy';btn.className=''},1600)})}
 function count(id,out,limit){var t=document.getElementById(id),o=document.getElementById(out);function u(){var n=t.value.replace(/\\[LINK\\]/g,'x'.repeat(23)).length;o.textContent=n+(limit?' / '+limit:'')+' characters';o.className='cnt'+(limit&&n>limit?' bad':'')}t.addEventListener('input',u);u()}"""
-open("site/style.css", "w").write(CSS); open("site/copy.js", "w").write(JS)
+import sys; sys.path.insert(0, "scripts"); import site_pages as SP
+open("site/style.css", "w").write(CSS + SP.EXTRA_CSS); open("site/copy.js", "w").write(JS)
 
-PAGES = [("index.html", "Overview"), ("youtube.html", "YouTube"), ("linkedin.html", "LinkedIn"), ("x.html", "X"), ("costs.html", "Costs")]
+PAGES = [("index.html", "Overview"), ("workflow.html", "Workflow"), ("checklist.html", "Checklist"), ("thumbnails.html", "Thumbnails"), ("youtube.html", "YouTube"), ("linkedin.html", "LinkedIn"), ("x.html", "X"), ("costs.html", "Costs")]
 def page(fn, title, body):
     nav = "".join(f'<a href="{f}"{" class=on" if f == fn else ""}>{n}</a>' for f, n in PAGES)
     open(f"site/{fn}", "w").write(f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -71,6 +73,9 @@ page("index.html", "Overview", f"""
  <a class="card" href="youtube.html"><b>▶️ YouTube</b><br><span class="mut">title, description, chapters, tags, thumbnail</span></a>
  <a class="card" href="linkedin.html"><b>💼 LinkedIn</b><br><span class="mut">long and short post</span></a>
  <a class="card" href="x.html"><b>✖️ X</b><br><span class="mut">single posts and a thread</span></a>
+ <a class="card" href="workflow.html"><b>🎬 Workflow</b><br><span class="mut">how the video is produced, stage by stage</span></a>
+ <a class="card" href="checklist.html"><b>✅ Checklist</b><br><span class="mut">every step, ticked or not</span></a>
+ <a class="card" href="thumbnails.html"><b>🖼️ Thumbnails</b><br><span class="mut">A/B/C test plan</span></a>
  <a class="card" href="costs.html"><b>💸 Costs</b><br><span class="mut">what this cost, and how</span></a>
 </div>
 <h2>Downloads</h2>
@@ -141,6 +146,7 @@ Rider, driver or pilot: where are you today?
 #AI #AIAgents #FutureOfWork"""
 page("linkedin.html", "LinkedIn", f"""<h1>💼 LinkedIn</h1><p class="mut">Written in Rifat Erdem Sahin's voice, to post from his profile when the video goes live. Add the YouTube link where it says <code>[LINK]</code> (put it in the first comment instead if you want more reach). Use the thumbnail as the image.</p>
 <p><a class="btn" href="assets/thumbnail.jpg" download>Download image</a></p>
+<div class="card"><b>🎞️ LinkedIn video: {mmss(cuts["linkedin_s"])} (limit 14:00)</b><br><span class="mut">A separate cut of the strongest sections, captions burned in, no repeated cold open. Render: <code>scripts/06_render_and_embed.sh linkedin</code> (file stays on the machine, not in git).</span><p><a class="btn" href="assets/subtitles_linkedin.srt" download>Download its subtitles (.srt)</a></p></div>
 {box("li_long", LONG, 24, 3000, "Long post (limit 3,000)")}
 {box("li_short", SHORT, 9, 3000, "Short post")}
 <div class="card"><b>Tips</b><ul><li>First two lines are what shows before "see more": keep the hook there</li><li>Tag Marianna (she asked the questions) if she agrees</li><li>Reply to every comment in the first hour</li></ul></div>""")
@@ -195,4 +201,9 @@ page("costs.html", "Costs", f"""<h1>💸 Costs</h1>
 <tr><td>Sound effects and music (fal.ai)</td><td>planned</td><td>Not generated yet; will be added here when done</td></tr></table>
 <h2>How costs are kept low</h2><ul><li>Cheapest suitable model (4-step <code>flux/schnell</code>), one image per idea</li><li>Images are cached: re-running never pays twice (<code>--force --only</code> to redo one)</li>
 <li>Text-free art, words drawn in Remotion, so fewer regenerations</li><li>Everything heavy (transcription, rendering) runs locally for free</li><li>Cost logged per image in <code>data/visuals_manifest.json</code></li></ul>""")
+page("workflow.html", "Workflow", SP.workflow_body())
+page("checklist.html", "Checklist", SP.checklist_body())
+page("thumbnails.html", "Thumbnails", SP.thumbs_body())
+open("docs/VIDEO_PRODUCTION.md", "w").write(SP.stages_md())
+open("docs/CHECKLIST.md", "w").write(SP.checklist_md())
 print("built site/:", ", ".join(sorted(os.listdir("site"))))

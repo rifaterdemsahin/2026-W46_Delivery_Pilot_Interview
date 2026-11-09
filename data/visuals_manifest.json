@@ -43,5 +43,41 @@
   "prompt": "a giant glowing red airplane-shaped constellation made of hundreds of tiny robots over a dark navy city at night, cinematic, dramatic lighting, high contrast, deep navy and vivid red palette, dark moody background, no text, no letters, no words",
   "seed": 29074526,
   "est_cost_usd": 0.0018
+ },
+ "thumb_art_B_1": {
+  "model": "fal-ai/flux/schnell",
+  "prompt": "a computer keyboard dissolving into glowing yellow particles and sparks floating upward, pure black background, high contrast yellow and black, no text, no letters, no words",
+  "seed": 247348864,
+  "est_cost_usd": 0.0018
+ },
+ "thumb_art_B_2": {
+  "model": "fal-ai/flux/schnell",
+  "prompt": "silhouette of two hands lifting away from a keyboard with glowing yellow light trails, pure black background, high contrast yellow and black, no text, no letters, no words",
+  "seed": 1818745018,
+  "est_cost_usd": 0.0018
+ },
+ "thumb_art_C_driver_1": {
+  "model": "fal-ai/flux/schnell",
+  "prompt": "black and white photograph of a car steering wheel and dashboard seen from the driver seat, flat grey, dull and moody, no text, no letters, no words",
+  "seed": 2030131715,
+  "est_cost_usd": 0.0018
+ },
+ "thumb_art_C_driver_2": {
+  "model": "fal-ai/flux/schnell",
+  "prompt": "monochrome grey close view of a steering wheel and road ahead, flat light, dull, no text, no letters, no words",
+  "seed": 1927510773,
+  "est_cost_usd": 0.0018
+ },
+ "thumb_art_C_pilot_1": {
+  "model": "fal-ai/flux/schnell",
+  "prompt": "view from an airplane cockpit at night with glowing cyan instruments and a vast starry sky of tiny glowing cyan lights, cinematic, no text, no letters, no words",
+  "seed": 890752841,
+  "est_cost_usd": 0.0018
+ },
+ "thumb_art_C_pilot_2": {
+  "model": "fal-ai/flux/schnell",
+  "prompt": "cockpit window looking out on a glowing cyan horizon with a swarm of tiny lights, cinematic, deep teal and white, no text, no letters, no words",
+  "seed": 344101587,
+  "est_cost_usd": 0.0018
  }
 }

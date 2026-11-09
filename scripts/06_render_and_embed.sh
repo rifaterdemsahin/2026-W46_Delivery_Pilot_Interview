@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Usage: scripts/06_render_and_embed.sh [highlights|main|combined|all]   (default: all)
+# Usage: scripts/06_render_and_embed.sh [highlights|main|combined|linkedin|all]   (default: all)
 #  combined:   highlights first, then the full interview, with explainers + section bar (~1711 s, ~20 min)
 #  highlights: ~53 s social reel, ~35 s to render
 #  main:       tightened full interview, ~41k frames (~18 min on Apple Silicon)
@@ -12,6 +12,14 @@ mkdir -p out
 
 if [[ "$what" == "highlights" || "$what" == "all" ]]; then
   npx remotion render src/index.ts Highlights out/highlights.mp4 --codec=h264 --crf=20
+fi
+
+if [[ "$what" == "linkedin" || "$what" == "all" ]]; then
+  npx remotion render src/index.ts LinkedIn out/linkedin_raw.mp4 --codec=h264 --crf=20
+  ffmpeg -y -hide_banner -loglevel error -i out/linkedin_raw.mp4 -i data/subtitles.linkedin.srt \
+    -map 0:v -map 0:a -map 1:0 -c:v copy -c:a copy -c:s mov_text -metadata:s:s:0 language=eng \
+    -movflags +faststart out/linkedin_final.mp4
+  ls -lh out/linkedin_final.mp4
 fi
 
 if [[ "$what" == "combined" || "$what" == "all" ]]; then

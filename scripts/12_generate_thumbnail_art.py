@@ -19,9 +19,23 @@ def key():
     if not k or k.startswith("your-"): sys.exit("FAL_KEY missing: put it in .env (git-ignored)")
     return k
 
+# Extra concepts for the A/B/C test. Usage: --set B|C_driver|C_pilot to generate, --set B --use 2 to pick variant 2.
+NOTEXT = "no text, no letters, no words"
+SETS = {
+    "A": PROMPTS,
+    "B": [f"a computer keyboard dissolving into glowing yellow particles and sparks floating upward, pure black background, high contrast yellow and black, {NOTEXT}",
+          f"silhouette of two hands lifting away from a keyboard with glowing yellow light trails, pure black background, high contrast yellow and black, {NOTEXT}"],
+    "C_driver": [f"black and white photograph of a car steering wheel and dashboard seen from the driver seat, flat grey, dull and moody, {NOTEXT}",
+                 f"monochrome grey close view of a steering wheel and road ahead, flat light, dull, {NOTEXT}"],
+    "C_pilot": [f"view from an airplane cockpit at night with glowing cyan instruments and a vast starry sky of tiny glowing cyan lights, cinematic, {NOTEXT}",
+                f"cockpit window looking out on a glowing cyan horizon with a swarm of tiny lights, cinematic, deep teal and white, {NOTEXT}"],
+}
+cur = sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else "A"
+dest = {"A": "thumb_bg"}.get(cur, f"thumb_{cur}")
 if "--use" in sys.argv:
     n = int(sys.argv[sys.argv.index("--use") + 1])
-    shutil.copy(f"work/thumb_art_{n}.jpg", "public/visuals/thumb_bg.jpg"); print(f"using variant {n}"); sys.exit()
+    shutil.copy(f"work/thumb_art_{cur}_{n}.jpg", f"public/visuals/{dest}.jpg"); print(f"set {cur}: using variant {n} -> {dest}.jpg"); sys.exit()
+PROMPTS = SETS[cur]
 
 k, spent, manifest = key(), 0.0, {}
 for n, prompt in enumerate(PROMPTS, 1):
@@ -30,9 +44,9 @@ for n, prompt in enumerate(PROMPTS, 1):
     try: res = json.load(urllib.request.urlopen(req, timeout=120))
     except urllib.error.HTTPError as e: sys.exit(f"fal.ai HTTP {e.code}: {e.read().decode()[:300]}")
     img = res["images"][0]
-    open(f"work/thumb_art_{n}.jpg", "wb").write(urllib.request.urlopen(img["url"], timeout=120).read())
+    open(f"work/thumb_art_{cur}_{n}.jpg", "wb").write(urllib.request.urlopen(img["url"], timeout=120).read())
     cost = img["width"] * img["height"] / 1e6 * PRICE_PER_MP; spent += cost
-    manifest[f"thumb_art_{n}"] = {"model": MODEL, "prompt": prompt, "seed": res.get("seed"), "est_cost_usd": round(cost, 4)}
+    manifest[f"thumb_art_{cur}_{n}"] = {"model": MODEL, "prompt": prompt, "seed": res.get("seed"), "est_cost_usd": round(cost, 4)}
     print(f"variant {n}: {img['width']}x{img['height']}")
 mp = "data/visuals_manifest.json"; m = json.load(open(mp)) if os.path.exists(mp) else {}
 m.update(manifest); json.dump(m, open(mp, "w"), indent=1)

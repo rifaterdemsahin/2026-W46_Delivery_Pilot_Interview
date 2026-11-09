@@ -27,6 +27,7 @@ export const Edit = ({ mode }: { mode: Mode }) => {
       {mode !== "highlights" && <Explainers timeline={tl} offset={offset} />}
       <Subtitles timeline={tl} bottom={mode === "combined" ? 66 : 28} />
       {mode === "main" && <ProgressBar timeline={tl} />}
+      {mode === "linkedin" && <ProgressBar timeline={tl} ticks={false} />}
       {mode === "combined" && <SectionBar />}
     </AbsoluteFill>
   );

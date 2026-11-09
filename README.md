@@ -6,7 +6,7 @@
 
 > 🚫 **This repo holds code, metadata and docs only.** The raw video (`~/Downloads/C1193.MP4`, 20.9 GB) and every generated video/audio file (`work/`, `out/`, `public/*.mp4`) are git-ignored and never committed.
 
-📚 **Docs:** [🕒 timeline](docs/TIMELINE.md) · [🏷️ changelog](CHANGELOG.md) · [🤖 CLAUDE.md](CLAUDE.md) · [🧭 workflow: prompts and stages](docs/WORKFLOW.md) · [🗺️ plan](docs/PLAN.md) · [🧠 rationale for every step](docs/DECISIONS.md) · [📝 readable transcript](data/transcript.txt)
+📚 **Docs:** [✅ checklist](docs/CHECKLIST.md) · [🎬 production workflow](docs/VIDEO_PRODUCTION.md) · [🕒 timeline](docs/TIMELINE.md) · [🏷️ changelog](CHANGELOG.md) · [🤖 CLAUDE.md](CLAUDE.md) · [🧭 workflow: prompts and stages](docs/WORKFLOW.md) · [🗺️ plan](docs/PLAN.md) · [🧠 rationale for every step](docs/DECISIONS.md) · [📝 readable transcript](data/transcript.txt)
 
 ## 👥 Speakers
 🎙️ **Marianna** asks the questions · 🧑‍💻 **Rifat Erdem Sahin** answers ([data/speakers.json](data/speakers.json)).
@@ -26,6 +26,9 @@
 | 🎞️ | Highlights reel render | ✅ rendered and checked |
 | 🖼️ | Thumbnail, title, description ([docs/PUBLISH.md](docs/PUBLISH.md)) | ✅ done |
 | 🚀 | Full `Combined` render | ✅ exported (25:49, 720p, `out/combined_final.mp4`) |
+| 💼 | LinkedIn cut (12:36, under the 14:00 limit) | ✅ rendered (`out/linkedin_final.mp4`) |
+| 🖼️ | Three A/B/C thumbnails | ✅ done (`assets/thumbnails/test1_*`) |
+| ✅ | Checklist and 🎬 video production workflow pages | ✅ on the site, mirrored in `docs/CHECKLIST.md` and `docs/VIDEO_PRODUCTION.md` |
 | 🌐 | GitHub Pages site (overview, YouTube, LinkedIn, X, costs) | ✅ deployed |
 | 🔊 | Sound effects and music (fal.ai) | ⏳ next |
 
@@ -151,8 +154,9 @@ Needs `ffmpeg`/`ffprobe` (Homebrew) and an Apple Silicon Mac for mlx-whisper. �
 | 7 | 👀 | `npm run studio` then open http://localhost:3000 in Chrome | live preview of `Main`, `Highlights`, `Combined` | |
 | 8 | ⚡ | `scripts/06_render_and_embed.sh highlights` | `out/highlights.mp4` | ~35 s |
 | 9 | 🎬 | `scripts/06_render_and_embed.sh main` | `out/final.mp4` with chapters + soft subs | ~20-30 min |
-| 10 | 🎞️ | `scripts/06_render_and_embed.sh combined` | `out/combined_final.mp4` | ~20-30 min |
-| 11 | 🖼️ | `scripts/10_make_thumbnail.sh [seconds]` | `assets/thumbnail.jpg` (1280x720) | ~10 s |
+| 10 | 🎞️ | `scripts/06_render_and_embed.sh combined` | `out/combined_final.mp4` | ~15 min |
+| 10b | 💼 | `scripts/06_render_and_embed.sh linkedin` | `out/linkedin_final.mp4` (12:36) | ~7 min |
+| 11 | 🖼️ | `scripts/10_make_thumbnail.sh` | three thumbnails A/B/C in `assets/thumbnails/` (+ `assets/thumbnail.jpg` = A) | ~30 s |
 | 13 | 🌐 | `.venv/bin/python -I scripts/13_build_site.py` then push | `site/` (deployed to GitHub Pages by the workflow) | instant |
 | 12 | 📣 | `.venv/bin/python -I scripts/11_make_publish.py` | `docs/PUBLISH.md`, `data/description.txt` (title, description, chapters, tags) | instant |
 

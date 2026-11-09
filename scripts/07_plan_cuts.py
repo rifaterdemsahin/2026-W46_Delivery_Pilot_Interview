@@ -150,6 +150,39 @@ for a, b, why in HIGHLIGHTS:
     highlights += ivs
 
 
+# ---- LINKEDIN (<= 14 min): the strongest sections of the deduplicated interview, no repeated cold open ----
+LINKEDIN_MAX_S = 14 * 60
+LINKEDIN = [  # (start phrase, end phrase, section[, words to step back from the start phrase])
+    ("so the reality is im passionate about technology", "this new profession comes to life", "Why a Delivery Pilot"),
+    ("what is happening right now is we are moving from a rider", "so the ai is creating the other ai", "Rider, driver, pilot and bots building bots"),
+    ("so i separated the ai skills into three", "the major thing that changes for us", "The three levels of AI skills"),
+    ("but if you have the money spend the tokens", "campaign in the budget", "Frontier models, bots and agent-to-agent"),
+    ("where is agent in between", "i like to deliver a pilot name", "Chatbot, agent, bot and Voltron"),
+    ("yes the agent and the bot are very similar", "i want that goal to be achieved", "Agent vs bot vs robot"),
+    ("lets talk a little bit about coding", "to use ai better", "Do we need to learn coding?"),
+    ("to answer your question the engineering has to be learned", "comment and conquer more", "Pilots need more training"),
+    ("right now most 20 30 of the world", "direct more than ever", "Jobs and directing bots"),
+    ("that was my core niche", "create and operate all day long", "Self-learners and the pilot", 3),
+    ("we are doing the eventbrite workshops", "what we implemented that week", "Join the workshops"),
+    ("if someone is thinking oh ai isnt for me", "thank you very much", "Not for me? and closing"),
+]
+linkedin, li_sections = [], []
+for a, b, label, *opt in LINKEDIN:
+    ia, ib = span(a, b)
+    if opt: ia = real[real.index(ia) - opt[0]]  # include a few words before the anchor (e.g. "Yes, the self-learning")
+    assert i0 <= ia <= ib <= i1, f"linkedin span outside main range: {a!r}"
+    cur, n0 = ia, len(linkedin)
+    for x in removed:  # never reintroduce a duplicate that the main edit removed
+        if x["ib"] < ia or x["ia"] > ib: continue
+        assert x["ia"] >= ia and x["ib"] <= ib, f"dedupe span straddles linkedin span {label!r}"
+        if x["ia"] > cur: linkedin += tighten(cur, x["ia"] - 1, label)
+        cur = x["ib"] + 1
+    linkedin += tighten(cur, ib, label)
+    for iv in linkedin[n0:]: iv["label"] = label
+    li_sections.append(label)
+assert all(x["src_end"] <= y["src_start"] for x, y in zip(linkedin, linkedin[1:])), "linkedin spans overlap or are out of order"
+
+
 # ---- timeline remap (source seconds -> output seconds) ----
 def build_map(ivs):
     m, acc = [], 0
@@ -169,6 +202,8 @@ def to_out(m, total, sec):
 
 m_main, tot_main = build_map(main)
 m_hl, tot_hl = build_map(highlights)
+m_li, tot_li = build_map(linkedin)
+assert tot_li / FPS <= LINKEDIN_MAX_S, f"LinkedIn cut is {tot_li / FPS:.0f}s, over the {LINKEDIN_MAX_S}s limit"
 
 def srt_ts(x):
     ms = round(x * 1000); h, ms = divmod(ms, 3600000); mi, ms = divmod(ms, 60000); s, ms = divmod(ms, 1000)
@@ -210,6 +245,7 @@ hl_s, main_s = tot_hl / FPS, tot_main / FPS
 # main only
 write_srt("data/subtitles.main.srt", cue_entries(m_main, tot_main, main))
 write_chapters("chapters.main", [dict(c) for c in main_chs], main_s)
+write_srt("data/subtitles.linkedin.srt", cue_entries(m_li, tot_li, linkedin))
 # combined: highlights first, then the full (tightened) interview
 write_srt("data/subtitles.combined.srt",
           cue_entries(m_hl, tot_hl, highlights) + cue_entries(m_main, tot_main, main, offset=hl_s))
@@ -223,10 +259,10 @@ stats = {
     "source_s": src_len, "main_s": round(tot_main / FPS, 1), "removed_s": round(src_len - tot_main / FPS, 1),
     "duplicates_removed_s": round(dedupe_s, 1), "duplicate_cuts": len(removed),
     "main_cuts": len(main), "highlights_s": round(tot_hl / FPS, 1), "highlight_clips": len(HIGHLIGHTS),
-    "highlight_intervals": len(highlights), "combined_s": round((tot_hl + tot_main) / FPS, 1),
+    "highlight_intervals": len(highlights), "linkedin_s": round(tot_li / FPS, 1), "linkedin_sections": len(LINKEDIN), "combined_s": round((tot_hl + tot_main) / FPS, 1),
 }
 removed_out = [{k: (round(v, 2) if isinstance(v, float) else v) for k, v in x.items() if k not in ("ia", "ib")} for x in removed]
-json.dump({"stats": stats, "main": main, "highlights": highlights, "removed": removed_out}, open("data/cuts.json", "w"), indent=1)
+json.dump({"stats": stats, "main": main, "highlights": highlights, "linkedin": linkedin, "removed": removed_out}, open("data/cuts.json", "w"), indent=1)
 
 
 # ---- TIMELINE.md: always regenerated with the cuts ----
@@ -269,6 +305,14 @@ acc = 0.0
 for h in highlights:
     d = h["src_end"] - h["src_start"]
     lines.append(f"| {mmss(acc)} | {mmss(h['src_start'])}-{mmss(h['src_end'])} | {h.get('label', '')} |"); acc += d
+lines += ["", f"## LinkedIn version ({mmss(tot_li / FPS)}, limit 14:00)", "",
+          "Own edit of the deduplicated interview: no repeated cold open, strongest sections only, captions burned in. Render: `scripts/06_render_and_embed.sh linkedin`.", "",
+          "| Output time | Source time | Length | Section |", "|---|---|---|---|"]
+acc = 0.0
+for sec in li_sections:
+    part = [iv for iv in linkedin if iv["label"] == sec]
+    d = sum(iv["src_end"] - iv["src_start"] for iv in part)
+    lines.append(f"| {mmss(acc)} | {mmss(part[0]['src_start'])}-{mmss(part[-1]['src_end'])} | {d:.0f} s | {sec} |"); acc += d
 lines += ["", "## Kept footage (main edit)", "", f"{len(main)} intervals; everything not listed was cut (pre-roll, long pauses, duplicates).", "",
           "| Output time | Source time | Length |", "|---|---|---|"]
 acc = hl_s

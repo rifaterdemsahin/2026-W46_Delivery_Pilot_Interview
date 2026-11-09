@@ -105,6 +105,25 @@ gantt
 | 00:35 | 17:55-18:02 | Honest risk beat, adds credibility |
 | 00:42 | 24:21-24:32 | Closing payoff: the human role |
 
+## LinkedIn version (12:36, limit 14:00)
+
+Own edit of the deduplicated interview: no repeated cold open, strongest sections only, captions burned in. Render: `scripts/06_render_and_embed.sh linkedin`.
+
+| Output time | Source time | Length | Section |
+|---|---|---|---|
+| 00:00 | 00:39-01:55 | 76 s | Why a Delivery Pilot |
+| 01:16 | 03:43-04:59 | 76 s | Rider, driver, pilot and bots building bots |
+| 02:32 | 05:56-07:20 | 84 s | The three levels of AI skills |
+| 03:56 | 08:52-10:22 | 90 s | Frontier models, bots and agent-to-agent |
+| 05:26 | 11:04-13:08 | 123 s | Chatbot, agent, bot and Voltron |
+| 07:29 | 13:47-14:52 | 61 s | Agent vs bot vs robot |
+| 08:30 | 14:54-15:04 | 10 s | Do we need to learn coding? |
+| 08:41 | 17:30-18:15 | 44 s | Pilots need more training |
+| 09:25 | 20:28-21:13 | 45 s | Jobs and directing bots |
+| 10:10 | 24:04-24:58 | 55 s | Self-learners and the pilot |
+| 11:04 | 25:13-25:41 | 29 s | Join the workshops |
+| 11:33 | 27:05-28:08 | 63 s | Not for me? and closing |
+
 ## Kept footage (main edit)
 
 21 intervals; everything not listed was cut (pre-roll, long pauses, duplicates).

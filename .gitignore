@@ -24,3 +24,4 @@ __pycache__/
 !.env.example
 *.pem
 public/thumb_frame.jpg
+public/thumb_frame_b.jpg
