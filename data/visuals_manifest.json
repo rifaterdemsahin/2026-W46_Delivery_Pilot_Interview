@@ -25,5 +25,23 @@
   "height": 768,
   "bytes": 384320,
   "est_cost_usd": 0.0024
+ },
+ "thumb_art_1": {
+  "model": "fal-ai/flux/schnell",
+  "prompt": "view from an airplane cockpit looking out at a huge swarm of hundreds of tiny glowing red robots flying in formation like a flock of birds across a stormy navy sky, cinematic, dramatic lighting, high contrast, deep navy and vivid red palette, dark moody background, no text, no letters, no words",
+  "seed": 1740610546,
+  "est_cost_usd": 0.0018
+ },
+ "thumb_art_2": {
+  "model": "fal-ai/flux/schnell",
+  "prompt": "a lone pilot silhouette seen from behind in a dark control room facing a giant wall of hundreds of small glowing red robot screens, cinematic, dramatic lighting, high contrast, deep navy and vivid red palette, dark moody background, no text, no letters, no words",
+  "seed": 1358351430,
+  "est_cost_usd": 0.0018
+ },
+ "thumb_art_3": {
+  "model": "fal-ai/flux/schnell",
+  "prompt": "a giant glowing red airplane-shaped constellation made of hundreds of tiny robots over a dark navy city at night, cinematic, dramatic lighting, high contrast, deep navy and vivid red palette, dark moody background, no text, no letters, no words",
+  "seed": 29074526,
+  "est_cost_usd": 0.0018
  }
 }
