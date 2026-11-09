@@ -3,6 +3,9 @@
 Every deliverable is versioned. Scheme: `0.MINOR.PATCH` for the whole project, one git tag per version, a snapshot of the
 small deliverables in `versions/v<version>/` (with `manifest.json`), and an entry here. New version: `scripts/version.py bump minor "notes"`.
 
+## v0.13.0 - 2026-11-09
+GitHub Pages site: overview, YouTube/LinkedIn/X copy pages, costs; workflow publishes site/ only
+
 ## v0.12.1 - 2026-11-09
 Exported Combined video: 25:49, 720p, -16.1 LUFS, 14 chapters + subtitle track (no SFX/music yet)
 

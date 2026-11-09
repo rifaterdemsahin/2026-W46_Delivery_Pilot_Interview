@@ -1,0 +1,3 @@
+function copyFrom(id,btn){var t=document.getElementById(id);t.select();var v=t.value;
+ (navigator.clipboard?navigator.clipboard.writeText(v):Promise.reject()).catch(function(){document.execCommand('copy')}).then(function(){btn.textContent='Copied';btn.className='ok';setTimeout(function(){btn.textContent='Copy';btn.className=''},1600)})}
+function count(id,out,limit){var t=document.getElementById(id),o=document.getElementById(out);function u(){var n=t.value.replace(/\[LINK\]/g,'x'.repeat(23)).length;o.textContent=n+(limit?' / '+limit:'')+' characters';o.className='cnt'+(limit&&n>limit?' bad':'')}t.addEventListener('input',u);u()}

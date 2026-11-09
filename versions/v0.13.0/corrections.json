@@ -1,0 +1,25 @@
+[
+  {"id": 1,  "find": ["cloud code"], "replace": "Claude Code", "active": true},
+  {"id": 2,  "find": ["delts", "demos"], "replace": "daemons", "active": true, "note": "'demos' is how Whisper wrote it in this transcript (11:24, 11:36)"},
+  {"id": 3,  "find": ["valtran"], "replace": "Voltron", "active": true},
+  {"id": 4,  "find": ["school platform"], "replace": "Skool platform", "active": true},
+  {"id": 5,  "find": ["school community"], "replace": "Skool community", "active": true},
+  {"id": 6,  "find": ["for the school"], "replace": "for the Skool", "active": true},
+  {"id": 7,  "find": ["the schools that"], "replace": "the Skools that", "active": true},
+  {"id": 8,  "find": ["300 boats"], "replace": "300 bots", "active": true},
+  {"id": 9,  "find": ["cobalt"], "replace": "COBALTS", "active": true},
+  {"id": 10, "find": ["sixth form college"], "replace": "sixth-form college", "active": true, "note": "initial capital kept, so 'Cambridge Sixth Form College' becomes 'Sixth-form college'"},
+  {"id": 11, "find": ["moose"], "replace": "Muse", "active": true},
+  {"id": 12, "find": ["broad bot", "growth bot"], "replace": "Grokbot", "active": true, "note": "'growth bot' is how Whisper wrote it in this transcript"},
+  {"id": 13, "find": ["duts", "dots"], "replace": "Dots", "active": true, "note": "'DOTS' is how Whisper wrote it in this transcript"},
+  {"id": 14, "find": ["hello ernem", "hello nem"], "replace": "hello, Marianna", "active": true},
+  {"id": 15, "find": ["got absurd", "got obstructed"], "replace": "got abstracted", "active": true, "note": "'got obstructed' is how Whisper wrote it in this transcript"},
+  {"id": 16, "find": ["getting disturbed"], "replace": "getting disrupted", "active": true},
+  {"id": 17, "find": ["or the news at home"], "replace": "or the Muses at home", "active": true, "note": "inferred; this transcript already reads 'Muses', check against the audio"},
+
+  {"id": 101, "find": ["test cross"], "replace": "Tesco", "active": false, "note": "unconfirmed"},
+  {"id": 102, "find": ["top nails"], "replace": "thumbnails", "active": false, "note": "unconfirmed"},
+  {"id": 103, "find": ["loss of"], "replace": "lots of", "active": false, "note": "unconfirmed"},
+  {"id": 104, "find": ["stand boxes"], "replace": "sandboxes", "active": false, "note": "unconfirmed"},
+  {"id": 105, "find": ["i taught"], "replace": "I thought", "active": false, "note": "unconfirmed"}
+]

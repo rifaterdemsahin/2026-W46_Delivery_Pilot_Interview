@@ -152,3 +152,11 @@
 - **Result:** 25:49 (1548.65 s, matches the planned 1548.6 s), 1280x720 25 fps, H.264 + AAC, 366 MB, loudness -16.1 LUFS, peak -1.4 dBFS.
 - **Location:** `out/combined_final.mp4` (git-ignored) and a versioned copy `~/Downloads/C1193_combined_v0.12.0.mp4`. Media is not committed.
 - **Known limits:** it is 720p because it is rendered from the proxy; at the 1.22x zoom a 4K-source render would be sharper. This version has no sound effects or music yet. The footer label truncates long chapter names ("Chatbots, Agents and Bots Exp..."); widening the label fixes it.
+
+## 25. GitHub Pages site (2026-11-09)
+- **What:** a static site in `site/` with an overview, a **YouTube** page (title, alternatives, description with chapters, tags, pinned comment, thumbnail, subtitles download, checklist), a **LinkedIn** page (long and short post), an **X** page (3 single posts and a 6-post thread), and a **Costs** page. Every text block has a Copy button and a live character counter (YouTube title 100, description 5,000; LinkedIn 3,000; X 280 with a link counted as 23). All X posts are asserted to fit at build time.
+- **Why generated:** `scripts/13_build_site.py` builds the pages from `data/` and `docs/`, so the copy, chapters and costs cannot drift from the project. The site is committed, so GitHub does not need Python or Node to deploy.
+- **Workflow:** the user's `static.yml` uploaded the whole repo (`path: '.'`), which would publish raw scripts and data. Changed to `path: 'site'` so only the site is public. Pages was already enabled (build type: workflow). No key or media is in `site/`.
+- **X vs x.ai:** "x.ai" was taken to mean posting on X (formerly Twitter). If xAI/Grok was meant, say so.
+- **Costs page:** fal.ai spend is an estimate from the list price (about $0.003 per megapixel), about $0.015 for 7 images (including one discarded and one regenerated). Local compute and hosting are $0. Claude usage is not measured here. Sound and music are marked as planned.
+- **Placeholders:** the YouTube link (`[LINK]`) and the Skool/Eventbrite links (`[ADD LINK]`) are not known, so they stay as placeholders instead of invented URLs.

@@ -1,0 +1,1519 @@
+1
+00:00:00,000 --> 00:00:03,780
+we are right now entered into an era in 2026.
+
+2
+00:00:04,060 --> 00:00:06,100
+AI is building another AI.
+
+3
+00:00:06,380 --> 00:00:09,780
+I have 300 bots running at the same time right now.
+
+4
+00:00:10,020 --> 00:00:13,180
+What's happening is I cannot go and write the bot.
+
+5
+00:00:13,340 --> 00:00:15,720
+I write one bot to write other bots.
+
+6
+00:00:15,820 --> 00:00:19,980
+What we need to become is, become pilots rather than drivers and make sure
+
+7
+00:00:19,980 --> 00:00:21,840
+that this is working all together.
+
+8
+00:00:22,000 --> 00:00:25,460
+Instead of going to their keyboards and typing, they will stop
+
+9
+00:00:25,460 --> 00:00:28,420
+typing, they will start observing and directing.
+
+10
+00:00:28,600 --> 00:00:31,520
+once I give you the task, I really don't care how you
+
+11
+00:00:31,520 --> 00:00:34,500
+complete that task. I want that goal to be achieved.
+
+12
+00:00:34,920 --> 00:00:36,940
+With a plane, the risk is higher.
+
+13
+00:00:37,400 --> 00:00:39,840
+If I had 300 bots, I'm more dangerous.
+
+14
+00:00:40,180 --> 00:00:41,920
+So I need to get certified.
+
+15
+00:00:41,920 --> 00:00:46,140
+once ai does the job we either go to our corner or we
+
+16
+00:00:46,140 --> 00:00:51,480
+become very creative and we become self-learners and our job becomes learning
+
+17
+00:00:51,480 --> 00:00:52,800
+and creating
+
+18
+00:00:52,940 --> 00:00:59,160
+Okay, hello, Marianna. Let's talk about technologies, AI, progress,
+
+19
+00:00:59,440 --> 00:01:04,120
+evolution and human because it's a very important subject and it becomes
+
+20
+00:01:04,120 --> 00:01:07,240
+more and more complicated for us to deal with it.
+
+21
+00:01:07,240 --> 00:01:12,980
+And let's start from technologies and your experience because all
+
+22
+00:01:12,980 --> 00:01:15,080
+your life you are focusing on technologies.
+
+23
+00:01:15,440 --> 00:01:17,280
+It's something that you are in love with.
+
+24
+00:01:17,480 --> 00:01:21,920
+Tell me why? What made you so interested in technologies?
+
+25
+00:01:22,440 --> 00:01:26,800
+So the reality is I'm passionate about technology because from a kid I
+
+26
+00:01:26,800 --> 00:01:29,340
+always fantasized to become a pilot.
+
+27
+00:01:29,340 --> 00:01:35,320
+Once you said let's do delivery pilot, it made two of my childhood
+
+28
+00:01:35,320 --> 00:01:40,480
+things come true. One from my adult old, which is called continuous integration
+
+29
+00:01:40,480 --> 00:01:45,920
+and continuous delivery. 10-20 years ago doing continuous integration was
+
+30
+00:01:45,920 --> 00:01:48,360
+impossible for most of the teams.
+
+31
+00:01:48,540 --> 00:01:51,160
+Most of the teams were unable to integrate the code.
+
+32
+00:01:51,340 --> 00:01:54,980
+And now we came to an age with the rise of the AI.
+
+33
+00:01:55,120 --> 00:01:56,720
+We can do the continuous integration.
+
+34
+00:01:57,080 --> 00:02:01,520
+Now it is time to do the continuous delivery, which brings me to my childhood.
+
+35
+00:02:02,060 --> 00:02:06,780
+In my childhood, I was watching the movies where these Macrobots, the suits,
+
+36
+00:02:07,040 --> 00:02:11,040
+the arc suits, were able to go to the other planets, be able to terraform
+
+37
+00:02:11,040 --> 00:02:13,420
+them and do all these magic stuff.
+
+38
+00:02:13,580 --> 00:02:18,020
+But the reality is being a pilot is very, very expensive right now.
+
+39
+00:02:18,260 --> 00:02:20,800
+To hold a plane in the air is very hard.
+
+40
+00:02:20,900 --> 00:02:23,620
+But with the rise of the AI, it all changed.
+
+41
+00:02:23,920 --> 00:02:28,080
+What happened is we are becoming from a driver to a pilot.
+
+42
+00:02:28,300 --> 00:02:30,380
+So I called it delivery pilot.
+
+43
+00:02:30,400 --> 00:02:32,840
+And that's the reason I'm very passionate about it.
+
+44
+00:02:32,840 --> 00:02:37,500
+not just to make money but make sure that this new profession comes to
+
+45
+00:02:37,500 --> 00:02:43,200
+life. Can you help us to understand the history of
+
+46
+00:02:43,200 --> 00:02:49,020
+technology a little bit? Because you've started over 20 years before and
+
+47
+00:02:49,020 --> 00:02:54,580
+do you remember how it looked like at that time and how much changed
+
+48
+00:02:54,580 --> 00:02:58,100
+till today? First of all, I started 40 years ago.
+
+49
+00:02:58,700 --> 00:03:03,080
+I had a computer at the age of five and my mother was a nuclear scientist.
+
+50
+00:03:03,440 --> 00:03:09,100
+And once she was doing the things with the Atari, I got a basic book, tried
+
+51
+00:03:09,100 --> 00:03:13,160
+to replicate what was on the book and some stuff working on the screen,
+
+52
+00:03:13,360 --> 00:03:18,980
+especially the colorful, the GPU stuff at that time at 1985 in Ankara on
+
+53
+00:03:18,980 --> 00:03:20,800
+the Nuclear Research Institute.
+
+54
+00:03:20,800 --> 00:03:27,040
+So, what is happening right now is most of these languages was declarative.
+
+55
+00:03:27,220 --> 00:03:29,760
+We had to learn a language to be able to talk.
+
+56
+00:03:29,920 --> 00:03:31,980
+I moved to the UK, I had to learn English.
+
+57
+00:03:32,200 --> 00:03:36,980
+People need to learn an intermediary language to talk to each other as
+
+58
+00:03:36,980 --> 00:03:38,380
+well as to talk to the computer.
+
+59
+00:03:38,720 --> 00:03:42,800
+Right now what's happening is with the rise of the AI we can only speak
+
+60
+00:03:42,800 --> 00:03:47,620
+in our own language, not even English, to be able to make the AI work.
+
+61
+00:03:47,620 --> 00:03:53,200
+because the AIs, the computer languages got abstracted so much that a
+
+62
+00:03:53,200 --> 00:03:57,640
+computer geek is not needed to be able to program these computers anymore.
+
+63
+00:03:58,000 --> 00:04:02,540
+What is happening right now is we are moving from a rider to a driver,
+
+64
+00:04:02,660 --> 00:04:05,320
+driver to a pilot. But this is a different change.
+
+65
+00:04:05,820 --> 00:04:09,760
+Meaning in the past the programmer was building the program.
+
+66
+00:04:09,760 --> 00:04:13,040
+Right now the program is getting built by AI.
+
+67
+00:04:13,380 --> 00:04:18,060
+What it means is we are right now entered into an era in 2026.
+
+68
+00:04:18,340 --> 00:04:20,380
+AI is building another AI.
+
+69
+00:04:20,680 --> 00:04:22,820
+So we need to come to ourselves.
+
+70
+00:04:23,060 --> 00:04:25,480
+Why do we need a pilot in the first place?
+
+71
+00:04:25,480 --> 00:04:31,220
+Once you want to fly to America, you always want a pilot in the helm because
+
+72
+00:04:31,220 --> 00:04:33,580
+they are going to carry 300 people.
+
+73
+00:04:33,780 --> 00:04:38,500
+Even though everything is done automatically, 30 years ago without the
+
+74
+00:04:38,500 --> 00:04:44,080
+generative AI, we still wanted a pilot, somebody who is responsible, who
+
+75
+00:04:44,080 --> 00:04:49,900
+understands the plane and who understands the passengers and the engineers
+
+76
+00:04:49,900 --> 00:04:52,840
+at the same time to fly these planes.
+
+77
+00:04:52,840 --> 00:04:56,860
+Right now with the software revolution, with the AI, what's happening is
+
+78
+00:04:56,860 --> 00:05:01,020
+we are responsible to fly over all of our bots.
+
+79
+00:05:01,340 --> 00:05:04,740
+I have 300 bots running at the same time right now.
+
+80
+00:05:04,980 --> 00:05:08,140
+What's happening is I cannot go and write the bot.
+
+81
+00:05:08,300 --> 00:05:10,700
+I write one bot to write other bots.
+
+82
+00:05:10,700 --> 00:05:14,040
+So the AI is creating the other AI.
+
+83
+00:05:14,280 --> 00:05:16,300
+Okay, you jumped already to bots.
+
+84
+00:05:16,440 --> 00:05:20,120
+I think it's too fast. Let's talk about AI skills.
+
+85
+00:05:20,120 --> 00:05:25,300
+what does it mean, why we need it, because I think that it's more popular
+
+86
+00:05:25,300 --> 00:05:30,980
+to use chat with AI, to
+
+87
+00:05:30,980 --> 00:05:36,160
+use AI just chatting about the problems, making some solutions, brainstorming,
+
+88
+00:05:36,200 --> 00:05:42,220
+etc. But it's much more, AI can do much more than
+
+89
+00:05:42,220 --> 00:05:43,700
+that. Yes.
+
+90
+00:05:44,100 --> 00:05:47,960
+How do you understand AI skills and why it's important?
+
+91
+00:05:48,200 --> 00:05:51,680
+So I separated the AI skills into three basic categories.
+
+92
+00:05:51,920 --> 00:05:53,440
+The first one is being a rider.
+
+93
+00:05:53,740 --> 00:05:56,640
+You use the web chat to be able to do your things.
+
+94
+00:05:56,920 --> 00:06:01,100
+You manually instruct them like riding a horse or riding a motorcycle.
+
+95
+00:06:01,340 --> 00:06:02,500
+You are very very hands-on.
+
+96
+00:06:02,740 --> 00:06:07,420
+Once you become a driver, you You start using Claude Code to build a website,
+
+97
+00:06:07,580 --> 00:06:10,060
+to do the things that you want to build with automation.
+
+98
+00:06:10,520 --> 00:06:13,760
+Once you become a pilot, you are not driving anymore.
+
+99
+00:06:13,940 --> 00:06:18,580
+The pilot does not drive, does not go into day in and day out like lots
+
+100
+00:06:18,580 --> 00:06:22,700
+of micromanagement. He cannot do that because he has lots of responsibility,
+
+101
+00:06:23,300 --> 00:06:27,720
+much more number of customers that they need to carry and make sure everything
+
+102
+00:06:27,720 --> 00:06:30,040
+works and the direction is correct.
+
+103
+00:06:30,040 --> 00:06:34,620
+So we are right now moving into an era where people are going to become
+
+104
+00:06:34,620 --> 00:06:39,180
+pilots. Instead of going to their keyboards and typing, they will stop
+
+105
+00:06:39,180 --> 00:06:42,140
+typing, they will start observing and directing.
+
+106
+00:06:42,520 --> 00:06:47,680
+That's a completely different job than driving these computers with the
+
+107
+00:06:47,680 --> 00:06:51,980
+keyboards. We got used to using the keyboards and people like myself, the
+
+108
+00:06:51,980 --> 00:06:53,620
+dinosaurs, look at the screens.
+
+109
+00:06:53,800 --> 00:06:56,740
+I have lots of screens, lots of keyboards to do the job.
+
+110
+00:06:57,000 --> 00:07:01,720
+That era is changing. Right now we will look into the computers much less
+
+111
+00:07:01,720 --> 00:07:05,360
+and the robots, the bots are going to do most.
+
+112
+00:07:05,540 --> 00:07:08,780
+But what we need to make sure is the direction is correct.
+
+113
+00:07:09,020 --> 00:07:11,860
+So that is the major thing that changes for us.
+
+114
+00:07:12,020 --> 00:07:15,700
+okay can you help us to understand
+
+115
+00:07:15,700 --> 00:07:21,340
+the journey this technology journey is it we have to
+
+116
+00:07:21,340 --> 00:07:24,960
+go through to get to the pilot level?
+
+117
+00:07:25,300 --> 00:07:29,840
+For us, starting from your personal life is very very important.
+
+118
+00:07:30,520 --> 00:07:35,920
+I start doing the typing and the writing, go on the chat GPT prompting.
+
+119
+00:07:36,020 --> 00:07:39,520
+That is the stage one that we all need to learn how to do that.
+
+120
+00:07:39,660 --> 00:07:44,460
+Most of us don't have the Alexa's or the Muses at home so they are unable
+
+121
+00:07:44,460 --> 00:07:49,680
+to go to that ecosystem. But if you have the money, spend the tokens, get
+
+122
+00:07:49,680 --> 00:07:55,260
+these latest Frontier models to be able to do your work in a more autonomous
+
+123
+00:07:55,260 --> 00:07:59,400
+manner. It could be Claude Code, it could be Gemini, it could be Codex.
+
+124
+00:07:59,620 --> 00:08:04,160
+Once you start doing that, right now the major hype, the trend is going
+
+125
+00:08:04,160 --> 00:08:06,480
+to the bots. That is the third stage.
+
+126
+00:08:06,680 --> 00:08:08,980
+Make sure that you have a bot with yourself.
+
+127
+00:08:09,140 --> 00:08:13,520
+It could be a Grokbot, it could be Muse, it could be Dots, every major
+
+128
+00:08:13,520 --> 00:08:15,300
+technology company is creating them.
+
+129
+00:08:15,480 --> 00:08:20,560
+They are more probabilistic than deterministic meaning most of the time
+
+130
+00:08:20,560 --> 00:08:25,200
+once we create computer programs they are deterministic we have one input
+
+131
+00:08:25,200 --> 00:08:30,080
+and one output and they don't go out of their box but these bots think
+
+132
+00:08:30,080 --> 00:08:34,340
+out of the box and they have something called the AI harness that they
+
+133
+00:08:34,340 --> 00:08:39,000
+go and complete the tasks such as once i created the event bright event
+
+134
+00:08:39,000 --> 00:08:43,480
+in Cambridge i need to make sure i advertise I need to make sure I go ahead
+
+135
+00:08:43,480 --> 00:08:47,120
+and get an insurance. I need to make sure I communicate to people.
+
+136
+00:08:47,360 --> 00:08:52,140
+So where we are going through in the world is we are going to create all
+
+137
+00:08:52,140 --> 00:08:55,320
+these little me's. You can call digital twins.
+
+138
+00:08:55,580 --> 00:08:59,420
+People call them bots. We are going to create them and we are going to
+
+139
+00:08:59,420 --> 00:09:02,920
+make sure that they can do something called agent to agent communication.
+
+140
+00:09:02,920 --> 00:09:07,800
+My campaign bot should be able to talk to my finance bot, that should be
+
+141
+00:09:07,800 --> 00:09:11,140
+able to talk to my capacity management bot.
+
+142
+00:09:11,300 --> 00:09:15,960
+So I can be at a high capacity, do my campaign in the budget.
+
+143
+00:09:16,360 --> 00:09:19,420
+Okay, but let's come back a little bit.
+
+144
+00:09:20,040 --> 00:09:25,020
+Again, there are software programs, there
+
+145
+00:09:25,020 --> 00:09:27,360
+are bots, chatbots,
+
+146
+00:09:27,760 --> 00:09:32,920
+AI tools and AI by itself.
+
+147
+00:09:33,240 --> 00:09:38,720
+Can you help us to understand they all are different?
+
+148
+00:09:39,120 --> 00:09:39,920
+Yes.
+
+149
+00:09:40,520 --> 00:09:46,140
+Because when we are talking to ChatGPT for example, we are talking to chatbot.
+
+150
+00:09:46,580 --> 00:09:47,380
+Yes.
+
+151
+00:09:47,620 --> 00:09:50,160
+But this chatbot can create a code.
+
+152
+00:09:50,680 --> 00:09:53,820
+Yes. That code can create a software program.
+
+153
+00:09:53,820 --> 00:09:54,760
+Yes.
+
+154
+00:09:55,460 --> 00:09:57,880
+Where is agent in between?
+
+155
+00:09:58,260 --> 00:10:00,520
+What does mean agent? What can we do?
+
+156
+00:10:00,740 --> 00:10:06,040
+Because this chatbot can create agent as well.
+
+157
+00:10:06,440 --> 00:10:10,980
+But what is the difference between AI tool, I mean the tool or software
+
+158
+00:10:10,980 --> 00:10:15,640
+program created by AI and agent?
+
+159
+00:10:15,640 --> 00:10:20,200
+So, how we call it in the world of software, we call it daemons.
+
+160
+00:10:20,560 --> 00:10:25,520
+Once you go to the chat GPT, you have some software, some data that's working,
+
+161
+00:10:25,640 --> 00:10:26,940
+that's the development side.
+
+162
+00:10:27,060 --> 00:10:28,460
+You have some code that's working.
+
+163
+00:10:28,740 --> 00:10:34,460
+But once that code becomes alive, becomes sentient, can do the tasks by
+
+164
+00:10:34,460 --> 00:10:37,200
+itself, can operate by itself, we call it daemons.
+
+165
+00:10:37,480 --> 00:10:42,700
+The bots are able to work in a world where they get coded and where they
+
+166
+00:10:42,700 --> 00:10:44,460
+can operate it at the same time.
+
+167
+00:10:44,460 --> 00:10:49,980
+Once I ask my grocery bot or grocery agent to complete a task every week
+
+168
+00:10:49,980 --> 00:10:55,380
+because I need to find or get food every week, the bot is able to go to
+
+169
+00:10:55,380 --> 00:10:59,580
+the Tesco's website, do all the clicks that I need to do in the digital
+
+170
+00:10:59,580 --> 00:11:04,860
+world, make sure that I get the items and if I have excessive items, stop
+
+171
+00:11:04,860 --> 00:11:10,720
+the system working. In the past, once it was only development, not operations
+
+172
+00:11:10,720 --> 00:11:15,460
+integrated, it always relied on humans to complete the operations.
+
+173
+00:11:15,840 --> 00:11:20,620
+Once it becomes a bot, it doesn't rely humans to complete the operations.
+
+174
+00:11:20,620 --> 00:11:26,120
+such as I did Google AdWords 10-15 years ago, I was deciding the keywords,
+
+175
+00:11:26,420 --> 00:11:28,600
+I was writing the title. Now I don't do that.
+
+176
+00:11:28,780 --> 00:11:34,680
+I have a bot that creates all the necessary bots that does the title,
+
+177
+00:11:34,900 --> 00:11:38,600
+that does the links, that does the thumbnails, that does the campaign management.
+
+178
+00:11:38,900 --> 00:11:41,120
+They come together to be able to do this.
+
+179
+00:11:41,120 --> 00:11:45,880
+20 years ago, 30 years ago, there was this cartoon called Voltron.
+
+180
+00:11:46,220 --> 00:11:51,480
+In Voltron, there is this space lion that flies in the space and it's a
+
+181
+00:11:51,480 --> 00:11:55,260
+robot. The robot comes together to be able to do the job.
+
+182
+00:11:55,400 --> 00:11:58,240
+So that's one of the reasons I like to deliver a pilot name.
+
+183
+00:11:58,520 --> 00:12:03,320
+Right now what is happening is all these bots are coming together and delivering
+
+184
+00:12:03,320 --> 00:12:09,000
+the job. So that is the reason Muse has passed ChatGPT in terms of installs.
+
+185
+00:12:09,000 --> 00:12:13,120
+Right now people are going to the bots because typing to chat GPT is good.
+
+186
+00:12:13,360 --> 00:12:16,780
+But what you want is to be operational in real world.
+
+187
+00:12:17,020 --> 00:12:20,320
+I don't want to do my visa application every five years.
+
+188
+00:12:20,540 --> 00:12:24,420
+I want a bot that knows all my information, that does a visa application.
+
+189
+00:12:24,700 --> 00:12:28,360
+I want a bot to do my insurance applications while I'm alive.
+
+190
+00:12:28,980 --> 00:12:34,340
+This bot, when you are saying bot, this is that agent that you are sending
+
+191
+00:12:34,340 --> 00:12:37,260
+to do the work instead of you.
+
+192
+00:12:37,260 --> 00:12:40,600
+Yes, the agent and the bot are very similar.
+
+193
+00:12:40,880 --> 00:12:44,040
+The agent has less autonomy than a bot.
+
+194
+00:12:44,280 --> 00:12:50,020
+A bot and a robot are tools that works in the real world, and a
+
+195
+00:12:50,020 --> 00:12:54,340
+robot collects the data from the real world, a bot collects the data from
+
+196
+00:12:54,340 --> 00:12:57,020
+the digital world, and it doesn't have a body.
+
+197
+00:12:57,020 --> 00:13:02,400
+The reality of an agent, because they started calling them agents, then
+
+198
+00:13:02,400 --> 00:13:07,220
+they turned into bots. Agents are mostly defined by software people and
+
+199
+00:13:07,220 --> 00:13:09,300
+they don't go out of their harnesses.
+
+200
+00:13:09,400 --> 00:13:11,640
+They are locked into their sandboxes.
+
+201
+00:13:11,700 --> 00:13:14,360
+But these bots are more probabilistic.
+
+202
+00:13:14,500 --> 00:13:18,420
+They go out, if they can't find the food in Tesco, they will go to Sainsbury.
+
+203
+00:13:18,440 --> 00:13:21,940
+If they can't go to the Sainsbury, they will knock on the door to Maria
+
+204
+00:13:21,940 --> 00:13:24,220
+and say, do you guys have any olives that we can eat?
+
+205
+00:13:24,400 --> 00:13:25,820
+It will be able to do that.
+
+206
+00:13:26,060 --> 00:13:31,300
+So that is the thing of these agents converting into bots and they become
+
+207
+00:13:31,300 --> 00:13:35,200
+more useful because once I give you the task, I really don't care how you
+
+208
+00:13:35,200 --> 00:13:38,180
+complete that task. I want that goal to be achieved.
+
+209
+00:13:38,600 --> 00:13:40,720
+Let's talk a little bit about coding.
+
+210
+00:13:41,240 --> 00:13:42,880
+How is it important nowadays.
+
+211
+00:13:43,280 --> 00:13:48,700
+Do we need to learn coding to use AI better?
+
+212
+00:13:49,120 --> 00:13:54,860
+So if you go back to Socrates, 3000 years ago, they memorized
+
+213
+00:13:54,860 --> 00:13:58,240
+all the books because there is no printing press.
+
+214
+00:13:58,540 --> 00:14:03,020
+They used a technique called memory palaces to remember thousands of pages
+
+215
+00:14:03,020 --> 00:14:05,760
+of a book. Right now we do not have that skill.
+
+216
+00:14:05,920 --> 00:14:09,840
+There is only memory championships in the world where people memorize a
+
+217
+00:14:09,840 --> 00:14:12,600
+deck of cards. and they got championship.
+
+218
+00:14:12,900 --> 00:14:14,820
+But most of the people stopped doing that.
+
+219
+00:14:14,920 --> 00:14:19,200
+the white-collar jobs that people got used to do is getting
+
+220
+00:14:19,200 --> 00:14:24,720
+disrupted a lot. So we are going to go into a world
+
+221
+00:14:24,720 --> 00:14:27,420
+where we don't look at the screens.
+
+222
+00:14:27,720 --> 00:14:30,840
+So it could be also very plus for people's mental health.
+
+223
+00:14:31,020 --> 00:14:35,100
+They don't have to look at the screens all day long because once you delegate
+
+224
+00:14:35,100 --> 00:14:40,860
+the job to a bot that can do the things with their own agency, then
+
+225
+00:14:40,860 --> 00:14:43,100
+you don't need to look at the screens that much.
+
+226
+00:14:43,260 --> 00:14:47,820
+The other reality that we got is in Europe, in the US, we created lots
+
+227
+00:14:47,820 --> 00:14:51,800
+of red tape. We draw borders between countries.
+
+228
+00:14:52,060 --> 00:14:54,820
+We say this is this government, this is that government.
+
+229
+00:14:55,060 --> 00:14:58,320
+That created a big bureaucracy all over the world.
+
+230
+00:14:58,620 --> 00:15:02,360
+What these bots are good at is they are good at policy.
+
+231
+00:15:02,760 --> 00:15:05,600
+Writing, implementing and delivering.
+
+232
+00:15:05,880 --> 00:15:10,300
+What we are going to see it is these government agencies are mostly going
+
+233
+00:15:10,300 --> 00:15:15,060
+to converge and all of the jobs that the government policy is done will
+
+234
+00:15:15,060 --> 00:15:20,000
+be done by the AI because that is the tasks that the AI can excel at.
+
+235
+00:15:20,180 --> 00:15:24,660
+What does it mean for us? We will have more time to be able to be much
+
+236
+00:15:24,660 --> 00:15:27,380
+much more creative. What does that mean?
+
+237
+00:15:27,760 --> 00:15:33,540
+to answer your question the engineering has to be learned because
+
+238
+00:15:33,540 --> 00:15:39,660
+once you fly a plane as a pilot you are going to get trained more not
+
+239
+00:15:39,660 --> 00:15:42,780
+less most of the time people think that I will get trained less.
+
+240
+00:15:42,920 --> 00:15:46,680
+No. From a horse to a car, you have to get licensed
+
+241
+00:15:47,060 --> 00:15:50,860
+to understand there's an engine, there's back, there's insurance, there's
+
+242
+00:15:50,860 --> 00:15:54,140
+the fatalities. With a plane, the risk is higher.
+
+243
+00:15:54,600 --> 00:15:57,040
+If I had 300 bots, I'm more dangerous.
+
+244
+00:15:57,380 --> 00:15:59,120
+So I need to get certified.
+
+245
+00:15:59,120 --> 00:16:01,780
+I need to make sure that I can engineer this.
+
+246
+00:16:01,960 --> 00:16:06,200
+To come to your question, would I need to memory memorize 300 pages?
+
+247
+00:16:06,360 --> 00:16:11,620
+No. But I will watch more, I will understand more, I will comment and conquer
+
+248
+00:16:11,620 --> 00:16:17,660
+more. Then we are turning to the subject why continuous
+
+249
+00:16:17,660 --> 00:16:23,240
+learning is so important and it's more and more important day by
+
+250
+00:16:23,240 --> 00:16:26,600
+day that we cannot stop learning new things.
+
+251
+00:16:27,100 --> 00:16:31,980
+Yes, that is the reality. I had a different idea 10 years ago, if you ask
+
+252
+00:16:31,980 --> 00:16:36,000
+me this question, I thought I live in Cambridge, the University of Cambridge's
+
+253
+00:16:36,000 --> 00:16:41,140
+value will go down. But right now, my idea is the adult education is going
+
+254
+00:16:41,140 --> 00:16:46,000
+to rise. Because being a pilot requires you to know more, to understand
+
+255
+00:16:46,000 --> 00:16:51,620
+more, to experience more. And people are going to
+
+256
+00:16:51,620 --> 00:16:54,900
+realize they already watch more YouTube than ever.
+
+257
+00:16:55,080 --> 00:16:58,320
+YouTube is a non-fiction source of education.
+
+258
+00:16:58,560 --> 00:16:59,840
+Everybody is trying to learn.
+
+259
+00:16:59,840 --> 00:17:03,420
+Right now, all over the world, everybody is skilling up.
+
+260
+00:17:03,820 --> 00:17:08,580
+Once Africa comes into the game, once India comes into the game with all
+
+261
+00:17:08,580 --> 00:17:12,100
+these satellites and all these learning, we will have a much different
+
+262
+00:17:12,100 --> 00:17:15,200
+world where everybody is continuously learning.
+
+263
+00:17:15,420 --> 00:17:17,100
+And that is going to be the main thing.
+
+264
+00:17:17,240 --> 00:17:21,780
+That will become bread and butter for everyone, especially for the adults,
+
+265
+00:17:21,940 --> 00:17:27,720
+to learn more and more. I know that you like to learn a lot and you've
+
+266
+00:17:27,720 --> 00:17:29,140
+been learning a lot continuously.
+
+267
+00:17:29,840 --> 00:17:33,740
+But what else you like a lot as well?
+
+268
+00:17:33,740 --> 00:17:36,260
+You like to teach people. What do you think?
+
+269
+00:17:36,360 --> 00:17:37,160
+Why?
+
+270
+00:17:37,160 --> 00:17:42,680
+The reason is if I go to these groups, communities, if you
+
+271
+00:17:42,680 --> 00:17:46,940
+don't give it to somebody else, I think what we do is meaningless.
+
+272
+00:17:47,120 --> 00:17:50,620
+Such as we started doing this Cambridge AI meetups.
+
+273
+00:17:51,040 --> 00:17:55,760
+If this information only lies with me, then it is not that meaningful.
+
+274
+00:17:56,040 --> 00:18:01,300
+But what is meaningful for me is to share this experience with others and
+
+275
+00:18:01,300 --> 00:18:06,620
+I see that right now everybody including myself is having a hard time being
+
+276
+00:18:06,620 --> 00:18:10,420
+able to adapt because the jobs give meaning to people.
+
+277
+00:18:10,620 --> 00:18:15,680
+My research paper is all about when AGI comes in what's going to happen
+
+278
+00:18:15,680 --> 00:18:20,940
+to the workforce because people ride these horses for hundreds of years.
+
+279
+00:18:21,100 --> 00:18:24,640
+Once the horses are not there they lose their meaning.
+
+280
+00:18:25,180 --> 00:18:30,420
+Right now most 20-30% of the world is doing a desk-based job.
+
+281
+00:18:30,580 --> 00:18:34,540
+Their jobs are gonna go away so that's an important time right now.
+
+282
+00:18:35,060 --> 00:18:39,660
+In history we need to find a way what we are going to do and instead of
+
+283
+00:18:39,660 --> 00:18:44,580
+trying to hold on to these old jobs being a developer, being a tester,
+
+284
+00:18:44,840 --> 00:18:50,560
+being an accountant, being a lawyer, we need to make sure we go to a more
+
+285
+00:18:50,560 --> 00:18:56,080
+creative world where we are not just only accountants, insurance, developers,
+
+286
+00:18:56,300 --> 00:19:00,440
+but we are all of them by using these bots and coordinating those bots.
+
+287
+00:19:00,600 --> 00:19:05,380
+We become like directors to those bots and that becomes our job.
+
+288
+00:19:05,500 --> 00:19:09,500
+We are not going to only direct ourselves, but direct more than ever.
+
+289
+00:19:09,780 --> 00:19:14,480
+Right now, this already happened in any flat or in any house.
+
+290
+00:19:14,900 --> 00:19:20,000
+If you are cooking, cleaning, doing the drying, you are using all the robots
+
+291
+00:19:20,000 --> 00:19:22,620
+in the house, but there is no agent in the middle.
+
+292
+00:19:22,980 --> 00:19:26,020
+You are the robot. You command the machines.
+
+293
+00:19:26,240 --> 00:19:30,860
+You do all the hands-on. But the future is there is going to be an intermediary.
+
+294
+00:19:30,980 --> 00:19:36,180
+We are going to pilot that machine or the abstract software to be able
+
+295
+00:19:36,180 --> 00:19:38,580
+to do the job. So that is where we are going.
+
+296
+00:19:38,740 --> 00:19:40,960
+And I'm very passionate about going there.
+
+297
+00:19:41,160 --> 00:19:44,400
+The reason is we have lots of gatekeepers right now.
+
+298
+00:19:44,620 --> 00:19:47,460
+Such as I'm a I am a gatekeeper of all my knowledge.
+
+299
+00:19:47,740 --> 00:19:50,120
+If I don't share it, that knowledge goes away.
+
+300
+00:19:50,260 --> 00:19:53,020
+But with the rise of AI, you are a nuclear scientist.
+
+301
+00:19:53,760 --> 00:19:55,340
+Everybody is a nuclear scientist.
+
+302
+00:19:55,500 --> 00:19:59,140
+We don't need to raise a nuclear scientist and take them to the university
+
+303
+00:19:59,140 --> 00:20:03,740
+for 40 years. We need pilots that can do the nuclear science, that can
+
+304
+00:20:03,740 --> 00:20:05,820
+do the civil engineering at the same time.
+
+305
+00:20:05,960 --> 00:20:11,560
+So we will be able to remove the barriers of the Skools that only focus
+
+306
+00:20:11,560 --> 00:20:15,000
+on nuclear science, that only focus on one subject.
+
+307
+00:20:15,000 --> 00:20:20,700
+but that is going to have also an impact of the society because in
+
+308
+00:20:20,700 --> 00:20:24,900
+the university we learn that we need to have only one major maybe max two
+
+309
+00:20:24,900 --> 00:20:30,500
+my mom did math and physics not that many majors but then we are going
+
+310
+00:20:30,500 --> 00:20:35,620
+to realize once AI does the job your job is to learn once you are learning
+
+311
+00:20:35,620 --> 00:20:40,000
+why are you learning only one major because your job is to become a pilot
+
+312
+00:20:40,140 --> 00:20:44,260
+They will expect you to become a scientist themselves because you have
+
+313
+00:20:44,260 --> 00:20:45,860
+all the agents at your disposal.
+
+314
+00:20:46,040 --> 00:20:47,580
+You need to come up with a new science.
+
+315
+00:20:47,800 --> 00:20:51,120
+You need to come up with creative ways to be able to do this stuff.
+
+316
+00:20:51,500 --> 00:20:56,420
+Let's talk a little bit about the mind digestion system.
+
+317
+00:20:56,920 --> 00:21:02,340
+Because we had a very interesting case when you asked the AI how much time
+
+318
+00:21:02,340 --> 00:21:08,140
+it will take to average person to absorb the information that you've provided
+
+319
+00:21:08,140 --> 00:21:13,800
+in a few minutes. I mean that it takes time and as early as
+
+320
+00:21:13,800 --> 00:21:19,500
+we are starting to work just to adopt AI for our
+
+321
+00:21:19,500 --> 00:21:24,680
+mind, like we help our mind to learn it, to be with it, to live with it.
+
+322
+00:21:24,960 --> 00:21:30,500
+It is not only about learning, it's about to learn have to live with AI
+
+323
+00:21:30,500 --> 00:21:36,280
+as soon as I can say based on my experience then when I started
+
+324
+00:21:36,280 --> 00:21:42,020
+it was complicated but every time months by months I can do more and more
+
+325
+00:21:42,020 --> 00:21:47,520
+but it's not possible to do a lot in the beginning you have
+
+326
+00:21:47,520 --> 00:21:53,260
+to adopt your mind to that right yes the self-learning that was
+
+327
+00:21:53,260 --> 00:21:58,820
+my core niche I started this niche 10 years ago there was not that many
+
+328
+00:21:58,820 --> 00:22:02,780
+people in this niche still there's not that many people on the self-learning
+
+329
+00:22:02,780 --> 00:22:07,840
+niche i think is going to become big and our job is going to become self
+
+330
+00:22:07,840 --> 00:22:13,340
+learners because once ai does the job we either go to our corner or we
+
+331
+00:22:13,340 --> 00:22:18,680
+become very creative and we become self-learners and our job becomes learning
+
+332
+00:22:18,680 --> 00:22:24,380
+and creating because we need to in my perception the pilots
+
+333
+00:22:24,380 --> 00:22:28,020
+needs to be creative. The pilots needs to be operative.
+
+334
+00:22:28,320 --> 00:22:30,760
+The pilots needs to be builders.
+
+335
+00:22:31,060 --> 00:22:32,300
+They need to be architects.
+
+336
+00:22:32,620 --> 00:22:36,100
+They need to treasure the things and they need to become strategists.
+
+337
+00:22:36,340 --> 00:22:41,260
+I call this COBALTS to make sure that what does a pilot do in a nutshell.
+
+338
+00:22:41,540 --> 00:22:45,580
+They need to be able to create and operate all day long.
+
+339
+00:22:45,980 --> 00:22:51,860
+Great. Let's talk a few sentences about the workshop
+
+340
+00:22:51,860 --> 00:22:57,460
+that you are running. Yes, we are doing the Eventbrite workshops in Cambridge
+
+341
+00:22:57,460 --> 00:23:02,260
+Sixth-form college. People can sign up in Cambridge and they can join us.
+
+342
+00:23:02,260 --> 00:23:08,060
+We have a free session on the Skool platform where we come together every
+
+343
+00:23:08,060 --> 00:23:13,640
+week on Sunday 1.30. So they can come in and showcase what they are doing.
+
+344
+00:23:13,800 --> 00:23:18,800
+We have a session where we meet up, we go through one topic, then we talk
+
+345
+00:23:18,800 --> 00:23:22,800
+about what we are grateful of, what we learned, what we implemented that
+
+346
+00:23:22,800 --> 00:23:27,720
+week. Our on-site sessions are mostly about people coming in, doing the
+
+347
+00:23:27,720 --> 00:23:31,880
+things hands-on because you always need somebody supporting this.
+
+348
+00:23:32,060 --> 00:23:37,240
+And we are very, very passionate about these delivery pilots going online.
+
+349
+00:23:37,520 --> 00:23:43,080
+People delivering, not just integrating, delivering the solutions as
+
+350
+00:23:43,080 --> 00:23:47,540
+a pilot. So we are very focused on it and we are blessed in Cambridge.
+
+351
+00:23:47,540 --> 00:23:51,700
+There is a community that people are very interested in learning these
+
+352
+00:23:51,700 --> 00:23:56,320
+things. But if you are not in this area, definitely go to the Skool community,
+
+353
+00:23:56,480 --> 00:23:57,280
+join.
+
+354
+00:23:57,360 --> 00:24:00,200
+It is free for the students to come in and join.
+
+355
+00:24:00,400 --> 00:24:03,040
+There is a symbolic fee for the professionals.
+
+356
+00:24:03,660 --> 00:24:07,680
+And if the businesses want, they can get managed service as these bots
+
+357
+00:24:07,680 --> 00:24:13,040
+and be able to implement. Are there any requirements that you have to know
+
+358
+00:24:13,040 --> 00:24:16,900
+or to be prepared before joining Skool community?
+
+359
+00:24:17,180 --> 00:24:20,540
+No, for the Skool there is no requirements.
+
+360
+00:24:20,540 --> 00:24:25,600
+In the past, if you needed to go to a computer language class, you needed
+
+361
+00:24:25,600 --> 00:24:29,540
+to have programming language as a prerequisite.
+
+362
+00:24:29,920 --> 00:24:34,480
+In this case, with the AI, most of the technical stuff is taken care of
+
+363
+00:24:34,480 --> 00:24:36,760
+by AI. But you need to have basics.
+
+364
+00:24:36,900 --> 00:24:39,580
+A computer and an internet connection is a must.
+
+365
+00:24:39,680 --> 00:24:44,740
+A mobile phone is a must. As long as you have the gear and the will to
+
+366
+00:24:44,740 --> 00:24:45,760
+learn, you are good to go.
+
+367
+00:24:46,140 --> 00:24:51,680
+If someone is thinking, oh, AI isn't for me, what can you say?
+
+368
+00:24:52,060 --> 00:24:56,520
+Yes, they said this as well during the revolution of the cars.
+
+369
+00:24:57,100 --> 00:24:59,620
+You can always say, stay like an Amish.
+
+370
+00:24:59,800 --> 00:25:03,080
+Amish people don't use internal combustion engines.
+
+371
+00:25:03,320 --> 00:25:06,060
+They always used the horses.
+
+372
+00:25:06,360 --> 00:25:11,740
+You can still stay there, but all of the world is right now moving to an
+
+373
+00:25:11,740 --> 00:25:15,840
+AI-based world. and the large language models are just the engine.
+
+374
+00:25:16,300 --> 00:25:21,600
+So the things happening around them, people are building platforms, people
+
+375
+00:25:21,600 --> 00:25:26,700
+are building economies, and this is the greatest investment of humanity.
+
+376
+00:25:27,280 --> 00:25:32,080
+Right now the AI investment bypassed the industrial revolution, railway,
+
+377
+00:25:32,560 --> 00:25:38,120
+the investments. So we are right now in an era everybody is putting
+
+378
+00:25:38,120 --> 00:25:43,660
+their chips in into this new AI-based, new bot-based world.
+
+379
+00:25:43,860 --> 00:25:45,620
+So we are trying to go there.
+
+380
+00:25:46,200 --> 00:25:48,540
+Thank you. Thank you very much.
