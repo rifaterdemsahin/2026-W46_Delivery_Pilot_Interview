@@ -15,12 +15,12 @@ flowchart TD
     WAV[("work/audio.wav<br/>git-ignored")]:::done
     S2["02 transcribe.py<br/>mlx-whisper large-v3-turbo"]:::done
     TJ[/"data/transcript.json<br/>283 segments, 4494 words"/]:::done
-    S3["03 make_subtitles.py"]:::todo
-    SUB[/"data/subtitles.srt + .vtt"/]:::todo
+    S3["03 make_subtitles.py"]:::done
+    SUB[/"data/subtitles.srt + .vtt"/]:::done
     S4["04 make_chapters.py<br/>Claude topic segmentation"]:::todo
     CH[/"data/chapters.json"/]:::todo
-    S5["05 make_proxy.sh<br/>ffmpeg 720p proxy"]:::todo
-    PX[("work/proxy.mp4<br/>git-ignored")]:::todo
+    S5["05 make_proxy.sh<br/>ffmpeg 720p proxy"]:::wip
+    PX[("work/proxy.mp4<br/>git-ignored")]:::wip
     RM["Remotion composition<br/>captions + chapter cards"]:::todo
     OUT[("out/final.mp4<br/>git-ignored")]:::todo
     S8["06 embed_chapters.sh<br/>ffmpeg metadata mux"]:::todo
@@ -49,4 +49,6 @@ npm install
 ```bash
 scripts/01_extract_audio.sh                  # ~2 s
 .venv/bin/python -I scripts/02_transcribe.py # ~2 min on Apple Silicon
+.venv/bin/python -I scripts/03_make_subtitles.py
+scripts/05_make_proxy.sh                     # ~10 min, hardware H.264
 ```
