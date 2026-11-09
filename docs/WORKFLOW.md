@@ -14,6 +14,7 @@ Rule that applies to every stage: **document the rationale, commit and push at e
 | 5 | "and have all the code recorded here and steps. just not input raw video and output video" | Steps table in README, media kept out of git | `README.md` Steps, `.gitignore` |
 | 6 | "have a code on how to cut to have the best impact and decide on how the cut should happen. Place the footage to remotion and have the animated white red subtitles" | Cut planner (EDL), Remotion timeline, animated white/red captions | `scripts/07_plan_cuts.py`, `data/cuts.json`, `src/Subtitles.tsx` |
 | 7 | "open this in remotion and record these prompts and stages as well for my workflow" | Remotion Studio opened in Chrome; this file | `docs/WORKFLOW.md` |
+| 8 | "there are type issues. Such as the person asking questions is Marianna, person answering is Rifat Erdem Sahin > do these updates: [17 before/after corrections, plus 5 unconfirmed left switched off]" | Transcript corrections as data + script, speakers recorded | `data/corrections.json`, `scripts/02b_apply_corrections.py`, `data/speakers.json` |
 
 ## Stages (pipeline)
 
@@ -21,7 +22,8 @@ Rule that applies to every stage: **document the rationale, commit and push at e
 |-------|--------------|---------------|--------------------|------------------------|
 | 0 Plan | Probe video, decide pipeline and rules | ffprobe | `docs/PLAN.md` | |
 | 1 Audio | 16 kHz mono WAV from the 4K file | `scripts/01_extract_audio.sh` | | `work/audio.wav` |
-| 2 Transcribe | Whisper large-v3-turbo on Apple GPU, word timestamps, ETA shown | `scripts/02_transcribe.py` | `data/transcript.json`, `.txt` | |
+| 2 Transcribe | Whisper large-v3-turbo on Apple GPU, word timestamps, ETA shown | `scripts/02_transcribe.py` | `data/transcript.raw.json` | |
+| 2b Correct | Apply reviewed before/after rules (names, products, jargon) | `scripts/02b_apply_corrections.py` | `data/transcript.json`, `.txt`, `corrections.json` | |
 | 3 Subtitles | Readable cues from word timing | `scripts/03_make_subtitles.py` | `subtitles.srt/.vtt`, `cues.json` | |
 | 4 Chapters | AI (Claude) topic segmentation, anchored to phrases | `scripts/04_make_chapters.py` | `chapters.json`, `.ffmetadata`, `.youtube.txt` | |
 | 5 Proxy | 720p proxy for fast preview/render | `scripts/05_make_proxy.sh` | | `work/proxy.mp4` |
@@ -39,4 +41,5 @@ Rule that applies to every stage: **document the rationale, commit and push at e
 2. *Build:* "Install the components, get the transcript, set up Remotion, keep all code in this repo. Keep a Mermaid flow diagram in README.md and update it every step."
 3. *Transcribe:* "Show the estimated completion time while transcribing. Save the transcript and commit/push."
 4. *Cut:* "Write code that decides the cuts for best impact (tighten pauses, drop pre/post-roll, hook-first highlights), place the footage in Remotion, with animated white and red subtitles."
-5. *Review:* "Open it in Remotion Studio in Chrome."
+5. *Fix:* "Here are before/after corrections (some unconfirmed, keep those switched off). Names: interviewer is X, guest is Y." (Rules live in `data/corrections.json`; re-run 02b, 03, 04, 07.)
+6. *Review:* "Open it in Remotion Studio in Chrome."

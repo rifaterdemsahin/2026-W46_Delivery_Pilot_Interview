@@ -6,7 +6,7 @@ exact. Outputs: chapters.json, ffmetadata (for ffmpeg mux), YouTube-style timest
 import json
 
 CHAPTERS = [  # (anchor phrase or None for t=0, title, summary)
-    (None, "Introduction", "Host opens the conversation on technology, AI, progress and human evolution."),
+    (None, "Introduction", "Marianna opens the conversation with Rifat Erdem Sahin on technology, AI, progress and human evolution."),
     ("So the reality is I'm passionate", "Why a Delivery Pilot?", "A childhood dream of flying meets continuous integration and continuous delivery."),
     ("Can you help us to understand the history", "40 Years of Technology: From Atari to AI", "Early computers in 1985, learning languages to talk to machines, and how AI removes that barrier."),
     ("it seems that today we don't need programmers", "From Rider to Driver to Pilot", "Why we still need a pilot in the cockpit, and bots building other bots."),
@@ -17,7 +17,7 @@ CHAPTERS = [  # (anchor phrase or None for t=0, title, summary)
     ("why continuous", "Continuous Learning and Adult Education", "Why learning never stops and adult education is set to rise."),
     ("I know that you like to learn a lot", "Teaching, Gatekeepers and the Future of Work", "Sharing knowledge, desk jobs changing, becoming directors of bots, beyond single majors."),
     ("mind digestion", "Adapting the Mind and Self-Learning", "Living with AI, self-learners, and the creative, operative pilot."),
-    ("workshop that you are running", "Cambridge Workshops and the School Community", "Eventbrite sessions, weekly meetups, requirements, and pricing."),
+    ("workshop that you are running", "Cambridge Workshops and the Skool Community", "Eventbrite sessions, weekly meetups, requirements, and pricing."),
     ("AI isn't for me", "\"AI Isn't for Me\" and the Bigger Picture", "The Amish comparison and AI investment surpassing past industrial revolutions."),
 ]
 

@@ -3,7 +3,7 @@
 
 Usage: 02_transcribe.py [audio.wav] [out.json]
 Prints the audio length, an up-front estimated completion time, and a live ETA
-(clock time + minutes left) while running. Also writes a readable data/transcript.txt.
+(clock time + minutes left) while running. Output is RAW; scripts/02b_apply_corrections.py then writes the corrected transcript.json/.txt.
 """
 import json, sys, time, subprocess, datetime as dt
 import mlx_whisper
@@ -11,7 +11,7 @@ from tqdm import tqdm
 
 MODEL = "mlx-community/whisper-large-v3-turbo"
 AUDIO = sys.argv[1] if len(sys.argv) > 1 else "work/audio.wav"
-OUT = sys.argv[2] if len(sys.argv) > 2 else "data/transcript.json"
+OUT = sys.argv[2] if len(sys.argv) > 2 else "data/transcript.raw.json"  # raw Whisper; run 02b_apply_corrections.py next
 SPEED_GUESS = 20.0  # x realtime measured on this Apple Silicon Mac (~25x); used for the first estimate
 
 def clock(sec_from_now):
@@ -58,10 +58,6 @@ slim = {
 with open(OUT, "w") as f:
     json.dump(slim, f, ensure_ascii=False, indent=1)
 
-if OUT == "data/transcript.json":  # human-readable copy
-    with open("data/transcript.txt", "w") as f:
-        for s in slim["segments"]:
-            f.write(f"[{int(s['start']//60):02}:{int(s['start']%60):02}] {s['text']}\n")
 
 took = time.time() - t0
 print(f"Done {clock(0)}: {len(slim['segments'])} segments, {len(slim['text'].split())} words "

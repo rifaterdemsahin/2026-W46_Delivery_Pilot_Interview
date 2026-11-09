@@ -70,3 +70,14 @@
 ## 12. Studio + workflow record (2026-11-09)
 - Remotion Studio runs on port 3000 (`npm run studio`) and is opened in Google Chrome. It plays the 720p proxy through the same cut list as the renders, so the preview matches the output.
 - `docs/WORKFLOW.md` records the user prompts in order, the stages with their scripts/outputs, which outputs are committed vs not, the role of each AI/code step, and reusable prompt templates for the next video.
+
+## 13. Transcript corrections and speakers (2026-11-09)
+- **Raw vs corrected:** Whisper output is kept untouched in `data/transcript.raw.json`. `scripts/02b_apply_corrections.py` applies `data/corrections.json` to produce `transcript.json`/`.txt`. Every downstream step (subtitles, chapters, cuts, Remotion captions) reads the corrected file, so a re-run of 02, then 02b, 03, 04, 07 reproduces everything.
+- **Why rules as data, not hand edits:** each fix is auditable, can be switched off (`"active": false`), and survives a re-transcription. The script prints how often each rule fired, so a rule that matches nothing is visible.
+- **Matching:** case-insensitive on word tokens inside a segment. Trailing punctuation and an initial capital are kept, and word timings are preserved (caption highlighting stays in sync).
+- **Applied (17 rules):** Claude Code (3), daemons (2), Skool platform/community (3), for the Skool, the Skools that, 300 bots, COBALTS, Sixth-form college, Grokbot, Dots, hello, Marianna, got abstracted, getting disrupted. Rules 3 (Voltron), 11 (Muse) and 17 (Muses at home) matched nothing because Whisper already wrote them correctly.
+- **Wording variants added** because this transcript differs from the list given: "demos" for "delts" (rule 2), "growth bot" for "broad bot" (12), "DOTS" for "duts" (13), "got obstructed" for "got absurd" (15). Please check these against the audio.
+- **Left switched off (unconfirmed):** Tesco, thumbnails, lots of, sandboxes, I thought. None matched anyway.
+- **Known leftover:** "the boats are building the boats" (about 08:04) was not in the list, so it is unchanged. It probably means "bots".
+- **Chapter title** now reads "Skool Community". The sixth-form rule lowercases "college" as written ("Cambridge Sixth-form college"); adjust the rule if you prefer the proper-noun capitals.
+- **Speakers:** Marianna asks the questions, Rifat Erdem Sahin answers (`data/speakers.json`, intro chapter summary). Whisper does not label speakers, so this is metadata only, not per-line labels.

@@ -1,6 +1,6 @@
 1
 00:00:00,140 --> 00:00:06,360
-Okay, hello Ernem. Let's talk about technologies, AI, progress,
+Okay, hello, Marianna. Let's talk about technologies, AI, progress,
 
 2
 00:00:06,640 --> 00:00:11,320
@@ -172,7 +172,7 @@ in our own language, not even English, to be able to make the AI work.
 
 44
 00:02:54,820 --> 00:03:00,400
-because the AIs, the computer languages got obstructed so much that a
+because the AIs, the computer languages got abstracted so much that a
 
 45
 00:03:00,400 --> 00:03:04,840
@@ -368,7 +368,7 @@ You are very very hands -on.
 
 93
 00:05:59,300 --> 00:06:03,980
-Once you become a driver, you You start using Cloud Code to build a website,
+Once you become a driver, you You start using Claude Code to build a website,
 
 94
 00:06:04,140 --> 00:06:06,620
@@ -444,7 +444,7 @@ If we never use AI, we need to first become a writer.
 
 112
 00:07:12,680 --> 00:07:16,320
-Then we need to understand, oh, there is cloud code, we can create programs.
+Then we need to understand, oh, there is Claude Code, we can create programs.
 
 113
 00:07:16,320 --> 00:07:18,740
@@ -536,7 +536,7 @@ these latest Frontier models to be able to do your work in a more autonomous
 
 135
 00:08:49,380 --> 00:08:53,520
-manner. It could be cloud code, it could be Gemini, it could be Codex.
+manner. It could be Claude Code, it could be Gemini, it could be Codex.
 
 136
 00:08:53,740 --> 00:08:58,280
@@ -552,7 +552,7 @@ Make sure that you have a bot with yourself.
 
 139
 00:09:03,260 --> 00:09:07,640
-It could be a growth bot, it could be Muse, it could be DOTS, every major
+It could be a Grokbot, it could be Muse, it could be Dots, every major
 
 140
 00:09:07,640 --> 00:09:09,420
@@ -680,7 +680,7 @@ program created by AI and agent?
 
 171
 00:11:09,760 --> 00:11:14,320
-So, how we call it in the world of software, we call it demos.
+So, how we call it in the world of software, we call it daemons.
 
 172
 00:11:14,680 --> 00:11:19,640
@@ -700,7 +700,7 @@ But once that code becomes alive, becomes sentient, can do the tasks by
 
 176
 00:11:28,580 --> 00:11:31,320
-itself, can operate by itself, we call it demos.
+itself, can operate by itself, we call it daemons.
 
 177
 00:11:31,600 --> 00:11:36,820
@@ -944,7 +944,7 @@ But that means the white -collar jobs that people got used to do is getting
 
 237
 00:15:38,160 --> 00:15:43,680
-disturbed a lot. So we are going to go into a world
+disrupted a lot. So we are going to go into a world
 
 238
 00:15:43,680 --> 00:15:46,380
@@ -1052,7 +1052,7 @@ the fatalities. With a plane, the risk is higher.
 
 264
 00:17:34,960 --> 00:17:37,400
-If I had 300 boats, I'm more dangerous.
+If I had 300 bots, I'm more dangerous.
 
 265
 00:17:37,740 --> 00:17:39,480
@@ -1300,7 +1300,7 @@ do the civil engineering at the same time.
 
 326
 00:21:46,320 --> 00:21:51,920
-So we will be able to remove the barriers of the schools that only focus
+So we will be able to remove the barriers of the Skools that only focus
 
 327
 00:21:51,920 --> 00:21:55,360
@@ -1436,7 +1436,7 @@ They need to treasure the things and they need to become strategists.
 
 360
 00:24:25,100 --> 00:24:30,020
-I call this cobalt to make sure that what does a pilot do in a nutshell.
+I call this COBALTS to make sure that what does a pilot do in a nutshell.
 
 361
 00:24:30,300 --> 00:24:34,340
@@ -1452,11 +1452,11 @@ that you are running. Yes, we are doing the Eventbrite workshops in Cambridge
 
 364
 00:24:46,220 --> 00:24:51,020
-Sixth Form College. People can sign up in Cambridge and they can join us.
+Sixth-form college. People can sign up in Cambridge and they can join us.
 
 365
 00:24:51,020 --> 00:24:56,820
-We have a free session on the school platform where we come together every
+We have a free session on the Skool platform where we come together every
 
 366
 00:24:56,820 --> 00:25:02,400
@@ -1496,7 +1496,7 @@ There is a community that people are very interested in learning these
 
 375
 00:25:40,460 --> 00:25:45,080
-things. But if you are not in this area, definitely go to the school community,
+things. But if you are not in this area, definitely go to the Skool community,
 
 376
 00:25:45,240 --> 00:25:46,040
@@ -1520,11 +1520,11 @@ and be able to implement. Are there any requirements that you have to know
 
 381
 00:26:01,800 --> 00:26:05,660
-or to be prepared before joining school community?
+or to be prepared before joining Skool community?
 
 382
 00:26:05,940 --> 00:26:09,300
-No, for the school there is no requirements.
+No, for the Skool there is no requirements.
 
 383
 00:26:09,300 --> 00:26:14,360

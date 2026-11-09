@@ -16,7 +16,8 @@ flowchart TD
     S1["01 extract_audio.sh<br/>ffmpeg 16kHz mono WAV"]:::done
     WAV[("work/audio.wav<br/>git-ignored")]:::done
     S2["02 transcribe.py<br/>mlx-whisper large-v3-turbo<br/>prints ETA while running"]:::done
-    TJ[/"data/transcript.json + transcript.txt<br/>283 segments, 4494 words"/]:::done
+    FIX["02b apply_corrections.py<br/>data/corrections.json, 17 active rules"]:::done
+    TJ[/"data/transcript.json + transcript.txt<br/>corrected; transcript.raw.json = untouched Whisper"/]:::done
     S3["03 make_subtitles.py"]:::done
     SUB[/"subtitles.srt/.vtt, captions.json,<br/>cues.json (per-word timing)"/]:::done
     S4["04 make_chapters.py<br/>Claude topic segmentation"]:::done
@@ -30,7 +31,7 @@ flowchart TD
     S6["06 render_and_embed.sh main<br/>render + ffmpeg chapters + soft subs"]:::wip
     OUT[("out/final.mp4<br/>git-ignored")]:::todo
 
-    SRC --> S1 --> WAV --> S2 --> TJ
+    SRC --> S1 --> WAV --> S2 --> FIX --> TJ
     TJ --> S3 --> SUB
     TJ --> S4 --> CH
     TJ --> S7
@@ -50,6 +51,9 @@ flowchart TD
     classDef todo fill:#eee,stroke:#999,color:#555
 ```
 
+## Speakers
+Marianna asks the questions; Rifat Erdem Sahin answers ([data/speakers.json](data/speakers.json)).
+
 ## Setup
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
@@ -61,7 +65,8 @@ Needs `ffmpeg`/`ffprobe` (Homebrew) and an Apple Silicon Mac for mlx-whisper. So
 | # | Command | Output | Time |
 |---|---------|--------|------|
 | 1 | `scripts/01_extract_audio.sh` | `work/audio.wav` | 2 s |
-| 2 | `.venv/bin/python -I scripts/02_transcribe.py` | `data/transcript.json`, `.txt` | ~1-2 min, shows ETA |
+| 2 | `.venv/bin/python -I scripts/02_transcribe.py` | `data/transcript.raw.json` | ~1-2 min, shows ETA |
+| 2b | `.venv/bin/python -I scripts/02b_apply_corrections.py` | `data/transcript.json`, `.txt` (corrected) | instant, prints hits per rule |
 | 3 | `.venv/bin/python -I scripts/03_make_subtitles.py` | SRT, VTT, captions/cues JSON | instant |
 | 4 | `.venv/bin/python -I scripts/04_make_chapters.py` | chapters JSON, ffmetadata, YouTube list | instant |
 | 5 | `scripts/05_make_proxy.sh` | `work/proxy.mp4`, `public/proxy.mp4` hard link | ~10 min |
