@@ -103,3 +103,7 @@
 - **Reproducible:** images are cached (skipped if present), `--force --only <id>` regenerates one, and `data/visuals_manifest.json` records prompt, seed, size and estimated cost.
 - **Caption fix found while testing:** Whisper split "20-30%", "desk-based" and "1.30" into pieces, which showed as "20 -30 %". `03_make_subtitles.py` now glues such tokens back together.
 - **Verified:** one still per explainer from the Combined composition, plus an 8 s video render of an infographic section. Full Combined render is scripted but not run (estimated 20-30 min).
+
+## 17. Slight zoom (2026-11-09)
+- Footage is scaled 1.12x (`ZOOM` in `src/config.ts`), anchored at 68% / 45% so the speaker on the right stays framed and the empty window area on the left is cropped. Applies to Main, Highlights and Combined. Only the video layer scales, so captions, panel and bars are unaffected. Change `ZOOM` (1.0 = none) to adjust.
+- Source is 4K and the proxy is 720p, so a zoom softens the proxy slightly. For a final 4K render, render from the original to keep it sharp.

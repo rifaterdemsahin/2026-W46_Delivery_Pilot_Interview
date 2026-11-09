@@ -1,5 +1,5 @@
 import { AbsoluteFill, OffthreadVideo, Series, staticFile } from "remotion";
-import { VIDEO_SRC } from "./config";
+import { VIDEO_SRC, ZOOM, ZOOM_ORIGIN } from "./config";
 import { mainOffset, timelines, type Mode } from "./edit";
 import { Subtitles } from "./Subtitles";
 import { ChapterCard } from "./ChapterCard";
@@ -16,7 +16,9 @@ export const Edit = ({ mode }: { mode: Mode }) => {
       <Series>
         {tl.map((c, i) => (
           <Series.Sequence key={i} durationInFrames={c.dur}>
-            <OffthreadVideo src={staticFile(VIDEO_SRC)} startFrom={c.srcFrom} />
+            <AbsoluteFill style={{ transform: `scale(${ZOOM})`, transformOrigin: ZOOM_ORIGIN }}>
+              <OffthreadVideo src={staticFile(VIDEO_SRC)} startFrom={c.srcFrom} />
+            </AbsoluteFill>
           </Series.Sequence>
         ))}
       </Series>
